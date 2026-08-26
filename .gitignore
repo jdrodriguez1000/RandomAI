@@ -1,0 +1,16 @@
+# Secretos — nunca al repositorio
+.env
+.env.*
+!.env.example
+
+# Sistema operativo
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Nota: _persistence/ SÍ va a Git a propósito. Es la memoria del proyecto.

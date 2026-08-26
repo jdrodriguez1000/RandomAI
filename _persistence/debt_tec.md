@@ -1,0 +1,303 @@
+# debt_tec.md — Deuda técnica del proyecto RandomAI
+
+> Todo lo que se dejó a medias, se aplazó conscientemente o quedó peor de lo que debería,
+> **con su estado**, para que al implementarlo podamos cerrarlo.
+>
+> Una deuda registrada es una decisión; una deuda no registrada es un accidente esperando.
+> Registrar no es saldar: mientras el estado no sea `Implementada` o `Aceptada`, sigue viva.
+
+**Última actualización:** 2026-08-26
+
+<!--INDEX-->
+
+## Índice
+
+> **Búsqueda rápida.** Salta con el enlace, o ve directo a la línea indicada (exacta, ya contando este índice).
+> Por código: `grep -n 'DT-003' debt_tec.md`
+
+| Línea | Sección | Ir a |
+|---|---|---|
+| `38` | **Convenciones** | [↓](#convenciones) |
+| `63` | **Tablero** | [↓](#tablero) |
+| `80` | **Detalle** | [↓](#detalle) |
+| `82` | &nbsp;&nbsp;↳ DT-001 · Encabezados de 015_evolution.md sin normalizar | [↓](#dt-001--encabezados-de-015_evolutionmd-sin-normalizar) |
+| `100` | &nbsp;&nbsp;↳ DT-002 · Rutas referenciadas por phases/ que no existen | [↓](#dt-002--rutas-referenciadas-por-phases-que-no-existen) |
+| `120` | &nbsp;&nbsp;↳ DT-003 · Divergencia de nombres en la capa de persistencia | [↓](#dt-003--divergencia-de-nombres-en-la-capa-de-persistencia) |
+| `154` | &nbsp;&nbsp;↳ DT-004 · ADRs pendientes del Anexo A | [↓](#dt-004--adrs-pendientes-del-anexo-a) |
+| `166` | &nbsp;&nbsp;↳ DT-005 · Numeración no correlativa del canónico | [↓](#dt-005--numeración-no-correlativa-del-canónico) |
+| `181` | &nbsp;&nbsp;↳ DT-006 · phases/ sin auditar | [↓](#dt-006--phases-sin-auditar) |
+| `197` | &nbsp;&nbsp;↳ DT-010 · El agente session-starter sigue sin adaptar | [↓](#dt-010--el-agente-session-starter-sigue-sin-adaptar) |
+| `222` | &nbsp;&nbsp;↳ DT-009 · El agente session-closer contradice al skill | [↓](#dt-009--el-agente-session-closer-contradice-al-skill) |
+| `257` | &nbsp;&nbsp;↳ DT-008 · El método pierde su nivel operativo | [↓](#dt-008--el-método-pierde-su-nivel-operativo) |
+| `290` | &nbsp;&nbsp;↳ DT-007 · CLAUDE.md no existe | [↓](#dt-007--claudemd-no-existe) |
+
+<!--/INDEX-->
+
+---
+
+## Convenciones
+
+**Código:** `DT-NNN`, correlativo, nunca se reutiliza.
+
+**Estados:**
+
+| Estado | Significado |
+|---|---|
+| `Abierta` | registrada, sin saldar |
+| `En curso` | se está saldando |
+| `Implementada` | saldada. **Estado de cierre** |
+| `Aceptada` | se decide convivir con ella indefinidamente. **Requiere decisión `D-NNN`** |
+| `Descartada` | dejó de ser deuda (el código o documento desapareció, o el problema se disolvió) |
+
+**Severidad:** `Alta` (bloqueará algo) · `Media` (costará más caro después) · `Baja` (molestia)
+
+**Cada deuda declara:** qué se debe · por qué se aplazó · **qué la salda** · qué pasa si no se salda.
+
+> ⚠️ Mientras no exista código de aplicación, la deuda es **documental y de proceso**. Cuando
+> empiece la construcción, esta será la fuente principal de deuda de implementación.
+> La obligación de revisarla en cada Gate vivía en `phases/`, eliminado por `D-04`: hoy no
+> está escrita en ninguna parte. Ver `DT-008`.
+
+---
+
+## Tablero
+
+| Código | Deuda | Severidad | Estado |
+|---|---|---|---|
+| `DT-001` | Encabezados de `015_evolution.md` §35–§51 sin normalizar | Media | `Aceptada` |
+| `DT-002` | `phases/` referencia `templates/`, `_memory/` y `_discovery/`, que no existen | Alta | `Descartada` |
+| `DT-003` | Divergencia de nombres: `_persistence/` vs `_memory/`, `debt_tec.md` vs `tech-debt.md` | Alta | `Descartada` |
+| `DT-004` | ADRs pendientes del Anexo A del canónico (A.2, A.5, A.6, y A.1 a revisar) | Media | `Abierta` |
+| `DT-005` | La numeración del canónico dejará de ser correlativa (`§17-bis`) | Baja | `Aceptada` |
+| `DT-006` | `phases/` sin auditar — 8 archivos, ~88 KB | Media | `Descartada` |
+| `DT-008` | El método pierde su nivel operativo al eliminar `phases/` | Alta | `Abierta` |
+| `DT-009` | El agente `session-closer` contradice al skill que dice invocar | Alta | `Implementada` |
+| `DT-010` | El agente `session-starter` sigue escrito contra el proyecto de origen | Alta | `Implementada` |
+| `DT-007` | `CLAUDE.md` no existe; el esquema de dos terminales no está escrito en ninguna parte | Media | `Implementada` |
+
+---
+
+## Detalle
+
+### `DT-001` · Encabezados de `015_evolution.md` sin normalizar
+
+**Qué se debe.** Las secciones §35–§51 (líneas 896–1147) son texto plano sin prefijo `#`.
+
+**Por qué se aplazó.** Decisión `D-01`: las fuentes se conservan intactas (`RES-006`). Se
+prefirió la regla de inmutabilidad sobre la comodidad de navegación.
+
+**Estado: `Aceptada`.** Convivimos con ella indefinidamente, respaldada por `D-01`.
+
+**Mitigación en vigor.** El defecto está documentado en la auditoría `0001-method` (H-02, causa
+raíz), en `L-001` y aquí. **Toda lectura de esa fuente se hace por rango de líneas.**
+
+**Qué pasa si no se mitiga.** Ya pasó una vez: se perdieron ~200 líneas normativas y se
+invirtió una regla del método. Puede volver a pasar con cualquier lector futuro que no lea
+`L-001`.
+
+---
+
+### `DT-002` · Rutas referenciadas por `phases/` que no existen
+
+> **`Descartada` el 2026-08-26 por `D-04`.** `templates/`, `_memory/` y `_discovery/` solo
+> eran necesarias porque `phases/` las citaba. Eliminado `phases/`, el problema se disolvió:
+> no hay nada que apunte a esas rutas. Se conserva el registro como historia.
+
+**Qué se debe.** `phases/` referencia `templates/` (plantillas de los cinco artefactos de
+Descubrimiento), `_memory/` y `_discovery/`. Ninguna existe.
+
+**Por qué se aplazó.** No bloquea la corrección del método, que es el trabajo actual.
+
+**Qué la salda.** `T-008` (crear `templates/`) y la resolución de `DT-003` (que decide si
+`_memory/` debe existir o renombrarse).
+
+**Qué pasa si no se salda.** **Bloqueará el arranque real de la fase `005_discovery`:**
+`phases/005_discovery.md` §5 dice literalmente «Las plantillas de estos cinco archivos aún no
+están escritas → `templates/`».
+
+---
+
+### `DT-003` · Divergencia de nombres en la capa de persistencia
+
+> **`Descartada` el 2026-08-26 por `D-04`.** La divergencia existía entre `_persistence/` y
+> lo que `phases/` esperaba encontrar. Sin `phases/` no hay dos partes que reconciliar:
+> `_persistence/` es ahora la única capa de registro. `T-006` queda `Cancelada`.
+
+**Qué se debe.** El usuario pidió `_persistence/` con `debt_tec.md`. `phases/` referencia
+`_memory/` con `tech-debt.md`, en 8 puntos distintos y en 6 de los 8 archivos de fase.
+
+**Los nombres en conflicto:**
+
+| Este repo (`_persistence/`) | `phases/` (`_memory/`) |
+|---|---|
+| `progress.md` | `progress.md` ✅ coincide |
+| `lessons.md` | `lessons.md` ✅ coincide |
+| `assumptions.md` | `assumptions.md` ✅ coincide |
+| `constraints.md` | `constraints.md` ✅ coincide |
+| `debt_tec.md` | `tech-debt.md` ❌ difiere |
+| `decisions.md` | *no existe en `phases/`* |
+| `tasks.md` | *no existe en `phases/`* |
+
+**Por qué se aplazó.** Se construyó lo que el usuario pidió; reconciliar `phases/` es una
+decisión suya, no de la ejecutora.
+
+**Qué la salda.** `T-006`. Dos caminos posibles: **(a)** actualizar las referencias de
+`phases/` a `_persistence/` y `debt_tec.md`; **(b)** renombrar esta carpeta a `_memory/`.
+**Recomendación: (a)** — `_persistence/` es más descriptivo, y `decisions.md` y `tasks.md`
+enriquecen lo que `phases/` contemplaba.
+
+**Qué pasa si no se salda.** Las fases apuntarán a una carpeta inexistente y la ejecutora
+escribirá en dos sitios distintos, o en ninguno.
+
+---
+
+### `DT-004` · ADRs pendientes del Anexo A
+
+**Qué se debe.** `000_method.md:1002` declara: «**Pendiente:** A.1, A.2, A.5 y A.6 merecen un
+ADR propio con contexto, alternativas y consecuencias. Aún no se han escrito.»
+
+**Estado tras la auditoría.** A.1 pierde peso al corregirse H-01 (`TA-0001` debe resolver si
+sigue necesitando ADR). A.5 requerirá reescritura si se ejecuta `TA-0006`.
+
+**Qué la salda.** Escribir los ADR que sobrevivan a `TA-0001` y `TA-0006`.
+
+---
+
+### `DT-005` · Numeración no correlativa del canónico
+
+**Qué se debe.** Tras `TA-0002`, el canónico tendrá `§17-bis` entre §17 y §18.
+
+**Por qué se aceptó.** Decisión `D-02`. El motivo original —41 de 62 referencias en
+`phases/`— desapareció con `D-04`, pero la deuda **sigue `Aceptada`**: ahora la sostienen las
+43 referencias del repo de la auditora, que `RES-009` nos impide corregir.
+
+**Estado: `Aceptada`.** Es el precio consciente de `RES-007`.
+
+**Condición de cierre.** Que ningún consumidor externo referencie el canónico por número.
+Ver la revisión de `D-02` y `RES-007`.
+
+---
+
+### `DT-006` · `phases/` sin auditar
+
+> **`Descartada` el 2026-08-26 por `D-04`.** No queda objeto que auditar. La lección que
+> produjo —`L-004`, el alcance declarado de una auditoría es su límite— **sigue vigente** y
+> es lo que hay que conservar de aquí.
+
+**Qué se debe.** Los 8 archivos de fase operacionalizan el método y nunca han sido auditados;
+la auditoría `0001-method` declaró como objeto solo `000_method.md`.
+
+**Evidencia de que importa.** Sin auditar, ya aparecieron dos problemas reales: el riesgo de
+las 62 referencias y el segundo frente de `TA-0007` en `005_discovery.md`.
+
+**Qué la salda.** Ya no aplica.
+
+---
+
+### `DT-010` · El agente `session-starter` sigue sin adaptar
+
+> **`Implementada` el 2026-08-26 (`T-021`).** El agente quedó **delgado**, igual que
+> `session-closer`: cero pasos y cero comandos del procedimiento en su cuerpo. Se le añadieron
+> la definición de sesión (`D-08`), la tabla de tres actores con la auditora como fuente
+> obligatoria, y la prohibición de declarar Gates (`RES-008`).
+
+**Severidad: Alta · Estado: `Abierta`** · Origen: `T-020`
+
+**Qué se debe.** `.claude/agents/session-starter.md` llegó escrito contra el proyecto de origen
+y **no se tocó**: se adaptó primero el skill, por decisión del usuario.
+
+**Es el mismo patrón que `DT-009`**, ya resuelto en el cierre: un agente que lleva el
+procedimiento duplicado en el cuerpo **no delega, compite** — ante la discrepancia sigue su
+propia copia, que es la vieja.
+
+**Qué la salda.** `T-021`: dejarlo delgado —quién es, qué no puede hacer, e invoca el skill—
+sin duplicar un solo paso, igual que se hizo con `session-closer`.
+
+**Qué pasa si no se salda.** El arranque ejecutaría el procedimiento ajeno: leería `_context/`,
+que no existe; ignoraría el tablero de la auditora; y reportaría sesiones por fecha en vez de
+por `S-nnn`.
+
+---
+
+### `DT-009` · El agente `session-closer` contradice al skill
+
+> **`Implementada` el 2026-08-26 (`T-019`).** El agente quedó **delgado**: dice quién es y qué
+> no puede hacer, e invoca el skill. **No contiene ni un solo paso ni comando del
+> procedimiento**, así que ya no puede competir con él. Se le añadieron la tabla de tres
+> actores, la prohibición de `Verificada`, `debt_tec.md` como proponible y el aviso del
+> repositorio público.
+
+**Severidad: Alta · Estado: `Abierta`** · Origen: `D-07`
+
+**Qué se debe.** `.claude/agents/session-closer.md` llegó escrito contra el proyecto de origen y
+**no se tocó** en esta ronda, por decisión del usuario: primero el skill.
+
+El agente dice *«invoca la skill `protocol-close`… síguelo tal como está escrito»*, pero además
+**repite media parte del procedimiento en su propio cuerpo** — y esa copia es la vieja:
+
+| El agente dice | El skill adaptado dice |
+|---|---|
+| comprobar que `app/static/*.js` sea el compilado de `frontend/*.ts` | ese control no existe; el Paso 2b regenera índices |
+| «Paso 5b», «Paso 2b del protocolo» | la numeración cambió |
+| cita `[D-016]`, `[D-019]`, `[L-006]` | el skill no cita ningún código; `L-006` aquí significa otra cosa |
+| «no toques `_context/`» | esa carpeta no existe; son `_brief/` y `_methodology/` |
+| cuatro archivos del porqué, seis en total | son **siete**, y `debt_tec.md` sí es proponible |
+| dos actores | **tres**: falta la prohibición de marcar `Verificada` |
+
+**Por qué importa más de lo que parece.** Un agente que lleva el procedimiento duplicado en el
+cuerpo **no delega: compite**. Ante la discrepancia seguirá lo que tiene más cerca, que es su
+propia copia desactualizada — y esa copia le manda ejecutar comprobaciones de un stack que este
+proyecto no tiene.
+
+**Qué la salda.** `T-019`: dejar el agente **delgado** —quién es, qué no puede hacer, e invoca
+el skill— sin duplicar pasos. Lo que sea procedimiento vive en el skill y solo ahí.
+
+---
+
+### `DT-008` · El método pierde su nivel operativo
+
+**Severidad: Alta · Estado: `Abierta`** · Origen: `D-04`
+
+**Qué se debe.** `000_method.md` es **descriptivo**: define qué es cada fase, qué la
+caracteriza y qué principios la rigen. `phases/` era **prescriptivo**: por cada una de las 8
+fases declaraba qué autoriza, **qué prohíbe**, qué entradas exige, el procedimiento paso a
+paso, los artefactos que produce, la **condición de salida** en forma de checklist, qué se
+registra en la capa de persistencia y qué se entrega al Gate siguiente.
+
+Eliminado `phases/`, el proyecto conserva el **qué** y pierde el **cómo**.
+
+**Por qué se aceptó el hueco.** `D-04` es decisión del usuario y la ejecutora no la discute.
+Se registra la consecuencia, no se revierte la decisión.
+
+**Qué la salda.** Una de estas tres, a elegir por el usuario:
+
+| | Opción | Coste |
+|---|---|---|
+| a | Reconstruir el nivel operativo dentro del propio `000_method.md` | Engorda el canónico; choca con `RES-007` si obliga a numerar |
+| b | Recrear un directorio operativo con otro nombre y otra forma | Reintroduce lo que se acaba de eliminar |
+| c | Operar sin procedimiento escrito, guiándose solo por el método | Cero coste ahora; las condiciones de salida de cada fase dejan de ser verificables |
+
+**Qué pasa si no se salda.** Al abrir el Descubrimiento no habrá checklist de condición de
+salida. El método dice que la fase termina cuando cinco condiciones son ciertas
+(`000_method.md` §14 más lo que añada `TA-0007`), pero **quién lo verifica y contra qué** era
+justamente lo que `phases/` fijaba. El Gate 1 se declararía sin criterio operativo escrito.
+
+**Nota.** No es urgente: no bloquea las tareas de auditoría en curso. Se vuelve bloqueante en
+el momento de abrir la fase de Descubrimiento.
+
+---
+
+### `DT-007` · `CLAUDE.md` no existe
+
+> **`Implementada` el 2026-08-26 (`T-007`).** `CLAUDE.md` existe en la raíz y recoge la
+> asignación concreta: **el veredicto de un Gate lo emite la auditora, nunca la ejecutora**,
+> junto con las reglas duras y el protocolo de persistencia. Con esto, `TA-0006` puede
+> ejecutarse: al sacar la asignación del canónico ya hay dónde dejarla.
+
+**Qué se debe.** El esquema de dos terminales —quién ejecuta, quién audita, quién declara los
+Gates— **no está escrito en ningún archivo del repo**. Vive solo en la conversación.
+
+**Por qué importa.** `TA-0006` exige mover ahí la asignación concreta al reformular §32 de
+forma agnóstica. Sin `CLAUDE.md`, esa asignación se perdería al sacarla del canónico.
+
+**Qué la salda.** `T-007` — hecha.
