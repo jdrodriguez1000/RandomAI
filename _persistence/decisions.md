@@ -19,19 +19,20 @@
 
 | Línea | Sección | Ir a |
 |---|---|---|
-| `40` | **Convenciones** | [↓](#convenciones) |
-| `55` | **Tablero** | [↓](#tablero) |
-| `77` | **D-01 · No se editan las fuentes** | [↓](#d-01--no-se-editan-las-fuentes) |
-| `118` | **D-02 · El canónico se amplía sin renumerar** | [↓](#d-02--el-canónico-se-amplía-sin-renumerar) |
-| `167` | &nbsp;&nbsp;↳ Revisión del 2026-08-26 — la decisión sobrevive, su fundamento cambia | [↓](#revisión-del-2026-08-26--la-decisión-sobrevive-su-fundamento-cambia) |
-| `186` | **D-03 · Alcance de la incorporación de 015 §35-§51** | [↓](#d-03--alcance-de-la-incorporación-de-015-35-51) |
-| `243` | **D-04 · Eliminar el directorio phases/** | [↓](#d-04--eliminar-el-directorio-phases) |
-| `280` | **D-05 · Prefijo _ en las carpetas de insumo** | [↓](#d-05--prefijo-_-en-las-carpetas-de-insumo) |
-| `312` | **D-06 · Git + GitHub como sustrato de evidencia** | [↓](#d-06--git--github-como-sustrato-de-evidencia) |
-| `337` | **D-07 · Adaptación de protocol-close a este proyecto** | [↓](#d-07--adaptación-de-protocol-close-a-este-proyecto) |
-| `382` | **D-08 · Una sesión es un bloque de tiempo, no un día** | [↓](#d-08--una-sesión-es-un-bloque-de-tiempo-no-un-día) |
-| `416` | **D-09 · La capa del cómo vive en _guide/GUIDE.md** | [↓](#d-09--la-capa-del-cómo-vive-en-_guideguidemd) |
-| `466` | **Decisiones heredadas del brief** | [↓](#decisiones-heredadas-del-brief) |
+| `41` | **Convenciones** | [↓](#convenciones) |
+| `56` | **Tablero** | [↓](#tablero) |
+| `79` | **D-01 · No se editan las fuentes** | [↓](#d-01--no-se-editan-las-fuentes) |
+| `120` | **D-02 · El canónico se amplía sin renumerar** | [↓](#d-02--el-canónico-se-amplía-sin-renumerar) |
+| `169` | &nbsp;&nbsp;↳ Revisión del 2026-08-26 — la decisión sobrevive, su fundamento cambia | [↓](#revisión-del-2026-08-26--la-decisión-sobrevive-su-fundamento-cambia) |
+| `188` | **D-03 · Alcance de la incorporación de 015 §35-§51** | [↓](#d-03--alcance-de-la-incorporación-de-015-35-51) |
+| `245` | **D-04 · Eliminar el directorio phases/** | [↓](#d-04--eliminar-el-directorio-phases) |
+| `282` | **D-05 · Prefijo _ en las carpetas de insumo** | [↓](#d-05--prefijo-_-en-las-carpetas-de-insumo) |
+| `314` | **D-06 · Git + GitHub como sustrato de evidencia** | [↓](#d-06--git--github-como-sustrato-de-evidencia) |
+| `339` | **D-07 · Adaptación de protocol-close a este proyecto** | [↓](#d-07--adaptación-de-protocol-close-a-este-proyecto) |
+| `384` | **D-08 · Una sesión es un bloque de tiempo, no un día** | [↓](#d-08--una-sesión-es-un-bloque-de-tiempo-no-un-día) |
+| `418` | **D-09 · La capa del cómo vive en _guide/GUIDE.md** | [↓](#d-09--la-capa-del-cómo-vive-en-_guideguidemd) |
+| `468` | **D-10 · A.1 sigue en la lista de ADR pendientes** | [↓](#d-10--a1-sigue-en-la-lista-de-adr-pendientes) |
+| `514` | **Decisiones heredadas del brief** | [↓](#decisiones-heredadas-del-brief) |
 
 <!--/INDEX-->
 
@@ -65,6 +66,7 @@ consecuencias.
 | `D-07` | Adaptación de `protocol-close`: sesiones `S-nnn` y deuda proponible | usuario | 2026-08-26 | `Vigente` |
 | `D-08` | Una sesión es un bloque de tiempo, no un día | usuario | 2026-08-26 | `Vigente` |
 | `D-09` | La capa del «cómo» vive en `_guide/GUIDE.md`, separada de reglas y método | usuario | 2026-08-26 | `Vigente` |
+| `D-10` | `A.1` sigue en la lista de ADR pendientes por consecuencia arquitectónica | usuario | 2026-08-26 | `Vigente` |
 
 **Contexto común de `D-01`, `D-02` y `D-03`.** Las tres eran condición previa para ejecutar
 cualquier tarea de la auditoría [`0001-method`](../../RandomAi_Auditor/audits/0001-method.md)
@@ -460,6 +462,52 @@ y otro modelo. Regla dura 7.
   público ya se hizo, así que deja de ser preventiva. La corre la auditora (`RES-008`) → `T-025`.
 
 **Trazas:** `T-023` · `T-024` · `T-025` · `RES-001` · `RES-004` · `L-007`
+
+---
+
+## D-10 · A.1 sigue en la lista de ADR pendientes
+
+**Decide:** usuario · **Fecha:** 2026-08-26 · **Estado:** `Vigente`
+
+**Contexto.** `TA-0001` corrige la atribución de fuentes sobre el Actor Invitado. Su cuarto
+punto de evidencia obliga a revisar el «Pendiente» del cierre de `000_method.md`, que lista
+`A.1`, `A.2`, `A.5` y `A.6` como decisiones que merecen un ADR propio: o se retira `A.1` de esa
+lista, o se justifica por escrito por qué se queda.
+
+**Problema.** El motivo original por el que `A.1` estaba ahí **desaparece con la corrección**.
+Se creía que dos fuentes incluían al Actor Invitado y una lo refutaba, de modo que había que
+justificar por qué gana la minoría. Corregido el dato —solo `005 §5.6` lo incluye; `010 §12` y
+`015 §5` lo excluyen con argumento— no queda conflicto que resolver. Mantenerla «porque siempre
+estuvo» la convertiría en un pendiente sin razón viva.
+
+**Alternativas.**
+
+1. **Retirar `A.1` de la lista.** Un ADR sin alternativa viva es un acta, no una decisión.
+   Coste: se pierde el rastro de una regla que sí restringe el diseño.
+2. **Mantenerla por el conflicto de fuentes.** Descartada: sería falsa. El conflicto no existe.
+3. **Mantenerla por su consecuencia arquitectónica.** ← **elegida**
+
+**Decisión.** `A.1` se queda en la lista, con la justificación escrita en el propio canónico y
+enunciada sobre el riesgo correcto: **no es que el conflicto siga abierto, es que la regla
+tiene consecuencia arquitectónica.** Decir que lo temporal, lo externo y lo restringido se
+tratan como permisos y seguridad es una restricción sobre el modelo de autorización del
+producto, no una nota de taxonomía. La alternativa —modelar el acceso restringido como actor
+propio— es viable y tiene coste distinto, y ese contraste hay que escribirlo.
+
+**Razón.** Un pendiente cuyo motivo ha caducado se cierra o miente. Este no se cierra porque
+tiene un segundo motivo, independiente del primero, que la corrección de `TA-0001` no toca.
+
+**Cuándo se escribe.** Al tocar la **Baseline**, que es donde viven los `ADR-NNN`
+(`000_method.md` §38) y donde la decisión empieza a tener consecuencias sobre el diseño. No
+antes: hoy no hay modelo de autorización que restringir.
+
+**Consecuencias.**
+
+- El cierre del Anexo A de `000_method.md` gana un párrafo de justificación para `A.1`.
+- Queda comprometido un `ADR-NNN` sobre el modelo de autorización para la fase de Baseline.
+- Con esto, el cuarto punto de evidencia de `TA-0001` queda cubierto.
+
+**Trazas:** `TA-0001` · `D-02` · `RES-007`
 
 ---
 

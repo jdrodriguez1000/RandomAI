@@ -7,7 +7,7 @@
 > **Lo escribe `session-closer` al cerrar cada sesión**, desde la evidencia del repositorio.
 > La sección `Dónde estamos` puede actualizarla la sesión principal durante el trabajo.
 
-**Última actualización:** 2026-08-26
+**Última actualización:** 2026-08-26 (S-003)
 
 <!--INDEX-->
 
@@ -19,13 +19,13 @@
 | Línea | Sección | Ir a |
 |---|---|---|
 | `34` | **1. Dónde estamos** | [↓](#1-dónde-estamos) |
-| `51` | **2. Por qué no hemos empezado a construir** | [↓](#2-por-qué-no-hemos-empezado-a-construir) |
-| `63` | **3. Sesiones** | [↓](#3-sesiones) |
-| `73` | &nbsp;&nbsp;↳ Tablero de sesiones | [↓](#tablero-de-sesiones) |
-| `80` | &nbsp;&nbsp;↳ Detalle de sesiones | [↓](#detalle-de-sesiones) |
-| `139` | **4. Qué sigue** | [↓](#4-qué-sigue) |
-| `155` | **5. Lo que bloqueará el arranque real del Descubrimiento** | [↓](#5-lo-que-bloqueará-el-arranque-real-del-descubrimiento) |
-| `171` | **6. Mapa de archivos de persistencia** | [↓](#6-mapa-de-archivos-de-persistencia) |
+| `52` | **2. Por qué no hemos empezado a construir** | [↓](#2-por-qué-no-hemos-empezado-a-construir) |
+| `64` | **3. Sesiones** | [↓](#3-sesiones) |
+| `74` | &nbsp;&nbsp;↳ Tablero de sesiones | [↓](#tablero-de-sesiones) |
+| `82` | &nbsp;&nbsp;↳ Detalle de sesiones | [↓](#detalle-de-sesiones) |
+| `174` | **4. Qué sigue** | [↓](#4-qué-sigue) |
+| `190` | **5. Lo que bloqueará el arranque real del Descubrimiento** | [↓](#5-lo-que-bloqueará-el-arranque-real-del-descubrimiento) |
+| `206` | **6. Mapa de archivos de persistencia** | [↓](#6-mapa-de-archivos-de-persistencia) |
 
 <!--/INDEX-->
 
@@ -38,13 +38,14 @@
 | **Fase del método** | *Ninguna todavía* — pre-Descubrimiento |
 | **Etapa real** | Corrección del método antes de aplicarlo |
 | **Producto** | Sin construir. Cero líneas de código de aplicación |
-| **Bloqueo activo** | 3 tareas bloqueantes de auditoría abiertas: `TA-0001`, `TA-0002`, `TA-0007` |
+| **Bloqueo activo** | 2 tareas bloqueantes de auditoría abiertas: `TA-0002`, `TA-0007`. `TA-0001` queda `Implementada` (no `Verificada` — eso lo asigna la auditora) |
 
-**Situación en una frase:** el brief del cliente está leído y comprendido, el método VERTICAL
-está documentado pero la auditoría encontró defectos que lo hacen inseguro de aplicar tal
-cual; se están corrigiendo antes de abrir la fase de Descubrimiento. Hoy se construyó
-infraestructura de proceso (`_guide/GUIDE.md`, reglas duras 8-9 en `CLAUDE.md`), no producto ni
-método: las tres bloqueantes de auditoría siguen sin empezar.
+**Situación en una frase:** `TA-0001` está resuelta en el canónico —§10 y Anexo A.1 corregidos,
+más la justificación de por qué `A.1` sigue como ADR pendiente (`D-10`)— y a la espera de que
+la auditora la verifique; `TA-0002`+`TA-0003` (alcance ampliado por `D-03`) es el siguiente
+paso bloqueante y **no se empezó a petición expresa del usuario**. Sigue pendiente el traslado
+a la auditora del desfase de estado en `TA-0009` (`Cancelada` aquí, `Pendiente` en su tablero;
+no podemos escribirlo nosotros, `RES-009`).
 
 ---
 
@@ -76,6 +77,7 @@ fila en el tablero y una entrada en el detalle**, y las dos se escriben juntas. 
 |---|---|---|
 | `S-001` | 2026-08-26 | Primera sesión: brief + método leídos, auditoría `0001-method` verificada, `_persistence/` creada, `phases/` eliminado, git inicializado, skills y agentes adaptados |
 | `S-002` | 2026-08-26 | Capa del «cómo»: `_guide/GUIDE.md` creado, reglas duras 8-9 en `CLAUDE.md`, corrección de `tools/mkindex.py` |
+| `S-003` | 2026-08-26 | `TA-0001` ejecutada: corregida la atribución de fuentes sobre el Actor Invitado en `000_method.md` (§10 y Anexo A.1), con justificación añadida sobre por qué `A.1` sigue como ADR pendiente (`D-10`) |
 
 ### Detalle de sesiones
 
@@ -136,11 +138,44 @@ bloqueante; nada de hoy lo adelantó.
 
 ---
 
+#### `S-003` — 2026-08-26
+
+**Fase del método:** ninguna todavía — pre-Descubrimiento. Sigue sin abrirse.
+
+**Qué quedó hecho** (según el diff):
+
+- `_methodology/000_method.md` corregido para `TA-0001` (H-01): en §10 se retira la marca `➕`
+  y la frase «005 y 015 lo incluían», y la cita queda `↳ *010 §12 · 015 §5*`. En el Anexo A.1 la
+  columna «Fuentes en conflicto» se reescribe: solo `005 §5.6` incluye al Actor Invitado;
+  `010 §12` y `015 §5` lo excluyen. Se añade al cierre del Anexo A un párrafo que justifica por
+  qué `A.1` sigue en la lista de ADR pendientes pese a que el conflicto de fuentes ya no existe
+  (consecuencia sobre el modelo de autorización, no taxonomía).
+- `_persistence/decisions.md` — `D-10` añadida (ya escrita por la sesión principal): por qué
+  `A.1` se queda en la lista de ADR pendientes.
+- `_persistence/lessons.md` — `L-008` (un dato repetido en dos capas diverge, y miente la que
+  menos se lee) y `L-009` (escribir en el sitio destruye el original antes de saber si va a
+  funcionar) añadidas, ya escritas por la sesión principal.
+- `_persistence/debt_tec.md` — `DT-004` actualizada (A.1 resuelta por `D-10`, sigue pendiente
+  el ADR), `DT-011` (cita de A.3 sin verificar del todo) y `DT-012` (`tools/mkindex.py` no
+  escribe de forma atómica) añadidas, ya escritas por la sesión principal.
+
+**No se tocó hoy:** `TA-0002`+`TA-0003` (incorporar `015` §36–§48 con el alcance ampliado de
+`D-03`) — el usuario pidió expresamente no trabajar en ella esta sesión.
+
+**Desfase sin resolver:** `TA-0009` figura `Cancelada` en `tasks.md` pero `Pendiente` en el
+tablero de la auditora. No se puede escribir en `RandomAi_Auditor/` (`RES-009`); el traslado lo
+hace el usuario.
+
+**Siguiente paso concreto.** `TA-0002` + `TA-0003` — incorporar `015` §36–§48 en el canónico
+con el alcance ampliado de `D-03` (crear `§17-bis`, fusionar §50 en §4).
+
+---
+
 ## 4. Qué sigue
 
 **Inmediato — Paso 1, tareas bloqueantes de la auditoría:**
 
-1. `TA-0001` — corregir la atribución de fuentes sobre «Actor Invitado» (§10 y Anexo A.1)
+1. `TA-0001` — **Implementada**, a la espera de verificación por la auditora
 2. `TA-0002` + `TA-0003` — crear `§17-bis`, incorporar `015` §36–§48, fusionar §50 en §4
 3. `TA-0007` — decisión de alcance del prototipo, en el canónico §14 (un solo frente tras `D-04`)
 

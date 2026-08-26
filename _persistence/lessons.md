@@ -17,16 +17,18 @@
 
 | Línea | Sección | Ir a |
 |---|---|---|
-| `35` | **Convenciones** | [↓](#convenciones) |
-| `43` | **Tablero** | [↓](#tablero) |
-| `57` | **Detalle** | [↓](#detalle) |
-| `59` | &nbsp;&nbsp;↳ L-001 · Leer 015_evolution.md por líneas, no por encabezados | [↓](#l-001--leer-015_evolutionmd-por-líneas-no-por-encabezados) |
-| `75` | &nbsp;&nbsp;↳ L-002 · No repetir el canónico sin contrastarlo | [↓](#l-002--no-repetir-el-canónico-sin-contrastarlo) |
-| `92` | &nbsp;&nbsp;↳ L-003 · Medir el impacto antes de renumerar | [↓](#l-003--medir-el-impacto-antes-de-renumerar) |
-| `113` | &nbsp;&nbsp;↳ L-004 · El alcance declarado de una auditoría es su límite | [↓](#l-004--el-alcance-declarado-de-una-auditoría-es-su-límite) |
-| `132` | &nbsp;&nbsp;↳ L-005 · Un fallo de formato puede perder contenido normativo | [↓](#l-005--un-fallo-de-formato-puede-perder-contenido-normativo) |
-| `155` | &nbsp;&nbsp;↳ L-007 · Quien delega un procedimiento no puede llevar una copia encima | [↓](#l-007--quien-delega-un-procedimiento-no-puede-llevar-una-copia-encima) |
-| `188` | &nbsp;&nbsp;↳ L-006 · Al eliminar algo, comprobar qué se apoyaba en ello | [↓](#l-006--al-eliminar-algo-comprobar-qué-se-apoyaba-en-ello) |
+| `37` | **Convenciones** | [↓](#convenciones) |
+| `45` | **Tablero** | [↓](#tablero) |
+| `61` | **Detalle** | [↓](#detalle) |
+| `63` | &nbsp;&nbsp;↳ L-001 · Leer 015_evolution.md por líneas, no por encabezados | [↓](#l-001--leer-015_evolutionmd-por-líneas-no-por-encabezados) |
+| `79` | &nbsp;&nbsp;↳ L-002 · No repetir el canónico sin contrastarlo | [↓](#l-002--no-repetir-el-canónico-sin-contrastarlo) |
+| `96` | &nbsp;&nbsp;↳ L-003 · Medir el impacto antes de renumerar | [↓](#l-003--medir-el-impacto-antes-de-renumerar) |
+| `117` | &nbsp;&nbsp;↳ L-004 · El alcance declarado de una auditoría es su límite | [↓](#l-004--el-alcance-declarado-de-una-auditoría-es-su-límite) |
+| `136` | &nbsp;&nbsp;↳ L-005 · Un fallo de formato puede perder contenido normativo | [↓](#l-005--un-fallo-de-formato-puede-perder-contenido-normativo) |
+| `159` | &nbsp;&nbsp;↳ L-007 · Quien delega un procedimiento no puede llevar una copia encima | [↓](#l-007--quien-delega-un-procedimiento-no-puede-llevar-una-copia-encima) |
+| `192` | &nbsp;&nbsp;↳ L-006 · Al eliminar algo, comprobar qué se apoyaba en ello | [↓](#l-006--al-eliminar-algo-comprobar-qué-se-apoyaba-en-ello) |
+| `224` | &nbsp;&nbsp;↳ L-008 · Un dato repetido en dos capas diverge, y miente la que menos se lee | [↓](#l-008--un-dato-repetido-en-dos-capas-diverge-y-miente-la-que-menos-se-lee) |
+| `267` | &nbsp;&nbsp;↳ L-009 · Escribir en el sitio destruye el original antes de saber si va a funcionar | [↓](#l-009--escribir-en-el-sitio-destruye-el-original-antes-de-saber-si-va-a-funcionar) |
 
 <!--/INDEX-->
 
@@ -51,6 +53,8 @@
 | `L-005` | Un defecto de formato puede causar una pérdida de contenido normativo | Técnica | 2026-08-26 |
 | `L-006` | Al eliminar algo, comprobar qué se apoyaba en ello, no solo qué contenía | Proceso | 2026-08-26 |
 | `L-007` | Quien delega un procedimiento no puede llevar una copia encima | Proceso | 2026-08-26 |
+| `L-008` | Un dato repetido en dos capas diverge, y miente la capa que menos se lee | Método | 2026-08-26 |
+| `L-009` | Escribir en el sitio destruye el original antes de saber si va a funcionar | Técnica | 2026-08-26 |
 
 ---
 
@@ -214,3 +218,80 @@ el riesgo siga intacto.
 Y al redactar una condición de levantamiento, **enunciarla sobre el riesgo, no sobre el
 ejemplo que lo ilustra**. `RES-007` decía «si `phases/`…»; ahora dice «que ningún consumidor
 externo referencie el canónico por número».
+
+---
+
+### `L-008` · Un dato repetido en dos capas diverge, y miente la que menos se lee
+
+**Qué pasó.** El hallazgo H-01 de la auditoría [`0001-method`](../../RandomAi_Auditor/audits/0001-method.md)
+no fue un despiste aislado. `000_method.md` tiene, **por diseño**, dos capas que hablan de lo
+mismo: el cuerpo enuncia la norma (§10, «No existe Actor Invitado») y el Anexo A registra cómo
+se llegó a ella (`A.1`, con la lista de fuentes en conflicto). Ambas listaban las fuentes, y
+ambas divergieron de la realidad **en el mismo sentido** —decían que `015` incluía al Actor
+Invitado, cuando `015 §5` lo excluye explícitamente. Nadie lo notó hasta la auditoría.
+
+**Qué aprendimos.** El modo de fallo no es «alguien se equivocó»: es **estructural**. Cuando un
+dato vive en dos capas, la copia que se corrompe sin ruido es la de abajo —la que se consulta
+menos— y por eso tarda más en detectarse. El cuerpo se lee cada vez que alguien aplica el
+método; el anexo se lee cuando alguien pregunta «¿por qué esto es así?», que es casi nunca.
+
+> 🔑 **La copia que miente es la que menos se lee, y es justo la que justifica la norma.** Una
+> norma con su justificación falseada sigue pareciendo correcta: se aplica igual, y el error
+> solo aparece cuando alguien va a revisarla.
+
+⚠️ **La salida fácil está mal.** Deduplicar —que §10 remita al Anexo A en vez de repetir la
+lista— arregla el síntoma **rompiendo la razón de ser de la estructura**: el Anexo A existe
+para poder leer «qué cambió respecto a las fuentes» sin recorrer el cuerpo entero, y si el
+cuerpo pasa a depender del anexo, se lee peor. La duplicación aquí es deliberada, no accidental.
+
+**Qué haremos distinto.** La defensa no es deduplicar: es **que la divergencia se detecte**.
+
+1. **Toda afirmación sobre lo que dice una fuente se verifica contra la fuente** — en el cuerpo
+   y en el anexo, y **el anexo primero**, que es el que menos ojos recibe. Es `L-002` aplicado
+   a la capa de abajo.
+2. **Al corregir una capa, se corrige la otra en la misma tarea.** `TA-0001` lo hizo bien: pidió
+   evidencia separada para §10 y para `A.1`, no una sola.
+3. **Una afirmación repetida en tres sitios es señal, no ruido.** «La fuente `005` queda
+   superada en este punto» aparece en §10, `A.1` y `A.3`. Que las escribieran manos distintas es
+   exactamente la condición que produjo H-01: al detectarla se verifican **todas**, no solo la
+   que disparó la revisión.
+
+📌 **Y el mecanismo funcionó.** La divergencia se detectó —en la auditoría, que es donde debía
+detectarse. La lección no es que fallara la defensa: es que este documento tiene una forma de
+fallo conocida, y a partir de ahora está nombrada.
+
+**Trazas:** `TA-0001` · `D-10` · `L-002` · `L-007`
+
+---
+
+### `L-009` · Escribir en el sitio destruye el original antes de saber si va a funcionar
+
+**Qué pasó.** Al añadir `L-008` a este mismo archivo, abrí `lessons.md` en modo escritura y
+fallé a mitad: el texto llevaba emojis mal escapados y Python lanzó `UnicodeEncodeError` **al
+volcar**, no al preparar. Para entonces el archivo ya estaba truncado a cero bytes y el
+contenido nuevo no llegó a escribirse. Se perdieron las 216 líneas de golpe.
+
+Se recuperó íntegro con `git checkout -- _persistence/lessons.md`. Coste real: cero.
+
+**Qué aprendimos.** `open(p, 'w')` **trunca al abrir**, no al escribir con éxito. Entre esa
+truncación y el volcado hay una ventana en la que el archivo está vacío, y cualquier excepción
+—codificación, permisos, disco— deja ahí el destrozo. El error de codificación fue la causa
+inmediata; **la causa real fue el método de escritura**, que convierte cualquier fallo en
+pérdida de datos.
+
+> 🔑 **Una escritura que puede fallar a mitad no es una escritura: es un borrado con una
+> segunda parte opcional.**
+
+Y lo que lo salvó no fue mi cuidado, fue `D-06`: el archivo estaba en git. Un archivo aún no
+commiteado no habría tenido esa red — que es justamente el estado de todo lo que se escribe
+durante una sesión, antes del cierre.
+
+**Qué haremos distinto.** Toda escritura sobre un archivo existente se hace **atómica**:
+volcar a `<archivo>.tmp` y luego `os.replace(tmp, p)`. `os.replace` es atómico en Windows y
+POSIX: o queda el archivo viejo entero, o el nuevo entero. Nunca el vacío.
+
+📌 **Corolario, y es el que muerde.** Esto vale para `tools/mkindex.py`, que reescribe los
+siete archivos de `_persistence/` en cada corrida. **Comprobado: no escribe de forma atómica**
+— `tools/mkindex.py:95` usa `write_text`, que trunca al abrir. Registrado como `DT-012`.
+
+**Trazas:** `L-008` · `D-06` · `DT-012`

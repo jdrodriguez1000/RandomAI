@@ -17,19 +17,21 @@
 
 | Línea | Sección | Ir a |
 |---|---|---|
-| `38` | **Convenciones** | [↓](#convenciones) |
-| `63` | **Tablero** | [↓](#tablero) |
-| `80` | **Detalle** | [↓](#detalle) |
-| `82` | &nbsp;&nbsp;↳ DT-001 · Encabezados de 015_evolution.md sin normalizar | [↓](#dt-001--encabezados-de-015_evolutionmd-sin-normalizar) |
-| `100` | &nbsp;&nbsp;↳ DT-002 · Rutas referenciadas por phases/ que no existen | [↓](#dt-002--rutas-referenciadas-por-phases-que-no-existen) |
-| `120` | &nbsp;&nbsp;↳ DT-003 · Divergencia de nombres en la capa de persistencia | [↓](#dt-003--divergencia-de-nombres-en-la-capa-de-persistencia) |
-| `154` | &nbsp;&nbsp;↳ DT-004 · ADRs pendientes del Anexo A | [↓](#dt-004--adrs-pendientes-del-anexo-a) |
-| `166` | &nbsp;&nbsp;↳ DT-005 · Numeración no correlativa del canónico | [↓](#dt-005--numeración-no-correlativa-del-canónico) |
-| `181` | &nbsp;&nbsp;↳ DT-006 · phases/ sin auditar | [↓](#dt-006--phases-sin-auditar) |
-| `197` | &nbsp;&nbsp;↳ DT-010 · El agente session-starter sigue sin adaptar | [↓](#dt-010--el-agente-session-starter-sigue-sin-adaptar) |
-| `222` | &nbsp;&nbsp;↳ DT-009 · El agente session-closer contradice al skill | [↓](#dt-009--el-agente-session-closer-contradice-al-skill) |
-| `257` | &nbsp;&nbsp;↳ DT-008 · El método pierde su nivel operativo | [↓](#dt-008--el-método-pierde-su-nivel-operativo) |
-| `290` | &nbsp;&nbsp;↳ DT-007 · CLAUDE.md no existe | [↓](#dt-007--claudemd-no-existe) |
+| `40` | **Convenciones** | [↓](#convenciones) |
+| `65` | **Tablero** | [↓](#tablero) |
+| `84` | **Detalle** | [↓](#detalle) |
+| `86` | &nbsp;&nbsp;↳ DT-001 · Encabezados de 015_evolution.md sin normalizar | [↓](#dt-001--encabezados-de-015_evolutionmd-sin-normalizar) |
+| `104` | &nbsp;&nbsp;↳ DT-002 · Rutas referenciadas por phases/ que no existen | [↓](#dt-002--rutas-referenciadas-por-phases-que-no-existen) |
+| `124` | &nbsp;&nbsp;↳ DT-003 · Divergencia de nombres en la capa de persistencia | [↓](#dt-003--divergencia-de-nombres-en-la-capa-de-persistencia) |
+| `158` | &nbsp;&nbsp;↳ DT-004 · ADRs pendientes del Anexo A | [↓](#dt-004--adrs-pendientes-del-anexo-a) |
+| `176` | &nbsp;&nbsp;↳ DT-005 · Numeración no correlativa del canónico | [↓](#dt-005--numeración-no-correlativa-del-canónico) |
+| `191` | &nbsp;&nbsp;↳ DT-006 · phases/ sin auditar | [↓](#dt-006--phases-sin-auditar) |
+| `207` | &nbsp;&nbsp;↳ DT-010 · El agente session-starter sigue sin adaptar | [↓](#dt-010--el-agente-session-starter-sigue-sin-adaptar) |
+| `232` | &nbsp;&nbsp;↳ DT-009 · El agente session-closer contradice al skill | [↓](#dt-009--el-agente-session-closer-contradice-al-skill) |
+| `267` | &nbsp;&nbsp;↳ DT-008 · El método pierde su nivel operativo | [↓](#dt-008--el-método-pierde-su-nivel-operativo) |
+| `300` | &nbsp;&nbsp;↳ DT-007 · CLAUDE.md no existe | [↓](#dt-007--claudemd-no-existe) |
+| `317` | &nbsp;&nbsp;↳ DT-011 · La cita de A.3 no está verificada del todo | [↓](#dt-011--la-cita-de-a3-no-está-verificada-del-todo) |
+| `349` | &nbsp;&nbsp;↳ DT-012 · tools/mkindex.py puede no escribir de forma atómica | [↓](#dt-012--toolsmkindexpy-puede-no-escribir-de-forma-atómica) |
 
 <!--/INDEX-->
 
@@ -67,13 +69,15 @@
 | `DT-001` | Encabezados de `015_evolution.md` §35–§51 sin normalizar | Media | `Aceptada` |
 | `DT-002` | `phases/` referencia `templates/`, `_memory/` y `_discovery/`, que no existen | Alta | `Descartada` |
 | `DT-003` | Divergencia de nombres: `_persistence/` vs `_memory/`, `debt_tec.md` vs `tech-debt.md` | Alta | `Descartada` |
-| `DT-004` | ADRs pendientes del Anexo A del canónico (A.2, A.5, A.6, y A.1 a revisar) | Media | `Abierta` |
+| `DT-004` | ADRs pendientes del Anexo A del canónico (A.1, A.2, A.5, A.6) | Media | `Abierta` |
 | `DT-005` | La numeración del canónico dejará de ser correlativa (`§17-bis`) | Baja | `Aceptada` |
 | `DT-006` | `phases/` sin auditar — 8 archivos, ~88 KB | Media | `Descartada` |
 | `DT-008` | El método pierde su nivel operativo al eliminar `phases/` | Alta | `Abierta` |
 | `DT-009` | El agente `session-closer` contradice al skill que dice invocar | Alta | `Implementada` |
 | `DT-010` | El agente `session-starter` sigue escrito contra el proyecto de origen | Alta | `Implementada` |
 | `DT-007` | `CLAUDE.md` no existe; el esquema de dos terminales no está escrito en ninguna parte | Media | `Implementada` |
+| `DT-011` | La cita de `A.3` del Anexo A no está verificada del todo | Baja | `Abierta` |
+| `DT-012` | `tools/mkindex.py` puede no escribir de forma atómica | Media | `Abierta` |
 
 ---
 
@@ -156,10 +160,16 @@ escribirá en dos sitios distintos, o en ninguno.
 **Qué se debe.** `000_method.md:1002` declara: «**Pendiente:** A.1, A.2, A.5 y A.6 merecen un
 ADR propio con contexto, alternativas y consecuencias. Aún no se han escrito.»
 
-**Estado tras la auditoría.** A.1 pierde peso al corregirse H-01 (`TA-0001` debe resolver si
-sigue necesitando ADR). A.5 requerirá reescritura si se ejecuta `TA-0006`.
+**Estado tras la auditoría.** A.5 requerirá reescritura si se ejecuta `TA-0006`.
 
-**Qué la salda.** Escribir los ADR que sobrevivan a `TA-0001` y `TA-0006`.
+✅ **A.1 resuelta por `D-10`** (2026-08-26). `TA-0001` obligó a decidir si seguía necesitando
+ADR, y la respuesta fue **sí, pero por otro motivo**: no porque el conflicto entre fuentes siga
+abierto —no lo está— sino porque la regla restringe el **modelo de autorización del producto**.
+La justificación está escrita en el cierre del Anexo A del canónico. Sigue contando como ADR
+pendiente; ya no como ADR **por revisar**.
+
+**Qué la salda.** Escribir los cuatro ADR —A.1, A.2, A.5 y A.6— al tocar la **Baseline**, que
+es donde viven los `ADR-NNN` (`000_method.md` §38). Antes no: hoy no hay diseño que restringir.
 
 ---
 
@@ -301,3 +311,56 @@ Gates— **no está escrito en ningún archivo del repo**. Vive solo en la conve
 forma agnóstica. Sin `CLAUDE.md`, esa asignación se perdería al sacarla del canónico.
 
 **Qué la salda.** `T-007` — hecha.
+
+---
+
+### `DT-011` · La cita de A.3 no está verificada del todo
+
+**Qué se debe.** Verificando `A.3` del Anexo A —a raíz de que «`005` queda superado en este
+punto» aparezca en tres sitios (§10, `A.1`, `A.3`)— aparecen dos defectos en su **cita**:
+
+1. **El rango `010 §17–§31` sobrepasa por una sección.** `010 §31` es «Estado actual de la
+   metodología», un recuento de cierre cuya primera mitad es **taxonomía**, no evaluación. El
+   bloque de evaluación va de §17 a §30.
+2. **«`005 §11` (dos párrafos)» es falso como medida.** Medido sobre
+   `005_vertical.md:190–201`: **4 líneas de prosa y 7 viñetas**. Regla dura 7 — el número no
+   se corrió.
+
+**Lo sustantivo sí se verificó y se sostiene.** `010 §17–§30` cubre todo lo que dice
+`005 §11`: sponsor que observa sin responder (§22), selección de usuarios representativos
+(§23), evidencia observable sobre opinión (§19, §25), tarea concreta (§20), registro de
+dificultades y observaciones (§21, §28), no sesgo (§30). Al dar `005 §11` por superado **no se
+pierde contenido normativo**. `A.3` no es un segundo H-01.
+
+**Por qué se aplazó.** Fuera del alcance de `TA-0001` (P-4). Son hallazgos nuevos sobre el
+canónico, y el canónico es material que audita la otra terminal: corregirlos por cuenta propia
+saltaría el circuito de `RES-008`.
+
+**Qué la salda.** Que el usuario decida entre corregir la cita aquí, o trasladarla a la
+auditora como hallazgo nuevo para que emita `TA`.
+
+**Qué pasa si no se salda.** Poco, y ese es el riesgo: son defectos cosméticos sobre una
+resolución correcta, así que nada se rompe. Pero es el mismo patrón de `L-008` —el anexo, que
+nadie lee, dice cosas que nadie comprobó— y la próxima vez puede tocar una resolución que sí
+importe.
+
+---
+
+### `DT-012` · `tools/mkindex.py` puede no escribir de forma atómica
+
+**Qué se debe.** Pasar la escritura de `mkindex.py` a volcado atómico.
+
+✅ **Comprobado, no es sospecha.** `tools/mkindex.py:95` escribe con
+`f.write_text(txt, encoding="utf-8")`, que abre en modo `'w'` y **trunca al abrir**. Un fallo a
+mitad de corrida trunca archivos de `_persistence/` — y como la herramienta recorre los siete,
+no truncaría uno: truncaría el que estuviera en curso, con los ya procesados salvados y los
+siguientes intactos.
+
+**Por qué se aplazó.** Se detectó al final de la sesión, a raíz de `L-009`, y tocar la
+herramienta que genera todos los índices no es un cambio para hacer con prisa ni sin pedirlo.
+
+**Qué la salda.** Sustituir la línea 95 por volcado en `.tmp` seguido de `os.replace`.
+
+**Qué pasa si no se salda.** Riesgo bajo de frecuencia y alto de impacto: la corrida es
+rutinaria y se ejecuta al final de cada sesión, justo cuando el trabajo aún no está
+commiteado y no hay red de `git`.

@@ -225,7 +225,7 @@ Un auditor externo es **Supervisor + usuario externo**.
 ⚠️ `sources/005_vertical.md` §5.6 todavía lo lista como séptimo actor. **Esa fuente
 está superada en este punto**; manda esta sección.
 
-↳ *010 §12* ➕ *(decisión de consolidación: 005 y 015 lo incluían; 010 lo refutaba)*
+↳ *010 §12 · 015 §5*
 
 ## 11. Los actores son potenciales, no obligatorios
 
@@ -991,7 +991,7 @@ cuerpo aparece aquí.
 
 | # | Decisión | Fuentes en conflicto | Resolución |
 |---|---|---|---|
-| **A.1** | **No existe Actor Invitado.** La taxonomía tiene **seis** actores | `005 §5.6` y `015 §5` lo incluyen; `010 §12` lo refuta con argumento | Gana `010`: «invitado» es una **condición de acceso**, no un comportamiento. Se trata como permiso |
+| **A.1** | **No existe Actor Invitado.** La taxonomía tiene **seis** actores | Solo `005 §5.6` lo incluye; `010 §12` y `015 §5` lo excluyen con argumento | Ganan `010` y `015`: «invitado» es una **condición de acceso**, no un comportamiento. Se trata como permiso. `005` queda superado en este punto |
 | **A.2** | **Los Gates son piezas de primera clase**, con sección propia y criterios listados | `015 §27` los nombra explícitos; `005` los deja implícitos en el diagrama | Se adoptan de `015` y se les da estructura propia (§28–§32, §51–§52) |
 | **A.3** | **La evaluación de prototipos se toma en su versión profunda** | `010 §17–§31` (detallada) vs `005 §11` (dos párrafos) | Gana `010`. `005` queda superado en este punto |
 | **A.4** | **La taxonomía de actores se declara una sola vez** | aparece en las tres fuentes, con redacciones distintas | Se unifica en §9, tomando `010` como base por ser la más razonada |
@@ -1001,3 +1001,12 @@ cuerpo aparece aquí.
 
 ⚠️ **Pendiente:** A.1, A.2, A.5 y A.6 merecen un ADR propio con contexto, alternativas
 y consecuencias. Aún no se han escrito.
+
+**Por qué A.1 sigue en esa lista.** No porque el conflicto entre fuentes siga abierto — no lo
+está: `010 §12` y `015 §5` excluyen al Actor Invitado con argumento y `005 §5.6` queda
+superado. Sigue porque **la regla tiene consecuencia arquitectónica**: decir que lo temporal,
+lo externo y lo restringido se tratan como permisos y seguridad, y no como un tipo de actor,
+es una restricción sobre el modelo de autorización del producto, no una nota de taxonomía. La
+alternativa —modelar el acceso restringido como un actor propio— es viable y tiene coste
+distinto. Ese contraste se escribe cuando se toque la **Baseline**, que es donde viven los
+`ADR-NNN` (§38) y donde la decisión empieza a tener consecuencias sobre el diseño.

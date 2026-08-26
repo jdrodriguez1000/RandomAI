@@ -4,7 +4,7 @@
 > Cumple la regla de trazabilidad del método (`000_method.md` §47): *nada se construye sin
 > una razón trazable*. Ninguna tarea existe sin origen.
 
-**Última actualización:** 2026-08-26
+**Última actualización:** 2026-08-26 (S-003)
 
 <!--INDEX-->
 
@@ -19,9 +19,9 @@
 | `32` | &nbsp;&nbsp;↳ Códigos | [↓](#códigos) |
 | `42` | &nbsp;&nbsp;↳ Estados | [↓](#estados) |
 | `59` | **Tablero — Tareas de auditoría (TA)** | [↓](#tablero--tareas-de-auditoría-ta) |
-| `80` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
-| `95` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
-| `144` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
+| `86` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
+| `101` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
+| `150` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
 
 <!--/INDEX-->
 
@@ -62,7 +62,7 @@ Origen: [`0001-method`](../../RandomAi_Auditor/audits/0001-method.md)
 
 | Código | Tarea | Imp. | Urg. | Estado |
 |---|---|---|---|---|
-| `TA-0001` | Corregir atribución sobre «Actor Invitado» (§10 y Anexo A.1); retirar `➕` de §10 | Alta | Bloqueante | `No implementada` |
+| `TA-0001` | Corregir atribución sobre «Actor Invitado» (§10 y Anexo A.1); retirar `➕` de §10 | Alta | Bloqueante | `Implementada` |
 | `TA-0002` | Incorporar contenido normativo omitido de `015` §35–§48 | Alta | Bloqueante | `No implementada` |
 | `TA-0007` | Añadir «decisión de alcance del prototipo» a las salidas del Descubrimiento (§14) | Alta | Bloqueante | `No implementada` |
 | `TA-0003` | Declarar en el Anexo A las omisiones deliberadas de `015` §35–§51 | Alta | No bloqueante | `No implementada` |
@@ -75,7 +75,13 @@ Origen: [`0001-method`](../../RandomAi_Auditor/audits/0001-method.md)
 **`TA-0009` · Razón de cancelación:** decisión `D-01` del usuario — las fuentes se conservan
 intactas (`000_method.md:6-7`). El defecto queda documentado en la auditoría y en `DT-001`.
 **Pendiente:** el usuario debe trasladar este estado a la auditora, que en su tablero lo
-registrará como `Descartada`.
+registrará como `Descartada`. ⚠️ **Desfase detectado:** en el tablero de la auditora sigue
+figurando `Pendiente`, no `Descartada`. No se puede corregir desde aquí (`RES-009`).
+
+**`TA-0001` · Implementada, no `Verificada`.** Corregidos §10 y el Anexo A.1 de
+`000_method.md` (evidencia: `git diff` de `S-003`). Se añadió además la justificación de por
+qué `A.1` sigue en la lista de ADR pendientes del Anexo A, registrada como `D-10`. El único
+estado de cierre es `Verificada` y lo asigna la auditora.
 
 ### Notas de alcance
 
@@ -146,7 +152,7 @@ lectura automática del diff. Sin decisión registrada.
 Primero las **bloqueantes** por importancia, después las **no bloqueantes** por importancia:
 
 ```text
-TA-0001 → TA-0002 (+TA-0003) → TA-0007
+TA-0001 (Implementada, a verificación) → TA-0002 (+TA-0003) → TA-0007
    ↓
 TA-0004 · TA-0005 · TA-0006 (T-007 ya hecha) · TA-0008
    ↓
