@@ -21,7 +21,7 @@
 | `59` | **Tablero — Tareas de auditoría (TA)** | [↓](#tablero--tareas-de-auditoría-ta) |
 | `80` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
 | `95` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
-| `137` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
+| `144` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
 
 <!--/INDEX-->
 
@@ -117,11 +117,18 @@ registrará como `Descartada`.
 | `T-019` | Adaptar el agente `session-closer` al skill ya adaptado | `DT-009` | `Implementada` |
 | `T-020` | Adaptar el skill `protocol-start` a este proyecto | `D-07` | `Implementada` |
 | `T-021` | Adaptar el agente `session-starter` al skill ya adaptado | `DT-010` | `Implementada` |
+| `T-023` | Construir la capa del «cómo se trabaja con IA»: `_guide/GUIDE.md` | brief §22 · `D-09` | `Implementada` |
+| `T-024` | Escribir las plantillas ejecutables de prueba | `D-09` | `Suspendida` |
+| `T-025` | Pedir a la auditora que corra la auditoría del historial público | `D-09` | `No implementada` |
 | `T-022` | Decidir si igualar el modelo de `session-starter` (`haiku`) al de `session-closer` (`sonnet`) | `session-closer` | `No implementada` |
 
 **`T-006` y `T-008` · Razón de cancelación:** decisión `D-04`. Ambas existían únicamente para
 servir a `phases/`; sin ese directorio no tienen objeto. Ver `DT-002` y `DT-003`, ambas
 `Descartada`.
+
+**`T-024` · Razón de suspensión:** no hay stack decidido (brief §23.1). **Condición de
+reanudación:** que se decida la tecnología. Ese día se escriben las plantillas del capítulo 5
+de la guía en el lenguaje elegido, y se amplía la tabla de «qué nunca sube a Git».
 
 **`T-013`** no bloquea las tareas de auditoría en curso, pero **sí bloqueará la apertura de la
 fase de Descubrimiento**. Requiere decisión del usuario entre las tres opciones de `DT-008`.

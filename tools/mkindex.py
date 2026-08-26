@@ -12,7 +12,7 @@ START, END = "<!--INDEX-->", "<!--/INDEX-->"
 EJEMPLO = {"decisions.md": "D-02", "tasks.md": "TA-0002",
            "assumptions.md": "SUP-001", "constraints.md": "RES-001",
            "lessons.md": "L-002", "debt_tec.md": "DT-003",
-           "progress.md": "Que sigue"}
+           "progress.md": "Que sigue", "GUIDE.md": "sabotea"}
 
 
 def anchor(text):
@@ -29,11 +29,20 @@ def plain(text):
 
 
 def headings(lines):
-    r = []
+    """Encabezados h2/h3 que estan FUERA de los bloques de codigo cercados.
+
+    Un `##` dentro de ``` es texto de ejemplo, no una seccion. Indexarlo manda al
+    lector a una plantilla creyendo que va a un apartado del documento.
+    """
+    r, dentro = [], False
     for i, ln in enumerate(lines):
+        if ln.lstrip().startswith("```"):
+            dentro = not dentro
+            continue
+        if dentro:
+            continue
         m = re.match(r'^(#{2,3})\s+(.*)$', ln)
-        if m and plain(m.group(2)).lower() != "indice" \
-                and plain(m.group(2)).lower() != "índice":
+        if m and plain(m.group(2)).lower() not in ("indice", "índice"):
             r.append((len(m.group(1)), plain(m.group(2)), anchor(m.group(2)), i + 1))
     return r
 

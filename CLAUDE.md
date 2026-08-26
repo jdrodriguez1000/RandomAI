@@ -44,6 +44,21 @@ Si crees que alguna está mal, **dilo, no la cambies solo.**
    y lo exige el método.
 7. **Ningún número sin una corrida detrás.** Conteos, tamaños y porcentajes se miden, no se
    recuerdan. Si es estimación, se dice.
+8. 🚨 **Ante una prueba roja se arregla el CÓDIGO.** Modificar o borrar una prueba exige
+   autorización explícita **del usuario**, con la razón escrita. No de la sesión que construye,
+   no de la auditora. 🔑 El porqué: un rojo tiene dos salidas —arreglar lo que rompió, o
+   ablandar lo que avisó— y la segunda es más rápida, deja todo en verde y **se siente como
+   haber arreglado algo**. Sin esta regla, la salida barata siempre gana.
+9. **Pide el refactor de forma explícita, cada ciclo.** Dirigido al usuario: es él quien tiene
+   que pedirlo. 🔑 El porqué: me detengo en verde porque *«las pruebas pasan»* es la última
+   condición comprobable que me dieron. No es pereza: se acabó el criterio. ⚠️ No choca con
+   `P-4` —cambios quirúrgicos—: `P-4` prohíbe refactorizar **por mi cuenta**; esta obliga a
+   **preguntar** si toca, y la respuesta puede ser que no.
+
+> 🔍 **Cómo se comprueban estas dos, porque solas no son comprobables.** El diff de las pruebas
+> se mira **aparte** del diff del código: una prueba ablandada no se anuncia, solo se ve ahí. Y
+> hay que comprobar **que el rojo existiera**: una prueba que nunca falló no probó nada, y
+> mirando el verde no se distingue de una vacía. Procedimiento en `_guide/GUIDE.md` §7.
 
 ## Cómo se construye
 
@@ -79,6 +94,7 @@ Este archivo no lleva el detalle. Ábrelo cuando toque:
 |---|---|
 | `_brief/` | dudes qué pidió el cliente o si algo entra en el alcance |
 | `_methodology/` | dudes cómo se trabaja: fases, Gates, trazabilidad, artefactos |
+| `_guide/` | vayas a probar, escribir un script que salga a la red, o entregar un hallazgo |
 | `_persistence/` | inicies o cierres sesión, o necesites saber por qué algo es como es |
 
 ⚠️ **Si no lo abres, no lo sabes.** No supongas el alcance ni el método: están escritos.

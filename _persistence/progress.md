@@ -19,13 +19,13 @@
 | Línea | Sección | Ir a |
 |---|---|---|
 | `34` | **1. Dónde estamos** | [↓](#1-dónde-estamos) |
-| `49` | **2. Por qué no hemos empezado a construir** | [↓](#2-por-qué-no-hemos-empezado-a-construir) |
-| `61` | **3. Sesiones** | [↓](#3-sesiones) |
-| `71` | &nbsp;&nbsp;↳ Tablero de sesiones | [↓](#tablero-de-sesiones) |
-| `77` | &nbsp;&nbsp;↳ Detalle de sesiones | [↓](#detalle-de-sesiones) |
-| `107` | **4. Qué sigue** | [↓](#4-qué-sigue) |
-| `123` | **5. Lo que bloqueará el arranque real del Descubrimiento** | [↓](#5-lo-que-bloqueará-el-arranque-real-del-descubrimiento) |
-| `139` | **6. Mapa de archivos de persistencia** | [↓](#6-mapa-de-archivos-de-persistencia) |
+| `51` | **2. Por qué no hemos empezado a construir** | [↓](#2-por-qué-no-hemos-empezado-a-construir) |
+| `63` | **3. Sesiones** | [↓](#3-sesiones) |
+| `73` | &nbsp;&nbsp;↳ Tablero de sesiones | [↓](#tablero-de-sesiones) |
+| `80` | &nbsp;&nbsp;↳ Detalle de sesiones | [↓](#detalle-de-sesiones) |
+| `139` | **4. Qué sigue** | [↓](#4-qué-sigue) |
+| `155` | **5. Lo que bloqueará el arranque real del Descubrimiento** | [↓](#5-lo-que-bloqueará-el-arranque-real-del-descubrimiento) |
+| `171` | **6. Mapa de archivos de persistencia** | [↓](#6-mapa-de-archivos-de-persistencia) |
 
 <!--/INDEX-->
 
@@ -42,7 +42,9 @@
 
 **Situación en una frase:** el brief del cliente está leído y comprendido, el método VERTICAL
 está documentado pero la auditoría encontró defectos que lo hacen inseguro de aplicar tal
-cual; se están corrigiendo antes de abrir la fase de Descubrimiento.
+cual; se están corrigiendo antes de abrir la fase de Descubrimiento. Hoy se construyó
+infraestructura de proceso (`_guide/GUIDE.md`, reglas duras 8-9 en `CLAUDE.md`), no producto ni
+método: las tres bloqueantes de auditoría siguen sin empezar.
 
 ---
 
@@ -73,6 +75,7 @@ fila en el tablero y una entrada en el detalle**, y las dos se escriben juntas. 
 | Código | Fecha | Qué se hizo |
 |---|---|---|
 | `S-001` | 2026-08-26 | Primera sesión: brief + método leídos, auditoría `0001-method` verificada, `_persistence/` creada, `phases/` eliminado, git inicializado, skills y agentes adaptados |
+| `S-002` | 2026-08-26 | Capa del «cómo»: `_guide/GUIDE.md` creado, reglas duras 8-9 en `CLAUDE.md`, corrección de `tools/mkindex.py` |
 
 ### Detalle de sesiones
 
@@ -101,6 +104,35 @@ método antes de aplicarlo (ver sección 2).
 
 **Siguiente paso concreto.** Empezar el Paso 1 de la auditoría: `TA-0001` — corregir la
 atribución de fuentes sobre «Actor Invitado» en `000_method.md` §10 y Anexo A.1.
+
+---
+
+#### `S-002` — 2026-08-26
+
+**Fase del método:** ninguna todavía — pre-Descubrimiento. Sigue sin abrirse. Lo de hoy fue
+infraestructura de proceso, no producto ni método.
+
+**Qué quedó hecho** (según el diff):
+
+- `_guide/GUIDE.md` creado (569 líneas): la capa del «cómo se ejecuta el trabajo con IA como
+  asistente», trazable al brief §22. Traducida y recortada de la guía de un proyecto anterior
+  fuera de este repo, con sus exclusiones declaradas en la propia sección 0 del archivo
+  (`D-09`).
+- `CLAUDE.md`: reglas duras 8 y 9 añadidas (ante prueba roja se arregla el código; el refactor
+  se pide explícitamente al usuario), más una fila nueva en «Dónde está lo demás» apuntando a
+  `_guide/`.
+- `tools/mkindex.py` corregido: `headings()` ahora salta los bloques de código cercados, para
+  no indexar encabezados de ejemplo como si fueran secciones reales (segunda aparición de
+  `L-005`).
+- `_persistence/decisions.md` — `D-09` añadida (ya escrita por la sesión principal).
+- `_persistence/lessons.md` — segunda aparición de `L-005` registrada (ya escrita por la
+  sesión principal).
+- `_persistence/tasks.md` — `T-023` `Implementada`, `T-024` `Suspendida` (sin stack decidido),
+  `T-025` `No implementada` (ya escrito por la sesión principal).
+
+**Siguiente paso concreto.** `TA-0001` — corregir la atribución de fuentes sobre «Actor
+Invitado» en `_methodology/000_method.md` §10 y Anexo A.1. Sigue siendo el primer paso
+bloqueante; nada de hoy lo adelantó.
 
 ---
 

@@ -25,8 +25,8 @@
 | `92` | &nbsp;&nbsp;↳ L-003 · Medir el impacto antes de renumerar | [↓](#l-003--medir-el-impacto-antes-de-renumerar) |
 | `113` | &nbsp;&nbsp;↳ L-004 · El alcance declarado de una auditoría es su límite | [↓](#l-004--el-alcance-declarado-de-una-auditoría-es-su-límite) |
 | `132` | &nbsp;&nbsp;↳ L-005 · Un fallo de formato puede perder contenido normativo | [↓](#l-005--un-fallo-de-formato-puede-perder-contenido-normativo) |
-| `148` | &nbsp;&nbsp;↳ L-007 · Quien delega un procedimiento no puede llevar una copia encima | [↓](#l-007--quien-delega-un-procedimiento-no-puede-llevar-una-copia-encima) |
-| `181` | &nbsp;&nbsp;↳ L-006 · Al eliminar algo, comprobar qué se apoyaba en ello | [↓](#l-006--al-eliminar-algo-comprobar-qué-se-apoyaba-en-ello) |
+| `155` | &nbsp;&nbsp;↳ L-007 · Quien delega un procedimiento no puede llevar una copia encima | [↓](#l-007--quien-delega-un-procedimiento-no-puede-llevar-una-copia-encima) |
+| `188` | &nbsp;&nbsp;↳ L-006 · Al eliminar algo, comprobar qué se apoyaba en ello | [↓](#l-006--al-eliminar-algo-comprobar-qué-se-apoyaba-en-ello) |
 
 <!--/INDEX-->
 
@@ -142,6 +142,13 @@ documento significa.
 
 **Qué haremos distinto.** Tratar la consistencia estructural de los documentos del proyecto
 como un requisito, no como estética. Aplicable a los artefactos que vengan: PRD, BDD, SPEC.
+
+**Segunda aparición, 2026-08-26.** `tools/mkindex.py` indexó un `##` que estaba **dentro de un
+bloque de código** —la plantilla de hallazgo de la guía— y lo ofreció como si fuera una
+sección. El índice era técnicamente correcto y **mandaba al lector a un ejemplo creyendo que
+iba a un apartado**. 🔑 La vuelta de tuerca: aquí el que confundió formato con semántica no fue
+un humano, **fue nuestra propia herramienta**. Corregido: `headings()` salta los bloques
+cercados. Una herramienta que genera índices también puede mentir, y hay que mirarla igual.
 
 ---
 

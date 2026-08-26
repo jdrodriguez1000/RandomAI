@@ -19,18 +19,19 @@
 
 | Línea | Sección | Ir a |
 |---|---|---|
-| `39` | **Convenciones** | [↓](#convenciones) |
-| `54` | **Tablero** | [↓](#tablero) |
-| `75` | **D-01 · No se editan las fuentes** | [↓](#d-01--no-se-editan-las-fuentes) |
-| `116` | **D-02 · El canónico se amplía sin renumerar** | [↓](#d-02--el-canónico-se-amplía-sin-renumerar) |
-| `165` | &nbsp;&nbsp;↳ Revisión del 2026-08-26 — la decisión sobrevive, su fundamento cambia | [↓](#revisión-del-2026-08-26--la-decisión-sobrevive-su-fundamento-cambia) |
-| `184` | **D-03 · Alcance de la incorporación de 015 §35-§51** | [↓](#d-03--alcance-de-la-incorporación-de-015-35-51) |
-| `241` | **D-04 · Eliminar el directorio phases/** | [↓](#d-04--eliminar-el-directorio-phases) |
-| `278` | **D-05 · Prefijo _ en las carpetas de insumo** | [↓](#d-05--prefijo-_-en-las-carpetas-de-insumo) |
-| `310` | **D-06 · Git + GitHub como sustrato de evidencia** | [↓](#d-06--git--github-como-sustrato-de-evidencia) |
-| `335` | **D-07 · Adaptación de protocol-close a este proyecto** | [↓](#d-07--adaptación-de-protocol-close-a-este-proyecto) |
-| `380` | **D-08 · Una sesión es un bloque de tiempo, no un día** | [↓](#d-08--una-sesión-es-un-bloque-de-tiempo-no-un-día) |
-| `414` | **Decisiones heredadas del brief** | [↓](#decisiones-heredadas-del-brief) |
+| `40` | **Convenciones** | [↓](#convenciones) |
+| `55` | **Tablero** | [↓](#tablero) |
+| `77` | **D-01 · No se editan las fuentes** | [↓](#d-01--no-se-editan-las-fuentes) |
+| `118` | **D-02 · El canónico se amplía sin renumerar** | [↓](#d-02--el-canónico-se-amplía-sin-renumerar) |
+| `167` | &nbsp;&nbsp;↳ Revisión del 2026-08-26 — la decisión sobrevive, su fundamento cambia | [↓](#revisión-del-2026-08-26--la-decisión-sobrevive-su-fundamento-cambia) |
+| `186` | **D-03 · Alcance de la incorporación de 015 §35-§51** | [↓](#d-03--alcance-de-la-incorporación-de-015-35-51) |
+| `243` | **D-04 · Eliminar el directorio phases/** | [↓](#d-04--eliminar-el-directorio-phases) |
+| `280` | **D-05 · Prefijo _ en las carpetas de insumo** | [↓](#d-05--prefijo-_-en-las-carpetas-de-insumo) |
+| `312` | **D-06 · Git + GitHub como sustrato de evidencia** | [↓](#d-06--git--github-como-sustrato-de-evidencia) |
+| `337` | **D-07 · Adaptación de protocol-close a este proyecto** | [↓](#d-07--adaptación-de-protocol-close-a-este-proyecto) |
+| `382` | **D-08 · Una sesión es un bloque de tiempo, no un día** | [↓](#d-08--una-sesión-es-un-bloque-de-tiempo-no-un-día) |
+| `416` | **D-09 · La capa del cómo vive en _guide/GUIDE.md** | [↓](#d-09--la-capa-del-cómo-vive-en-_guideguidemd) |
+| `466` | **Decisiones heredadas del brief** | [↓](#decisiones-heredadas-del-brief) |
 
 <!--/INDEX-->
 
@@ -63,6 +64,7 @@ consecuencias.
 | `D-06` | Git + GitHub como sustrato de evidencia del proyecto | usuario | 2026-08-26 | `Vigente` |
 | `D-07` | Adaptación de `protocol-close`: sesiones `S-nnn` y deuda proponible | usuario | 2026-08-26 | `Vigente` |
 | `D-08` | Una sesión es un bloque de tiempo, no un día | usuario | 2026-08-26 | `Vigente` |
+| `D-09` | La capa del «cómo» vive en `_guide/GUIDE.md`, separada de reglas y método | usuario | 2026-08-26 | `Vigente` |
 
 **Contexto común de `D-01`, `D-02` y `D-03`.** Las tres eran condición previa para ejecutar
 cualquier tarea de la auditoría [`0001-method`](../../RandomAi_Auditor/audits/0001-method.md)
@@ -408,6 +410,56 @@ compartir fecha siendo sesiones distintas. Por lo tanto:
   día**.
 
 **Trazas:** `D-07` · `T-018` · `T-020`
+
+---
+
+## D-09 · La capa del cómo vive en _guide/GUIDE.md
+
+**Decide:** usuario · **Fecha:** 2026-08-26 · **Estado:** `Vigente`
+
+**Contexto.** El brief §22 declara que aprender a desarrollar con IA como asistente es una de
+las dos entregas del proyecto. Teníamos el **método** (`_methodology/`) y las **reglas**
+(`CLAUDE.md`), pero no el **cómo ejecutable**. La fuente era la guía de un proyecto anterior,
+fuera de este repo y en solo lectura.
+
+**Problema.** Aquel proyecto construía un agente que **sí** llamaba a una API de IA. Más de la
+mitad de su guía presupone eso, y el brief §21 lo prohíbe aquí (`RES-001`).
+
+**Decisión.** Se crea `_guide/GUIDE.md`, con partición explícita de tres archivos:
+
+| Archivo | Qué es |
+|---|---|
+| `CLAUDE.md` | las **reglas** — qué está prohibido y qué es obligatorio |
+| `_methodology/000_method.md` | el **método** — fases, Gates, trazabilidad |
+| `_guide/GUIDE.md` | el **cómo** — procedimientos, órdenes concretas, formatos |
+
+**Tres decisiones tomadas dentro de esta:**
+
+1. **Las dos reglas duras de §11.i van a `CLAUDE.md`, no a la guía** — pasan a ser reglas duras
+   8 y 9. La guía las cita sin copiarlas. Es `L-007` aplicado: una segunda fuente de verdad
+   envejece sin avisar.
+2. **Las secciones de prueba se escriben como contrato, no como plantilla.** §8.l, §8.b, §8.c y
+   §7 de la fuente son Python. Traducirlas literalmente **habría decidido el stack por la
+   puerta de atrás**, contra `RES-004` y el brief §23.1 — y el brief §24 exige Vercel, cuyo
+   camino natural es JS/TS. Hoy se escribe lo independiente del lenguaje; las plantillas
+   ejecutables quedan en `T-024`, disparadas por la decisión de stack.
+3. **Se trae «cuándo crear un subagente» y «evidencia, nunca veredicto»**, que no estaban en el
+   encargo original. Motivo: tenemos tres actores y dos agentes, y ese criterio estaba vivo en
+   `RES-008` pero no escrito como regla general para decidir agentes futuros.
+
+**Lo que se dejó fuera está declarado en la propia guía**, sección por sección y con su motivo.
+Un salto sin motivo escrito se lee como veredicto sobre lo saltado.
+
+**Ningún número heredado.** Las cifras de la fuente se midieron en otra máquina, con otro stack
+y otro modelo. Regla dura 7.
+
+**Consecuencias.**
+
+- `CLAUDE.md` gana las reglas duras 8 y 9, y una fila en «Dónde está lo demás».
+- ⚠️ **La auditoría del historial público (§1.b de la guía) llega tarde**: el primer commit
+  público ya se hizo, así que deja de ser preventiva. La corre la auditora (`RES-008`) → `T-025`.
+
+**Trazas:** `T-023` · `T-024` · `T-025` · `RES-001` · `RES-004` · `L-007`
 
 ---
 
