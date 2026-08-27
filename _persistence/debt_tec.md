@@ -18,20 +18,20 @@
 | Línea | Sección | Ir a |
 |---|---|---|
 | `40` | **Convenciones** | [↓](#convenciones) |
-| `65` | **Tablero** | [↓](#tablero) |
-| `84` | **Detalle** | [↓](#detalle) |
-| `86` | &nbsp;&nbsp;↳ DT-001 · Encabezados de 015_evolution.md sin normalizar | [↓](#dt-001--encabezados-de-015_evolutionmd-sin-normalizar) |
-| `104` | &nbsp;&nbsp;↳ DT-002 · Rutas referenciadas por phases/ que no existen | [↓](#dt-002--rutas-referenciadas-por-phases-que-no-existen) |
-| `124` | &nbsp;&nbsp;↳ DT-003 · Divergencia de nombres en la capa de persistencia | [↓](#dt-003--divergencia-de-nombres-en-la-capa-de-persistencia) |
-| `158` | &nbsp;&nbsp;↳ DT-004 · ADRs pendientes del Anexo A | [↓](#dt-004--adrs-pendientes-del-anexo-a) |
-| `176` | &nbsp;&nbsp;↳ DT-005 · Numeración no correlativa del canónico | [↓](#dt-005--numeración-no-correlativa-del-canónico) |
-| `191` | &nbsp;&nbsp;↳ DT-006 · phases/ sin auditar | [↓](#dt-006--phases-sin-auditar) |
-| `207` | &nbsp;&nbsp;↳ DT-010 · El agente session-starter sigue sin adaptar | [↓](#dt-010--el-agente-session-starter-sigue-sin-adaptar) |
-| `232` | &nbsp;&nbsp;↳ DT-009 · El agente session-closer contradice al skill | [↓](#dt-009--el-agente-session-closer-contradice-al-skill) |
-| `267` | &nbsp;&nbsp;↳ DT-008 · El método pierde su nivel operativo | [↓](#dt-008--el-método-pierde-su-nivel-operativo) |
-| `300` | &nbsp;&nbsp;↳ DT-007 · CLAUDE.md no existe | [↓](#dt-007--claudemd-no-existe) |
-| `317` | &nbsp;&nbsp;↳ DT-011 · La cita de A.3 no está verificada del todo | [↓](#dt-011--la-cita-de-a3-no-está-verificada-del-todo) |
-| `349` | &nbsp;&nbsp;↳ DT-012 · tools/mkindex.py puede no escribir de forma atómica | [↓](#dt-012--toolsmkindexpy-puede-no-escribir-de-forma-atómica) |
+| `71` | **Tablero** | [↓](#tablero) |
+| `90` | **Detalle** | [↓](#detalle) |
+| `92` | &nbsp;&nbsp;↳ DT-001 · Encabezados de 015_evolution.md sin normalizar | [↓](#dt-001--encabezados-de-015_evolutionmd-sin-normalizar) |
+| `110` | &nbsp;&nbsp;↳ DT-002 · Rutas referenciadas por phases/ que no existen | [↓](#dt-002--rutas-referenciadas-por-phases-que-no-existen) |
+| `130` | &nbsp;&nbsp;↳ DT-003 · Divergencia de nombres en la capa de persistencia | [↓](#dt-003--divergencia-de-nombres-en-la-capa-de-persistencia) |
+| `164` | &nbsp;&nbsp;↳ DT-004 · ADRs pendientes del Anexo A | [↓](#dt-004--adrs-pendientes-del-anexo-a) |
+| `188` | &nbsp;&nbsp;↳ DT-005 · Numeración no correlativa del canónico | [↓](#dt-005--numeración-no-correlativa-del-canónico) |
+| `203` | &nbsp;&nbsp;↳ DT-006 · phases/ sin auditar | [↓](#dt-006--phases-sin-auditar) |
+| `219` | &nbsp;&nbsp;↳ DT-010 · El agente session-starter sigue sin adaptar | [↓](#dt-010--el-agente-session-starter-sigue-sin-adaptar) |
+| `244` | &nbsp;&nbsp;↳ DT-009 · El agente session-closer contradice al skill | [↓](#dt-009--el-agente-session-closer-contradice-al-skill) |
+| `279` | &nbsp;&nbsp;↳ DT-008 · El método pierde su nivel operativo | [↓](#dt-008--el-método-pierde-su-nivel-operativo) |
+| `336` | &nbsp;&nbsp;↳ DT-007 · CLAUDE.md no existe | [↓](#dt-007--claudemd-no-existe) |
+| `353` | &nbsp;&nbsp;↳ DT-011 · La cita de A.3 no está verificada del todo | [↓](#dt-011--la-cita-de-a3-no-está-verificada-del-todo) |
+| `385` | &nbsp;&nbsp;↳ DT-012 · tools/mkindex.py puede no escribir de forma atómica | [↓](#dt-012--toolsmkindexpy-puede-no-escribir-de-forma-atómica) |
 
 <!--/INDEX-->
 
@@ -54,6 +54,12 @@
 **Severidad:** `Alta` (bloqueará algo) · `Media` (costará más caro después) · `Baja` (molestia)
 
 **Cada deuda declara:** qué se debe · por qué se aplazó · **qué la salda** · qué pasa si no se salda.
+
+🚨 **La severidad y el estado viven en el tablero, y solo ahí.** Las entradas no los repiten:
+un dato en dos capas diverge, y miente la capa que menos se lee (`L-008`). Hasta `S-004`,
+tres entradas llevaban su propio campo `Estado:`; dos de las tres ya contradecían al tablero
+—`DT-009` y `DT-010` decían `Abierta` estando `Implementada`—. Se retiró el campo en vez de
+sincronizarlo: sincronizar deja el defecto listo para repetirse.
 
 > ⚠️ Mientras no exista código de aplicación, la deuda es **documental y de proceso**. Cuando
 > empiece la construcción, esta será la fuente principal de deuda de implementación.
@@ -171,6 +177,12 @@ pendiente; ya no como ADR **por revisar**.
 **Qué la salda.** Escribir los cuatro ADR —A.1, A.2, A.5 y A.6— al tocar la **Baseline**, que
 es donde viven los `ADR-NNN` (`000_method.md` §38). Antes no: hoy no hay diseño que restringir.
 
+📌 **Revisada en `S-004` (`TA-0019`).** Al pasar el Anexo A de 7 a 12 entradas, la lista de
+ADR pendientes no se revisó. Hecho: **`A.8`–`A.12` no requieren ADR**, y el criterio que lo
+decide —¿la decisión restringe el diseño del producto, o solo este documento?— quedó escrito
+en el propio canónico, que es donde hace falta al añadir la siguiente entrada. La deuda sigue
+`Abierta`: la componen `A.1`, `A.2`, `A.5` y `A.6`, sin cambios.
+
 ---
 
 ### `DT-005` · Numeración no correlativa del canónico
@@ -211,7 +223,7 @@ las 62 referencias y el segundo frente de `TA-0007` en `005_discovery.md`.
 > la definición de sesión (`D-08`), la tabla de tres actores con la auditora como fuente
 > obligatoria, y la prohibición de declarar Gates (`RES-008`).
 
-**Severidad: Alta · Estado: `Abierta`** · Origen: `T-020`
+**Origen:** `T-020` · *severidad y estado, en el tablero* ↑
 
 **Qué se debe.** `.claude/agents/session-starter.md` llegó escrito contra el proyecto de origen
 y **no se tocó**: se adaptó primero el skill, por decisión del usuario.
@@ -237,7 +249,7 @@ por `S-nnn`.
 > actores, la prohibición de `Verificada`, `debt_tec.md` como proponible y el aviso del
 > repositorio público.
 
-**Severidad: Alta · Estado: `Abierta`** · Origen: `D-07`
+**Origen:** `D-07` · *severidad y estado, en el tablero* ↑
 
 **Qué se debe.** `.claude/agents/session-closer.md` llegó escrito contra el proyecto de origen y
 **no se tocó** en esta ronda, por decisión del usuario: primero el skill.
@@ -266,7 +278,7 @@ el skill— sin duplicar pasos. Lo que sea procedimiento vive en el skill y solo
 
 ### `DT-008` · El método pierde su nivel operativo
 
-**Severidad: Alta · Estado: `Abierta`** · Origen: `D-04`
+**Origen:** `D-04` · *severidad y estado, en el tablero* ↑
 
 **Qué se debe.** `000_method.md` es **descriptivo**: define qué es cada fase, qué la
 caracteriza y qué principios la rigen. `phases/` era **prescriptivo**: por cada una de las 8
@@ -275,6 +287,28 @@ paso, los artefactos que produce, la **condición de salida** en forma de checkl
 registra en la capa de persistencia y qué se entrega al Gate siguiente.
 
 Eliminado `phases/`, el proyecto conserva el **qué** y pierde el **cómo**.
+
+🚨 **Corregida por la auditoría `0004` (`S-004`). Esta deuda estaba mal medida y su premisa
+principal era falsa.** Lo escrito arriba se conserva porque es el enunciado que la auditora
+verificó; lo que sigue es lo comprobado, y **manda sobre el párrafo anterior**:
+
+| De los 8 puntos enumerados | Estado real |
+|---|---|
+| qué autoriza · qué prohíbe · procedimiento · artefactos · registro en persistencia | **cubiertos** entre el canónico y `_guide/GUIDE.md` |
+| **entradas exigidas** · **condición de salida** · **entrega al Gate** | **faltan** — «condición de salida» y «checklist» no aparecen ni una vez en el canónico, `GUIDE.md` ni `CLAUDE.md` |
+
+⚠️ **La premisa sobre el Gate 1 era falsa.** Esta entrada decía que el Gate 1 se declararía
+sin criterio operativo escrito. **No es cierto:** §29, §29.1, §30, §31, §32 y §19–§27 dan
+para esa fase **más** nivel operativo del que `phases/` daba. El hueco no está en el Gate 1.
+
+📌 **Y `GUIDE.md` no cubre lo que esta entrada suponía:** cubre el «cómo» de la
+**construcción**, que `DT-008` daba por perdido. WSLT y GRTH tienen hoy más procedimiento
+escrito que antes de `D-04`.
+
+**Consecuencia sobre las tres opciones de abajo:** están dimensionadas para un hueco de ocho
+puntos en seis etapas. El hueco medido es **de tres puntos y en un sitio**. Ninguna de las
+tres se eligió sobre esta medición — se enunciaron sobre la anterior, que era peor de lo que
+el problema es. `T-013` debe decidirse contra los tres puntos reales, no contra los ocho.
 
 **Por qué se aceptó el hueco.** `D-04` es decisión del usuario y la ejecutora no la discute.
 Se registra la consecuencia, no se revierte la decisión.
@@ -287,13 +321,15 @@ Se registra la consecuencia, no se revierte la decisión.
 | b | Recrear un directorio operativo con otro nombre y otra forma | Reintroduce lo que se acaba de eliminar |
 | c | Operar sin procedimiento escrito, guiándose solo por el método | Cero coste ahora; las condiciones de salida de cada fase dejan de ser verificables |
 
-**Qué pasa si no se salda.** Al abrir el Descubrimiento no habrá checklist de condición de
-salida. El método dice que la fase termina cuando cinco condiciones son ciertas
-(`000_method.md` §14 más lo que añada `TA-0007`), pero **quién lo verifica y contra qué** era
-justamente lo que `phases/` fijaba. El Gate 1 se declararía sin criterio operativo escrito.
+**Qué pasa si no se salda.** Al abrir el Descubrimiento no habrá condición de salida
+escrita: `§14` lista **qué produce** la fase —cinco salidas tras `TA-0007`— pero no **cuándo
+se considera terminada**, ni quién lo declara. Eso es `TA-0015`, emitida por la auditoría
+`0004` y **bloqueante**. ~~El Gate 1 se declararía sin criterio operativo escrito~~ —
+comprobado falso, ver arriba.
 
-**Nota.** No es urgente: no bloquea las tareas de auditoría en curso. Se vuelve bloqueante en
-el momento de abrir la fase de Descubrimiento.
+**Nota.** Se vuelve bloqueante al abrir el Descubrimiento. ⚠️ **Pero ya no es el camino
+crítico entero:** `TA-0016` bloquea el Gate 1 —escala numérica en `§24` sin ningún umbral—
+**se decida lo que se decida en `T-013`**.
 
 ---
 

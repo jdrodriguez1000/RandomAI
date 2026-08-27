@@ -1245,6 +1245,26 @@ cuerpo aparece aquí.
 ⚠️ **Pendiente:** A.1, A.2, A.5 y A.6 merecen un ADR propio con contexto, alternativas
 y consecuencias. Aún no se han escrito.
 
+**El criterio que decide si una entrada merece ADR** —hasta ahora implícito, y por eso se
+escribe aquí: **¿la decisión restringe el diseño del producto, o solo este documento?** Un
+`ADR-NNN` (§38) registra decisiones con consecuencia arquitectónica. Una resolución sobre
+terminología, sobre qué se omitió o sobre cómo se numeran las secciones no la tiene: agota
+su efecto en el propio canónico.
+
+**Revisadas con ese criterio las entradas A.8–A.12** (añadidas después de la lista de
+arriba): **ninguna requiere ADR.**
+
+| | Por qué no |
+|---|---|
+| **A.8** | Decide *cuándo* se valida, no cómo se construye. Efecto sobre el proceso, no sobre el diseño |
+| **A.9** | Convención de numeración del documento |
+| **A.10** | Declaración de qué no se incorporó |
+| **A.11** | Sitúa una decisión en una etapa. La decisión concreta que produce **sí** puede exigir ADR, caso por caso; la regla que la sitúa, no |
+| **A.12** | Resolución terminológica |
+
+📌 Toda entrada nueva del Anexo A se pasa por esta pregunta **al escribirla**. La lista de
+arriba dejó de revisarse una vez y hubo que auditarla para notarlo.
+
 ## A.9 — La convención `bis`, en detalle
 
 **El problema.** Este documento se cita **por número de sección** desde repositorios que

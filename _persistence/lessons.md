@@ -17,20 +17,21 @@
 
 | Línea | Sección | Ir a |
 |---|---|---|
-| `39` | **Convenciones** | [↓](#convenciones) |
-| `47` | **Tablero** | [↓](#tablero) |
-| `65` | **Detalle** | [↓](#detalle) |
-| `67` | &nbsp;&nbsp;↳ L-001 · Leer 015_evolution.md por líneas, no por encabezados | [↓](#l-001--leer-015_evolutionmd-por-líneas-no-por-encabezados) |
-| `83` | &nbsp;&nbsp;↳ L-002 · No repetir el canónico sin contrastarlo | [↓](#l-002--no-repetir-el-canónico-sin-contrastarlo) |
-| `100` | &nbsp;&nbsp;↳ L-003 · Medir el impacto antes de renumerar | [↓](#l-003--medir-el-impacto-antes-de-renumerar) |
-| `121` | &nbsp;&nbsp;↳ L-004 · El alcance declarado de una auditoría es su límite | [↓](#l-004--el-alcance-declarado-de-una-auditoría-es-su-límite) |
-| `140` | &nbsp;&nbsp;↳ L-005 · Un fallo de formato puede perder contenido normativo | [↓](#l-005--un-fallo-de-formato-puede-perder-contenido-normativo) |
-| `163` | &nbsp;&nbsp;↳ L-007 · Quien delega un procedimiento no puede llevar una copia encima | [↓](#l-007--quien-delega-un-procedimiento-no-puede-llevar-una-copia-encima) |
-| `196` | &nbsp;&nbsp;↳ L-006 · Al eliminar algo, comprobar qué se apoyaba en ello | [↓](#l-006--al-eliminar-algo-comprobar-qué-se-apoyaba-en-ello) |
-| `228` | &nbsp;&nbsp;↳ L-008 · Un dato repetido en dos capas diverge, y miente la que menos se lee | [↓](#l-008--un-dato-repetido-en-dos-capas-diverge-y-miente-la-que-menos-se-lee) |
-| `271` | &nbsp;&nbsp;↳ L-009 · Escribir en el sitio destruye el original antes de saber si va a funcionar | [↓](#l-009--escribir-en-el-sitio-destruye-el-original-antes-de-saber-si-va-a-funcionar) |
-| `305` | **L-010 · Una frase de cierre bien escrita es la forma más fácil de colar una regla inventada** | [↓](#l-010--una-frase-de-cierre-bien-escrita-es-la-forma-más-fácil-de-colar-una-regla-inventada) |
-| `350` | **L-011 · Ampliar una cita introduce defectos sin tocar el texto, y el diff no los enseña** | [↓](#l-011--ampliar-una-cita-introduce-defectos-sin-tocar-el-texto-y-el-diff-no-los-enseña) |
+| `40` | **Convenciones** | [↓](#convenciones) |
+| `48` | **Tablero** | [↓](#tablero) |
+| `67` | **Detalle** | [↓](#detalle) |
+| `69` | &nbsp;&nbsp;↳ L-001 · Leer 015_evolution.md por líneas, no por encabezados | [↓](#l-001--leer-015_evolutionmd-por-líneas-no-por-encabezados) |
+| `85` | &nbsp;&nbsp;↳ L-002 · No repetir el canónico sin contrastarlo | [↓](#l-002--no-repetir-el-canónico-sin-contrastarlo) |
+| `102` | &nbsp;&nbsp;↳ L-003 · Medir el impacto antes de renumerar | [↓](#l-003--medir-el-impacto-antes-de-renumerar) |
+| `123` | &nbsp;&nbsp;↳ L-004 · El alcance declarado de una auditoría es su límite | [↓](#l-004--el-alcance-declarado-de-una-auditoría-es-su-límite) |
+| `142` | &nbsp;&nbsp;↳ L-005 · Un fallo de formato puede perder contenido normativo | [↓](#l-005--un-fallo-de-formato-puede-perder-contenido-normativo) |
+| `165` | &nbsp;&nbsp;↳ L-007 · Quien delega un procedimiento no puede llevar una copia encima | [↓](#l-007--quien-delega-un-procedimiento-no-puede-llevar-una-copia-encima) |
+| `198` | &nbsp;&nbsp;↳ L-006 · Al eliminar algo, comprobar qué se apoyaba en ello | [↓](#l-006--al-eliminar-algo-comprobar-qué-se-apoyaba-en-ello) |
+| `230` | &nbsp;&nbsp;↳ L-008 · Un dato repetido en dos capas diverge, y miente la que menos se lee | [↓](#l-008--un-dato-repetido-en-dos-capas-diverge-y-miente-la-que-menos-se-lee) |
+| `273` | &nbsp;&nbsp;↳ L-009 · Escribir en el sitio destruye el original antes de saber si va a funcionar | [↓](#l-009--escribir-en-el-sitio-destruye-el-original-antes-de-saber-si-va-a-funcionar) |
+| `307` | **L-010 · Una frase de cierre bien escrita es la forma más fácil de colar una regla inventada** | [↓](#l-010--una-frase-de-cierre-bien-escrita-es-la-forma-más-fácil-de-colar-una-regla-inventada) |
+| `352` | **L-011 · Ampliar una cita introduce defectos sin tocar el texto, y el diff no los enseña** | [↓](#l-011--ampliar-una-cita-introduce-defectos-sin-tocar-el-texto-y-el-diff-no-los-enseña) |
+| `419` | **L-012 · Medí el hueco inventariando lo que se fue, no comprobando lo que falta** | [↓](#l-012--medí-el-hueco-inventariando-lo-que-se-fue-no-comprobando-lo-que-falta) |
 
 <!--/INDEX-->
 
@@ -59,6 +60,7 @@
 | `L-009` | Escribir en el sitio destruye el original antes de saber si va a funcionar | Técnica | 2026-08-26 |
 | `L-010` | Una frase de cierre bien escrita es la forma más fácil de colar una regla inventada | Método | 2026-08-27 |
 | `L-011` | Ampliar una cita introduce defectos sin tocar el texto, y el diff no los enseña | Método | 2026-08-27 |
+| `L-012` | Medí el hueco inventariando lo que se fue, no comprobando lo que falta | Método | 2026-08-27 |
 
 ---
 
@@ -381,10 +383,29 @@ cada afirmación que queda debajo?**
 
 **Qué haremos distinto.** Toda ampliación de una marca `↳` obliga a recorrer el bloque
 entero contra el **conjunto** de fuentes citadas, no contra la añadida. Se hace **cada
-vez**, aunque la ampliación parezca inofensiva. En esta sesión se aplicó a las seis marcas
-que `TA-0002` amplió —`§4`, `§29`, `§30`, `§37`, `§41`, `§50`— y las seis salieron limpias;
-que saliera limpia no la hace prescindible, porque el coste de saltársela es un defecto
-invisible al diff.
+vez**, aunque la ampliación parezca inofensiva.
+
+**Aplicado a las seis marcas que amplió `TA-0002`.** Bloque por bloque, contra la fuente
+abierta:
+
+| Marca | Afirmación no trivial del bloque | Cubierta por |
+|---|---|---|
+| `§4` | filas MVP y EVOL de la tabla | `015 §2:45-53`, casi literal |
+| `§29` | las ocho situaciones que el prototipo no valida | `015 §39:980-990` |
+| `§30` | «un prototipo exitoso no demuestra adopción» | `015 §40`; el resto ← `015 §15` |
+| `§37` | «no construir innecesariamente, pero tampoco imposibilitar» | `015 §37`, literal; lista de actores ← `015 §36` |
+| `§41` | «cada iteración debería entregar capacidad demostrable» | `015 §41` |
+| `§50` | 20 vs 5.000 y la evaluación periódica | `015 §38` |
+
+Las seis limpias. Lo que en cada bloque no procede de fuente lleva su `➕` con remisión al
+Anexo, por `TA-0010`.
+
+⚠️ **Esta tabla se escribió en una segunda pasada.** La primera versión de esta lección
+afirmaba el barrido sin dejar la evidencia, y la auditoría `0004` lo señaló: había
+comprobado `§4` y dado por buenas las otras cinco. **Afirmar una comprobación no es
+hacerla** — y es precisamente el reproche que esta lección le hace al que amplía una marca
+sin recorrer el bloque. Que saliera limpia no la hace prescindible: el coste de saltársela
+es un defecto invisible al diff.
 
 ⚠️ **Corolario sobre el trabajo ajeno.** El hallazgo era incorrecto en su caso concreto y
 correcto en su método. Verificarlo antes de aceptarlo (`P-1`) evitó tocar un `§4` que
@@ -392,3 +413,54 @@ estaba bien; descartarlo entero por eso habría perdido la lección. **Un hallaz
 fallar en el ejemplo y acertar en la regla.**
 
 **Trazas:** `TA-0002` · `TA-0010` · `TA-0014` · `L-010` · `P-1`
+
+---
+
+## L-012 · Medí el hueco inventariando lo que se fue, no comprobando lo que falta
+
+**Categoría:** Método · **Fecha:** 2026-08-27 · Origen: auditoría `0004`
+
+**Qué pasó.** Al eliminarse `phases/` (`D-04`) escribí `DT-008`, severidad Alta, declarándola
+**bloqueante para abrir el Descubrimiento**. La auditoría la contrastó punto por punto:
+
+- de los **ocho** elementos que enumeré, **cinco ya estaban cubiertos** entre el canónico y
+  `_guide/GUIDE.md`. Faltan tres: entradas exigidas, condición de salida, entrega al Gate.
+- **la premisa principal era falsa.** Escribí que el Gate 1 se declararía sin criterio
+  operativo. El Gate 1 tiene `§29`, `§29.1`, `§30`, `§31`, `§32` y `§19`–`§27`: **más** nivel
+  operativo del que `phases/` le daba.
+- `GUIDE.md` cubre el «cómo» de la construcción, que `DT-008` daba por perdido. WSLT y GRTH
+  tienen hoy **más** procedimiento escrito que antes de `D-04`.
+
+**Cómo se produjo el error, que es lo que hay que recordar.** Escribí `DT-008` abriendo
+`phases/` y **listando lo que contenía**. Cada punto de esa lista era cierto: eso estaba ahí
+y dejó de estar. Lo que nunca hice fue la otra mitad —**ir al resto del proyecto y comprobar
+punto por punto si algo más lo cubría**—. El resultado tiene toda la apariencia de una
+medición: ocho elementos concretos, verificables, ninguno inventado.
+
+> 🔑 **Un inventario de lo que se fue no es una medida de lo que falta.** Se parecen tanto
+> que el primero se pasa por el segundo sin que nadie lo note — empezando por quien lo
+> escribe.
+
+**Por qué importa más de lo que parece.** `DT-008` no era una nota: era el **camino crítico
+declarado** del proyecto. Bloqueaba la apertura del Descubrimiento, y sostuvo `T-013` —una
+decisión del usuario con tres opciones— **dimensionada sobre ocho puntos y seis etapas cuando
+el hueco real son tres puntos en un sitio.** Las tres opciones se enunciaron contra un
+problema más grande que el problema. Durante dos sesiones el proyecto planificó contra una
+medición que nadie había comprobado.
+
+⚠️ **Y no había forma de detectarlo desde dentro.** `DT-008` la escribió quien sufría el
+hueco, y quien lo sufre lo estima por lo que echa de menos, no por lo que queda. Es
+literalmente `§32` —*quien construye no puede ser su propio testigo*— aplicado a un
+diagnóstico en vez de a un Gate. **Una deuda declarada bloqueante por la propia ejecutora es
+una candidata a auditoría, no un hecho.**
+
+**Qué haremos distinto.** Toda deuda que se declare **bloqueante** exige, antes de anotarse:
+recorrer sus puntos **contra el resto del proyecto**, uno por uno, y escribir qué los cubre o
+que nada los cubre. Si no se ha hecho, la deuda se anota igual pero **con la severidad sin
+asignar** y diciendo que la medición está pendiente. Una severidad Alta sin comprobación
+detrás no es una advertencia: es una desviación de la planificación.
+
+📌 **Corolario para `T-013`.** No se decide sobre las tres opciones tal como están escritas:
+están dimensionadas contra el hueco equivocado. Se redimensionan primero.
+
+**Trazas:** `DT-008` · `D-04` · `T-013` · `TA-0015` · `L-006`

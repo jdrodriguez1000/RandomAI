@@ -19,9 +19,9 @@
 | `32` | &nbsp;&nbsp;↳ Códigos | [↓](#códigos) |
 | `42` | &nbsp;&nbsp;↳ Estados | [↓](#estados) |
 | `59` | **Tablero — Tareas de auditoría (TA)** | [↓](#tablero--tareas-de-auditoría-ta) |
-| `246` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
-| `261` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
-| `310` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
+| `276` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
+| `291` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
+| `340` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
 
 <!--/INDEX-->
 
@@ -75,9 +75,13 @@ Origen: [`0001-method`](../../RandomAi_Auditor/audits/0001-method.md)
 | `TA-0011` | `§17-bis` remite a «Ver Anexo A» para la convención `bis`; el Anexo no la contenía | Media | No bloqueante | `Verificada` |
 | `TA-0012` | La fila «§42 → completa §47» de `D-03` sigue escrita y contradice al canónico | Media | No bloqueante | `Verificada` |
 | `TA-0013` | Doble `↳` consecutivo en cuatro puntos del canónico | Baja | No bloqueante | `Verificada` |
-| `TA-0014` | Marcas `↳` ampliadas que cubren texto anterior no procedente de la fuente nueva | Media | No bloqueante | `En discusión` |
+| `TA-0014` | Marcas `↳` ampliadas que cubren texto anterior no procedente de la fuente nueva | Media | No bloqueante | `Descartada` |
 
-**`TA-0009` · Razón del descarte:** decisión `D-01` del usuario — las fuentes se conservan
+| `TA-0015` | El Descubrimiento no tiene condición de salida escrita | Alta | **Bloqueante** | `No implementada` |
+| `TA-0016` | El Gate 1 tiene escala numérica (§24) y ningún umbral | Alta | **Bloqueante** | `No implementada` |
+| `TA-0017` | Los frenos de los dos agentes viven solo en prosa | Media | No bloqueante | `No implementada` |
+| `TA-0018` | Estado de deuda duplicado entre tablero y entrada | Media | No bloqueante | `Implementada` |
+| `TA-0019` | La lista de ADR pendientes no se revisó al pasar el Anexo de 7 a 12 | Media | No bloqueante | `Implementada` |**`TA-0009` · Razón del descarte:** decisión `D-01` del usuario — las fuentes se conservan
 intactas (`000_method.md:6-7`). El defecto queda documentado en la auditoría y en `DT-001`.
 El traslado a la auditora ya se hizo: su tablero registra `Descartada`
 (`tasks_audit.md:66`, comprobado en `S-004`). ⚠️ **Nota de nomenclatura:** aquí figuró como
@@ -242,6 +246,32 @@ conviene. Va bajo la marca `➕` con remisión a `A.5`, que se amplió para cubr
 (métrica del Gate 2) era la única del cuerpo sin remisión `*(A.n)*` una vez que las demás
 la llevaban. Añadida `*(A.6)*`, que es la entrada del Anexo que ya la cubría desde el
 consolidado. **Las doce `➕` del cuerpo remiten ahora a su entrada.**
+
+**`TA-0014` · `Descartada` por la auditora**, que reconoció el error: contrastó la tabla
+de `§4` contra la fuente añadida en vez de contra el conjunto citado — el mismo defecto que
+su propio hallazgo describía. Lo que valía quedó en `L-011`.
+
+**`TA-0018` · Implementada.** Barridas las doce entradas de `debt_tec.md`, no dos. El
+resultado es más estrecho y más claro que el enunciado: **solo tres entradas tenían campo
+`Estado:` propio, y dos de las tres ya mentían** (`DT-009` y `DT-010` decían `Abierta`
+estando `Implementada`). Las otras nueve nunca lo tuvieron.
+
+🔑 **Se retiró el campo en vez de sincronizarlo.** Sincronizar deja el defecto listo para
+repetirse: es `L-008` —un dato en dos capas diverge, y miente la capa que menos se lee— y la
+propia `debt_tec.md` lo estaba incumpliendo. La severidad y el estado viven ahora en el
+tablero y solo ahí, con la regla escrita en las convenciones del archivo.
+
+**`TA-0019` · Implementada.** Revisadas `A.8`–`A.12`: **ninguna requiere ADR.** Y se escribió
+en el canónico **el criterio que lo decide**, que hasta ahora era implícito: *¿la decisión
+restringe el diseño del producto, o solo este documento?* Sin criterio escrito, la lista se
+volvería a quedar sin revisar en la siguiente ampliación — que es exactamente lo que pasó.
+`DT-004` sigue `Abierta` con `A.1`, `A.2`, `A.5` y `A.6`, sin cambios.
+
+**`DT-008` · corregida, no saldada.** La auditoría `0004` demostró que estaba mal medida:
+cinco de sus ocho puntos están cubiertos, faltan tres —entradas exigidas, condición de salida,
+entrega al Gate— **y su premisa principal era falsa**: el Gate 1 tiene hoy más nivel operativo
+que el que daba `phases/`. La entrada conserva el enunciado original —es el que la auditora
+verificó— con la corrección encima y marcada como dominante. Ver `L-012`.
 
 ### Notas de alcance
 
