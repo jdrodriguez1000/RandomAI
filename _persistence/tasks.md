@@ -19,9 +19,9 @@
 | `32` | &nbsp;&nbsp;↳ Códigos | [↓](#códigos) |
 | `42` | &nbsp;&nbsp;↳ Estados | [↓](#estados) |
 | `59` | **Tablero — Tareas de auditoría (TA)** | [↓](#tablero--tareas-de-auditoría-ta) |
-| `241` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
-| `256` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
-| `305` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
+| `246` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
+| `261` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
+| `310` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
 
 <!--/INDEX-->
 
@@ -237,6 +237,11 @@ implementar.**
 📌 **Añadido en `§32` y no pedido por el encargo:** *declararlo después es no tenerlo*. Un
 veredicto cuyo dueño se decide al llegar al Gate se asigna sabiendo ya qué resultado
 conviene. Va bajo la marca `➕` con remisión a `A.5`, que se amplió para cubrirlo.
+
+**Nota en blanco de la auditoría `0003`, cerrada sin abrir tarea.** La `➕` de `§51`
+(métrica del Gate 2) era la única del cuerpo sin remisión `*(A.n)*` una vez que las demás
+la llevaban. Añadida `*(A.6)*`, que es la entrada del Anexo que ya la cubría desde el
+consolidado. **Las doce `➕` del cuerpo remiten ahora a su entrada.**
 
 ### Notas de alcance
 

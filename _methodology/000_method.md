@@ -1060,7 +1060,7 @@ El MVP se evalúa **en condiciones reales de uso**.
 
 La métrica exacta depende del producto: usuarios activos, frecuencia, transacciones,
 porcentaje de adopción, recurrencia, retención, reducción de trabajo, satisfacción,
-cumplimiento de objetivos. **Se define antes de medir, no después.** ➕
+cumplimiento de objetivos. ➕ **Se define antes de medir, no después.** *(A.6)*
 
 ↳ *015 §24, §25, §27*
 
