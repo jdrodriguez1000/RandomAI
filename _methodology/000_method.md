@@ -699,12 +699,24 @@ Detener aquí es un **resultado válido y barato**. Es el propósito de la etapa
 
 El veredicto del Gate **no lo emite quien construyó el prototipo.**
 
-Quien construye no puede ser su propio testigo: un sistema que se revisa a sí mismo
-comprueba que es coherente, no que sea cierto. El Gate lo declara la **terminal
-auditora** contra los criterios de §29 y la evidencia registrada de las sesiones.
+🔑 **Quien construye no puede ser su propio testigo:** un sistema que se revisa a sí mismo
+comprueba que es coherente, no que sea cierto. Son dos preguntas distintas, y solo la
+segunda decide si se invierte.
 
-➕ *(adición de consolidación — conecta el método con el esquema de dos terminales;
-las fuentes no asignan dueño al veredicto)*
+El veredicto lo emite **alguien independiente de la construcción**, contra los criterios
+de **§29** y la evidencia registrada. «Independiente» significa que no participó en
+construir lo que se evalúa y que no responde ante quien lo construyó.
+
+**Qué exige el método, y qué no.** Exige que el veredicto tenga un dueño **declarado antes
+de emitirlo** y distinto del constructor. **No** prescribe quién es: una persona, un rol,
+un comité o un equipo separado son todos válidos. Cada proyecto lo asigna según su
+organización, y esa asignación se escribe **fuera de este documento** — en la definición
+operativa del proyecto que lo aplique.
+
+⚠️ **Declararlo después es no tenerlo.** Un veredicto cuyo dueño se decide al llegar al
+Gate se asigna sabiendo ya qué resultado conviene.
+
+➕ *(A.5)*
 
 ---
 
@@ -1114,12 +1126,16 @@ Durante GRTH o EVOL aparecen nuevas necesidades. **No todas requieren prototipad
 
 | | Prototipo Inicial | Prototipo de Evolución |
 |---|---|---|
-| **Cuándo** | al comienzo del proyecto | durante la evolución |
+| **Cuándo** | al comienzo del proyecto | **durante GRTH o EVOL** |
 | **Pregunta** | ¿la solución tiene sentido para el Generador? | ¿esta nueva capacidad resuelve bien la necesidad, y cuál es la mejor forma de implementarla? |
 | **Autoriza** | construir el MVP | construir la funcionalidad |
 
 **No es una etapa nueva del ciclo.** No reemplaza ni modifica WSLT, GRTH, MVP ni
 EVOL: es una herramienta que se usa dentro de ellos cuando hace falta.
+
+📌 **Que empiece en GRTH y no en EVOL es una resolución entre fuentes en conflicto**, no
+una obviedad: `005 §29` lo sitúa en «GRTH o EVOL» y el Anexo de `015` lo restringe a EVOL.
+Este documento resuelve a favor de `005`. El porqué está en **Anexo A.8**.
 
 ↳ *005 §29 · 015 Anexo §3, §4*
 
@@ -1217,18 +1233,17 @@ cuerpo aparece aquí.
 | **A.2** | **Los Gates son piezas de primera clase**, con sección propia y criterios listados | `015 §27` los nombra explícitos; `005` los deja implícitos en el diagrama | Se adoptan de `015` y se les da estructura propia (§28–§32, §51–§52) |
 | **A.3** | **La evaluación de prototipos se toma en su versión profunda** | `010 §17–§31` (detallada) vs `005 §11` (dos párrafos) | Gana `010`. `005` queda superado en este punto |
 | **A.4** | **La taxonomía de actores se declara una sola vez** | aparece en las tres fuentes, con redacciones distintas | Se unifica en §9, tomando `010` como base por ser la más razonada |
-| **A.5** | ➕ **El veredicto de un Gate no lo emite quien construyó** | ninguna fuente asigna dueño al veredicto | Adición. Conecta el método con el esquema de dos terminales (§32) |
+| **A.5** | ➕ **El veredicto de un Gate no lo emite quien construyó**, sino alguien independiente de la construcción, designado antes de emitirlo | ninguna fuente asigna dueño al veredicto | Adición (§32). El método exige que el dueño exista, sea independiente y esté declarado de antemano; **no prescribe quién es**. La asignación concreta la hace cada proyecto en su definición operativa, fuera de este documento |
 | **A.6** | ➕ **La métrica de adopción del Gate 2 se define antes de medir** | `015 §25` lista métricas posibles sin decir cuándo se eligen | Adición. Elegir la métrica después de ver el resultado no es medir |
 | **A.7** | **Se elimina la voz de deliberación** | las tres fuentes usan «se consideró…», «hasta este punto», «inicialmente se denominó…» | El método se enuncia en presente y sin condicionales. La deliberación queda en `sources/` |
+| **A.8** | **El Prototipo de Evolución se usa durante GRTH o EVOL**, no solo durante EVOL | `005 §29` dice «Durante GRTH o EVOL»; el Anexo de `015` §1 lo define «utilizado durante la etapa EVOL» y su §3 «durante la evolución del producto» | Gana `005`. El criterio que decide prototipar es *incertidumbre × impacto* (`005 §29`, `015` Anexo §2), y esa condición se da también en GRTH: una capacidad de alto riesgo no deja de serlo por aparecer antes del MVP. Restringirlo a EVOL obligaría a construir a ciegas justo donde el método dice validar. `015` queda superado en este punto |
 | **A.9** | ➕ **El canónico se amplía, nunca se renumera** — las secciones nuevas llevan sufijo `bis` (`§17-bis`) en lugar de desplazar las siguientes | ninguna fuente contempla el problema: son documentos que no habían sido citados todavía | Adición. Hay referencias por número de sección en repositorios que este documento no puede editar; renumerar las rompería en silencio. Ver la nota de detalle abajo |
 | **A.10** | **Omisiones deliberadas del bloque `015` §35–§51** | `015` §35, §49 y §51 no tienen contrapartida en el cuerpo | Se omiten por recapitulación o por ser argumentativas, **no por descarte**: su contenido normativo ya vive distribuido en el cuerpo. Detalle sección por sección abajo |
 | **A.11** | ➕ **La decisión de alcance del prototipo es una salida del Descubrimiento**, con justificación escrita obligatoria | ninguna fuente la sitúa en una etapa: `015 §45` y `§47` establecen *que* debe decidirse, no *cuándo* ni *dónde se registra* | Adición. Sin dueño ni momento, la decisión se toma por omisión al empezar a prototipar — que es exactamente cuando ya no es gratis cambiarla |
+| **A.12** | **«Product Baseline» designa la Baseline (PRD · BDD · SPEC · ARCHIT · ADR), nunca un release objetivo** | `005 §38` lo ofrece como denominación posible de una versión-objetivo, junto a Release, Milestone y Version; `005 §13` y la Parte VI usan el mismo término para el conjunto de artefactos de definición | Se conserva **un solo significado**: el de la Parte VI. Para una versión-objetivo se usa **Release Objetivo** (§60). El nombre alternativo de `005 §38` se descarta: un término con dos referentes en el mismo documento produce ambigüedad justo donde hay que ser preciso —qué existe ya y qué falta por construir— |
 
 ⚠️ **Pendiente:** A.1, A.2, A.5 y A.6 merecen un ADR propio con contexto, alternativas
 y consecuencias. Aún no se han escrito.
-
-⚠️ **A.8 está reservada** para la resolución del conflicto sobre el alcance del
-Prototipo de Evolución. Aún no se ha escrito.
 
 ## A.9 — La convención `bis`, en detalle
 

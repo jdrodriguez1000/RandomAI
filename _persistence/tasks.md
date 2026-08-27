@@ -19,9 +19,9 @@
 | `32` | &nbsp;&nbsp;↳ Códigos | [↓](#códigos) |
 | `42` | &nbsp;&nbsp;↳ Estados | [↓](#estados) |
 | `59` | **Tablero — Tareas de auditoría (TA)** | [↓](#tablero--tareas-de-auditoría-ta) |
-| `216` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
-| `231` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
-| `280` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
+| `241` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
+| `256` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
+| `305` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
 
 <!--/INDEX-->
 
@@ -66,10 +66,10 @@ Origen: [`0001-method`](../../RandomAi_Auditor/audits/0001-method.md)
 | `TA-0002` | Incorporar contenido normativo omitido de `015` §35–§48 | Alta | Bloqueante | `Verificada` |
 | `TA-0007` | Añadir «decisión de alcance del prototipo» a las salidas del Descubrimiento (§14) | Alta | Bloqueante | `Implementada` |
 | `TA-0003` | Declarar en el Anexo A las omisiones deliberadas de `015` §35–§51 | Alta | No bloqueante | `Verificada` |
-| `TA-0004` | Añadir Anexo A.8: alcance del Prototipo de Evolución | Media | No bloqueante | `No implementada` |
-| `TA-0005` | Corregir la fila «Cuándo» de la tabla §57 | Media | No bloqueante | `No implementada` |
-| `TA-0006` | Reformular §32 de forma agnóstica a la infraestructura | Media | No bloqueante | `No implementada` |
-| `TA-0008` | Registrar en el Anexo A la resolución sobre «Product Baseline» | Baja | No bloqueante | `No implementada` |
+| `TA-0004` | Añadir Anexo A.8: alcance del Prototipo de Evolución | Media | No bloqueante | `Implementada` |
+| `TA-0005` | Corregir la fila «Cuándo» de la tabla §57 | Media | No bloqueante | `Implementada` |
+| `TA-0006` | Reformular §32 de forma agnóstica a la infraestructura | Media | No bloqueante | `Implementada` |
+| `TA-0008` | Registrar en el Anexo A la resolución sobre «Product Baseline» | Baja | No bloqueante | `Implementada` |
 | `TA-0009` | Normalizar encabezados de `015_evolution.md` §35–§51 | Media | No bloqueante | `Descartada` |
 | `TA-0010` | Frases normativas propias entregadas bajo un `↳` sin `➕` ni entrada en Anexo A | Media | No bloqueante | `Verificada` |
 | `TA-0011` | `§17-bis` remite a «Ver Anexo A» para la convención `bis`; el Anexo no la contenía | Media | No bloqueante | `Verificada` |
@@ -212,6 +212,31 @@ establecen **que** la decisión debe tomarse; ninguna fuente dice **cuándo** ni
 registra**. Situarla como salida del Descubrimiento es adición del canónico, y se declara
 como tal en vez de entregarla bajo el `↳` de `005 §39 · 015 §45, §47`. Es el defecto que
 la auditoría `0002` encontró en `TA-0002`; esta vez se evitó al escribir, no al corregir.
+
+**`TA-0004`, `TA-0005`, `TA-0006`, `TA-0008` · Implementadas, no `Verificadas`.** Las
+cuatro no bloqueantes, ejecutadas en `S-004`. **Con esto no queda ninguna `TA` sin
+implementar.**
+
+- **`TA-0004`** — creada **`A.8`**, que estaba reservada desde `TA-0011`. Conflicto
+  comprobado en las fuentes, no recordado: `005_vertical.md:492` dice «Durante GRTH o
+  EVOL»; el Anexo de `015` lo restringe a EVOL en `:1178` y `:1209`. Gana `005`, y la
+  razón queda escrita: el criterio que decide prototipar es *incertidumbre × impacto*, y
+  esa condición se da también en GRTH. `§57` remite a `A.8`.
+- **`TA-0005`** — la celda «Cuándo» de `§57` pasa de «durante la evolución» a «durante
+  GRTH o EVOL», alineada con su propio párrafo. No queda en `§57` ninguna otra afirmación
+  que restrinja el Prototipo de Evolución a EVOL.
+- **`TA-0006`** — `§32` reescrito sin infraestructura: exige un dueño del veredicto
+  **independiente de la construcción y declarado antes de emitirlo**, y dice
+  explícitamente que **no prescribe quién es**. `A.5` reescrita en coherencia. `CLAUDE.md`
+  ya contenía la asignación concreta (evidencia 4 cubierta de antes); solo se afinó el
+  puntero para que cite `§32`.
+- **`TA-0008`** — creada **`A.12`**: «Product Baseline» conserva un solo significado, el
+  de la Parte VI. `005 §38:643-647` lo ofrecía además como nombre de versión-objetivo,
+  junto a Release, Milestone y Version; para eso se usa **Release Objetivo** (`§60`).
+
+📌 **Añadido en `§32` y no pedido por el encargo:** *declararlo después es no tenerlo*. Un
+veredicto cuyo dueño se decide al llegar al Gate se asigna sabiendo ya qué resultado
+conviene. Va bajo la marca `➕` con remisión a `A.5`, que se amplió para cubrirlo.
 
 ### Notas de alcance
 

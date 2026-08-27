@@ -21,8 +21,11 @@ puede ser su propio testigo: un sistema que se revisa a sí mismo comprueba que 
 no que sea cierto. Igual con las tareas de auditoría: **que la ejecutora informe «hecho» no las
 cierra.** El único estado de cierre es `Verificada`, y solo lo asigna la auditora.
 
-📌 El principio general está en `_methodology/000_method.md`; **la asignación concreta a estas
-dos terminales vive aquí y solo aquí.**
+📌 El principio general está en `_methodology/000_method.md` **§32**, que exige un dueño del
+veredicto **independiente de la construcción y declarado antes de emitirlo**, pero no
+prescribe quién es: eso lo asigna cada proyecto. **Esta es esa asignación, y vive aquí y solo
+aquí.** El canónico no menciona terminales — es un método de desarrollo de software, no la
+descripción de cómo opera este equipo.
 
 ## Reglas duras — no se rediscuten
 
