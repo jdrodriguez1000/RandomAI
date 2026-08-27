@@ -25,14 +25,14 @@
 | `120` | **D-02 · El canónico se amplía sin renumerar** | [↓](#d-02--el-canónico-se-amplía-sin-renumerar) |
 | `169` | &nbsp;&nbsp;↳ Revisión del 2026-08-26 — la decisión sobrevive, su fundamento cambia | [↓](#revisión-del-2026-08-26--la-decisión-sobrevive-su-fundamento-cambia) |
 | `188` | **D-03 · Alcance de la incorporación de 015 §35-§51** | [↓](#d-03--alcance-de-la-incorporación-de-015-35-51) |
-| `266` | **D-04 · Eliminar el directorio phases/** | [↓](#d-04--eliminar-el-directorio-phases) |
-| `303` | **D-05 · Prefijo _ en las carpetas de insumo** | [↓](#d-05--prefijo-_-en-las-carpetas-de-insumo) |
-| `335` | **D-06 · Git + GitHub como sustrato de evidencia** | [↓](#d-06--git--github-como-sustrato-de-evidencia) |
-| `360` | **D-07 · Adaptación de protocol-close a este proyecto** | [↓](#d-07--adaptación-de-protocol-close-a-este-proyecto) |
-| `405` | **D-08 · Una sesión es un bloque de tiempo, no un día** | [↓](#d-08--una-sesión-es-un-bloque-de-tiempo-no-un-día) |
-| `439` | **D-09 · La capa del cómo vive en _guide/GUIDE.md** | [↓](#d-09--la-capa-del-cómo-vive-en-_guideguidemd) |
-| `489` | **D-10 · A.1 sigue en la lista de ADR pendientes** | [↓](#d-10--a1-sigue-en-la-lista-de-adr-pendientes) |
-| `535` | **Decisiones heredadas del brief** | [↓](#decisiones-heredadas-del-brief) |
+| `272` | **D-04 · Eliminar el directorio phases/** | [↓](#d-04--eliminar-el-directorio-phases) |
+| `309` | **D-05 · Prefijo _ en las carpetas de insumo** | [↓](#d-05--prefijo-_-en-las-carpetas-de-insumo) |
+| `341` | **D-06 · Git + GitHub como sustrato de evidencia** | [↓](#d-06--git--github-como-sustrato-de-evidencia) |
+| `366` | **D-07 · Adaptación de protocol-close a este proyecto** | [↓](#d-07--adaptación-de-protocol-close-a-este-proyecto) |
+| `411` | **D-08 · Una sesión es un bloque de tiempo, no un día** | [↓](#d-08--una-sesión-es-un-bloque-de-tiempo-no-un-día) |
+| `445` | **D-09 · La capa del cómo vive en _guide/GUIDE.md** | [↓](#d-09--la-capa-del-cómo-vive-en-_guideguidemd) |
+| `495` | **D-10 · A.1 sigue en la lista de ADR pendientes** | [↓](#d-10--a1-sigue-en-la-lista-de-adr-pendientes) |
+| `541` | **Decisiones heredadas del brief** | [↓](#decisiones-heredadas-del-brief) |
 
 <!--/INDEX-->
 
@@ -236,6 +236,12 @@ el §4** del canónico, y se **omiten §35, §49 y §51** declarándolas en el A
 > §4— es el mismo. La enmienda no altera qué se incorpora, solo dónde dice esta tabla que se
 > incorpora. El canónico ya quedó correcto al ejecutar `TA-0002`; lo que estaba mal era esta
 > fila.
+>
+> **Autorización.** La enmienda la pidió el usuario de forma explícita el 2026-08-27
+> —*«haz el commit y redacta la enmienda de D-03»*—, tras habérsele presentado el problema
+> y la redacción propuesta. `D-03` es decisión suya y la enmienda también: la ejecutora la
+> redactó, no la decidió. Queda escrito aquí porque en `tasks.md` no es observable desde el
+> repo de la auditora.
 >
 > **Por qué se enmienda `D-03` y no se abre una `D-11`.** Una decisión nueva no borra la
 > anterior: dejaría dos textos vigentes contradiciéndose, y `D-03` es el que se cita desde

@@ -289,8 +289,38 @@ Lo que hay que entender:
 - Actores identificados y clasificados
 - Interesados identificados
 - **Hipótesis** a validar con el prototipo
+- ➕ **Decisión de alcance del prototipo** — qué actores entran, **con su
+  justificación escrita** *(A.11)*
 
-↳ *005 §39*
+### 14.1. ➕ La decisión de alcance del prototipo
+
+> **Sección añadida al consolidar.** Ninguna de las tres fuentes sitúa esta decisión en
+> una etapa. Ver **Anexo A.11**.
+
+El Descubrimiento no termina sabiendo **qué** se va a validar: termina sabiendo también
+**con quién**. Esa decisión se toma aquí, antes de prototipar, y no en el momento de
+construir el prototipo.
+
+**La decisión por defecto es el Actor Generador solo** (§17). Pero `§17-bis.1` establece
+que el prototipo debe ampliarse cuando el valor de la hipótesis dependa necesariamente de
+otro actor, y `§17-bis.4` enumera los tipos de aplicación donde eso es previsible. Ambas
+se evalúan **en esta etapa**, cuando aún no hay nada construido y cambiar de opinión es
+gratis.
+
+🚨 **No basta con registrar la decisión: hay que registrar por qué.** La salida es la
+decisión **y su justificación**, contrastada explícitamente contra `§17-bis.1` y
+`§17-bis.4`. Una decisión sin justificación no es evaluable después: cuando el prototipo
+falle —o acierte— nadie podrá distinguir si el alcance fue el correcto o si simplemente
+nadie se lo preguntó.
+
+**Justificar la decisión por defecto también es obligatorio.** Decidir «solo el Generador»
+sin haber mirado `§17-bis` no es aplicar la regla general: es no haber decidido. Ambas
+salidas de la evaluación se escriben igual.
+
+Si la decisión amplía el alcance, se registra además **qué razón crítica** la sostiene, en
+los términos de `§17-bis.6`.
+
+↳ *005 §39 · 015 §45, §47*
 
 ---
 
@@ -1192,6 +1222,7 @@ cuerpo aparece aquí.
 | **A.7** | **Se elimina la voz de deliberación** | las tres fuentes usan «se consideró…», «hasta este punto», «inicialmente se denominó…» | El método se enuncia en presente y sin condicionales. La deliberación queda en `sources/` |
 | **A.9** | ➕ **El canónico se amplía, nunca se renumera** — las secciones nuevas llevan sufijo `bis` (`§17-bis`) en lugar de desplazar las siguientes | ninguna fuente contempla el problema: son documentos que no habían sido citados todavía | Adición. Hay referencias por número de sección en repositorios que este documento no puede editar; renumerar las rompería en silencio. Ver la nota de detalle abajo |
 | **A.10** | **Omisiones deliberadas del bloque `015` §35–§51** | `015` §35, §49 y §51 no tienen contrapartida en el cuerpo | Se omiten por recapitulación o por ser argumentativas, **no por descarte**: su contenido normativo ya vive distribuido en el cuerpo. Detalle sección por sección abajo |
+| **A.11** | ➕ **La decisión de alcance del prototipo es una salida del Descubrimiento**, con justificación escrita obligatoria | ninguna fuente la sitúa en una etapa: `015 §45` y `§47` establecen *que* debe decidirse, no *cuándo* ni *dónde se registra* | Adición. Sin dueño ni momento, la decisión se toma por omisión al empezar a prototipar — que es exactamente cuando ya no es gratis cambiarla |
 
 ⚠️ **Pendiente:** A.1, A.2, A.5 y A.6 merecen un ADR propio con contexto, alternativas
 y consecuencias. Aún no se han escrito.

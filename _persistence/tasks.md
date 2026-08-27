@@ -19,9 +19,9 @@
 | `32` | &nbsp;&nbsp;↳ Códigos | [↓](#códigos) |
 | `42` | &nbsp;&nbsp;↳ Estados | [↓](#estados) |
 | `59` | **Tablero — Tareas de auditoría (TA)** | [↓](#tablero--tareas-de-auditoría-ta) |
-| `160` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
-| `175` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
-| `224` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
+| `216` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
+| `231` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
+| `280` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
 
 <!--/INDEX-->
 
@@ -63,18 +63,19 @@ Origen: [`0001-method`](../../RandomAi_Auditor/audits/0001-method.md)
 | Código | Tarea | Imp. | Urg. | Estado |
 |---|---|---|---|---|
 | `TA-0001` | Corregir atribución sobre «Actor Invitado» (§10 y Anexo A.1); retirar `➕` de §10 | Alta | Bloqueante | `Verificada` |
-| `TA-0002` | Incorporar contenido normativo omitido de `015` §35–§48 | Alta | Bloqueante | `Implementada` |
-| `TA-0007` | Añadir «decisión de alcance del prototipo» a las salidas del Descubrimiento (§14) | Alta | Bloqueante | `No implementada` |
-| `TA-0003` | Declarar en el Anexo A las omisiones deliberadas de `015` §35–§51 | Alta | No bloqueante | `Implementada` |
+| `TA-0002` | Incorporar contenido normativo omitido de `015` §35–§48 | Alta | Bloqueante | `Verificada` |
+| `TA-0007` | Añadir «decisión de alcance del prototipo» a las salidas del Descubrimiento (§14) | Alta | Bloqueante | `Implementada` |
+| `TA-0003` | Declarar en el Anexo A las omisiones deliberadas de `015` §35–§51 | Alta | No bloqueante | `Verificada` |
 | `TA-0004` | Añadir Anexo A.8: alcance del Prototipo de Evolución | Media | No bloqueante | `No implementada` |
 | `TA-0005` | Corregir la fila «Cuándo» de la tabla §57 | Media | No bloqueante | `No implementada` |
 | `TA-0006` | Reformular §32 de forma agnóstica a la infraestructura | Media | No bloqueante | `No implementada` |
 | `TA-0008` | Registrar en el Anexo A la resolución sobre «Product Baseline» | Baja | No bloqueante | `No implementada` |
 | `TA-0009` | Normalizar encabezados de `015_evolution.md` §35–§51 | Media | No bloqueante | `Descartada` |
-| `TA-0010` | Frases normativas propias entregadas bajo un `↳` sin `➕` ni entrada en Anexo A | Media | No bloqueante | `Implementada` |
-| `TA-0011` | `§17-bis` remite a «Ver Anexo A» para la convención `bis`; el Anexo no la contenía | Media | No bloqueante | `Implementada` |
-| `TA-0012` | La fila «§42 → completa §47» de `D-03` sigue escrita y contradice al canónico | Media | No bloqueante | `Implementada` |
-| `TA-0013` | Doble `↳` consecutivo en cuatro puntos del canónico | Baja | No bloqueante | `Implementada` |
+| `TA-0010` | Frases normativas propias entregadas bajo un `↳` sin `➕` ni entrada en Anexo A | Media | No bloqueante | `Verificada` |
+| `TA-0011` | `§17-bis` remite a «Ver Anexo A» para la convención `bis`; el Anexo no la contenía | Media | No bloqueante | `Verificada` |
+| `TA-0012` | La fila «§42 → completa §47» de `D-03` sigue escrita y contradice al canónico | Media | No bloqueante | `Verificada` |
+| `TA-0013` | Doble `↳` consecutivo en cuatro puntos del canónico | Baja | No bloqueante | `Verificada` |
+| `TA-0014` | Marcas `↳` ampliadas que cubren texto anterior no procedente de la fuente nueva | Media | No bloqueante | `En discusión` |
 
 **`TA-0009` · Razón del descarte:** decisión `D-01` del usuario — las fuentes se conservan
 intactas (`000_method.md:6-7`). El defecto queda documentado en la auditoría y en `DT-001`.
@@ -156,6 +157,61 @@ son diez principios cuya fuente es `005 §41`, no los 28 de `015 §49`; y `§62`
 duplicación con esas dos secciones. **No se modifica `D-03`**: la decisión no cambia, solo
 su justificación, y la razón precisa queda escrita donde el lector del canónico la va a
 buscar.
+
+**`TA-0014` · En discusión — la ejecutora disputa la premisa, con evidencia.**
+
+La auditora observa que el `↳` de `§4` pasó a `015 §2, §50` y que dos filas de la tabla
+—MVP y EVOL— no dicen lo que dice `015 §50`. **Es cierto que no vienen de §50. Vienen de
+§2, que sigue citado en la misma marca.** `015_evolution.md:45-53`:
+
+| | `015 §2` (fuente) | Canónico `§4` |
+|---|---|---|
+| MVP | «¿La solución construida realmente es adoptada y utilizada por el **Actor Generador**?» | «¿El Actor Generador realmente adopta y usa la solución construida?» |
+| EVOL | «¿Cómo aumentamos el valor de una solución que ya demostró adopción?» | «¿Cómo aumentamos el valor de algo que ya demostró adopción?» |
+
+La segunda es casi literal. La marca `↳ *015 §2, §50*` es un **conjunto**, no una
+atribución fila a fila: cada afirmación de `§4` está cubierta por uno de los dos. No hay
+defecto que corregir en `§4`.
+
+**El método que propone la auditora sí es correcto, y se aplicó.** Barridas las otras cinco
+marcas ampliadas por `TA-0002`, preguntando —como pide— si el conjunto citado cubre **cada
+afirmación** del bloque, no si la fuente nueva aporta algo:
+
+| Marca | Cubre |
+|---|---|
+| `§29` `:636` — `005 §12 · 010 §29 · 015 §39` | cuerpo de §29 ← `005 §12`, `010 §29`; §29.1 ← `015 §39` ✅ |
+| `§30` `:655` — `005 §12 · 015 §15, §24, §40` | cuerpo ← `005 §12`, `015 §15, §24`; párrafo nuevo ← `015 §40` ✅ |
+| `§37` `:765` — `005 §17 · 015 §36, §37` | ARCHIT ← `005 §17`; §37.1 ← `015 §36, §37` ✅ |
+| `§41` `:832` — `005 §21 · 015 §18, §19, §41` | GRTH ← `005 §21`, `015 §18, §19`; §41.1 ← `015 §41` ✅ |
+| `§50` `:997` — `015 §23, §38` | cuerpo ← `015 §23`; §50.1 ← `015 §38` ✅ |
+
+Lo que en cada bloque **no** procede de ninguna fuente ya lleva su `➕` con remisión a
+`A.9`, por `TA-0010`. **Ninguna de las seis marcas cubre texto huérfano.**
+
+📌 **Lo que sí queda en pie del hallazgo, y merece anotarse:** ampliar una marca es una
+operación que puede introducir un defecto sin tocar una sola línea de texto. `TA-0010` y
+`TA-0014` son la misma comprobación en dos direcciones: allí se añadió texto bajo una
+marca; aquí se amplió una marca sobre texto. Que esta vez saliera limpia no la hace
+prescindible — **hay que hacerla cada vez que una marca se amplía**, y sobre el conjunto
+citado, no sobre la fuente añadida.
+
+**Devuelto a la auditora** para que resuelva: la ejecutora no cierra sus propias tareas.
+
+**`TA-0007` · Implementada, no `Verificada`.** Última bloqueante del Paso 1. Añadida a
+`§14` la quinta salida —**decisión de alcance del prototipo**— y creada `§14.1` con su
+desarrollo. Las tres evidencias:
+
+1. `§14:291-292` la lista como salida.
+2. `§14.1:309-317` exige la justificación, no solo la decisión, **y también cuando se
+   decide el alcance por defecto**: decidir «solo el Generador» sin haber mirado `§17-bis`
+   no es aplicar la regla general, es no haber decidido.
+3. `§14.1` remite a `§17-bis.1`, `§17-bis.4` y `§17-bis.6`, creadas por `TA-0002`.
+
+📌 **Marcada `➕` con entrada `A.11`, aplicando `L-010` por adelantado.** `015 §45` y `§47`
+establecen **que** la decisión debe tomarse; ninguna fuente dice **cuándo** ni **dónde se
+registra**. Situarla como salida del Descubrimiento es adición del canónico, y se declara
+como tal en vez de entregarla bajo el `↳` de `005 §39 · 015 §45, §47`. Es el defecto que
+la auditoría `0002` encontró en `TA-0002`; esta vez se evitó al escribir, no al corregir.
 
 ### Notas de alcance
 
