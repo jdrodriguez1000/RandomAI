@@ -7,7 +7,7 @@
 > **Lo escribe `session-closer` al cerrar cada sesión**, desde la evidencia del repositorio.
 > La sección `Dónde estamos` puede actualizarla la sesión principal durante el trabajo.
 
-**Última actualización:** 2026-08-26 (S-003)
+**Última actualización:** 2026-08-27 (S-004)
 
 <!--INDEX-->
 
@@ -19,13 +19,13 @@
 | Línea | Sección | Ir a |
 |---|---|---|
 | `34` | **1. Dónde estamos** | [↓](#1-dónde-estamos) |
-| `52` | **2. Por qué no hemos empezado a construir** | [↓](#2-por-qué-no-hemos-empezado-a-construir) |
-| `64` | **3. Sesiones** | [↓](#3-sesiones) |
-| `74` | &nbsp;&nbsp;↳ Tablero de sesiones | [↓](#tablero-de-sesiones) |
-| `82` | &nbsp;&nbsp;↳ Detalle de sesiones | [↓](#detalle-de-sesiones) |
-| `174` | **4. Qué sigue** | [↓](#4-qué-sigue) |
-| `190` | **5. Lo que bloqueará el arranque real del Descubrimiento** | [↓](#5-lo-que-bloqueará-el-arranque-real-del-descubrimiento) |
-| `206` | **6. Mapa de archivos de persistencia** | [↓](#6-mapa-de-archivos-de-persistencia) |
+| `53` | **2. Por qué no hemos empezado a construir** | [↓](#2-por-qué-no-hemos-empezado-a-construir) |
+| `65` | **3. Sesiones** | [↓](#3-sesiones) |
+| `75` | &nbsp;&nbsp;↳ Tablero de sesiones | [↓](#tablero-de-sesiones) |
+| `84` | &nbsp;&nbsp;↳ Detalle de sesiones | [↓](#detalle-de-sesiones) |
+| `214` | **4. Qué sigue** | [↓](#4-qué-sigue) |
+| `232` | **5. Lo que bloqueará el arranque real del Descubrimiento** | [↓](#5-lo-que-bloqueará-el-arranque-real-del-descubrimiento) |
+| `248` | **6. Mapa de archivos de persistencia** | [↓](#6-mapa-de-archivos-de-persistencia) |
 
 <!--/INDEX-->
 
@@ -38,14 +38,15 @@
 | **Fase del método** | *Ninguna todavía* — pre-Descubrimiento |
 | **Etapa real** | Corrección del método antes de aplicarlo |
 | **Producto** | Sin construir. Cero líneas de código de aplicación |
-| **Bloqueo activo** | 2 tareas bloqueantes de auditoría abiertas: `TA-0002`, `TA-0007`. `TA-0001` está `Verificada` por la auditora (`tasks_audit.md:59`) |
+| **Bloqueo activo** | Paso 1 de la auditoría **cerrado** (`TA-0002`, `TA-0003`, `TA-0007` implementadas). Quedan 2 tareas **nuevas** bloqueantes para abrir el Descubrimiento: `TA-0015`, `TA-0016`, sin implementar — pendientes de decisión del usuario |
 
-**Situación en una frase:** `TA-0001` está resuelta en el canónico —§10 y Anexo A.1 corregidos,
-más la justificación de por qué `A.1` sigue como ADR pendiente (`D-10`)— y ya `Verificada` por
-la auditora; `TA-0002`+`TA-0003` (alcance ampliado por `D-03`) es el siguiente
-paso bloqueante y **no se empezó a petición expresa del usuario**. Sigue pendiente el traslado
-a la auditora del desfase de estado en `TA-0009` (`Cancelada` aquí, `Pendiente` en su tablero;
-no podemos escribirlo nosotros, `RES-009`).
+**Situación en una frase:** las tres bloqueantes del Paso 1 (`TA-0002`, `TA-0003`, `TA-0007`)
+quedaron `Implementada`/`Verificada`; el resto del tablero de la auditoría `0004`
+(`TA-0004`…`TA-0013`, `TA-0018`, `TA-0019`) también se ejecutó, `TA-0014` fue `Descartada` por
+la auditora. Emergieron tres tareas nuevas —`TA-0015`, `TA-0016` (bloqueantes para el
+Descubrimiento) y `TA-0017` (no bloqueante)— todavía `No implementada`. Sigue pendiente el
+traslado a la auditora del desfase de estado en `TA-0009` (`Cancelada` aquí, `Pendiente` en su
+tablero; no podemos escribirlo nosotros, `RES-009`).
 
 ---
 
@@ -78,6 +79,7 @@ fila en el tablero y una entrada en el detalle**, y las dos se escriben juntas. 
 | `S-001` | 2026-08-26 | Primera sesión: brief + método leídos, auditoría `0001-method` verificada, `_persistence/` creada, `phases/` eliminado, git inicializado, skills y agentes adaptados |
 | `S-002` | 2026-08-26 | Capa del «cómo»: `_guide/GUIDE.md` creado, reglas duras 8-9 en `CLAUDE.md`, corrección de `tools/mkindex.py` |
 | `S-003` | 2026-08-26 | `TA-0001` ejecutada: corregida la atribución de fuentes sobre el Actor Invitado en `000_method.md` (§10 y Anexo A.1), con justificación añadida sobre por qué `A.1` sigue como ADR pendiente (`D-10`) |
+| `S-004` | 2026-08-27 | Paso 1 de la auditoría cerrado: `TA-0002`, `TA-0003`, `TA-0007` implementadas. Ejecutadas además `TA-0004`–`TA-0006`, `TA-0008`, `TA-0010`–`TA-0013`, `TA-0018`, `TA-0019`. `TA-0014` descartada por la auditora. `DT-008` corregida (no saldada). Emiten `TA-0015`, `TA-0016` (bloqueantes) y `TA-0017` |
 
 ### Detalle de sesiones
 
@@ -171,17 +173,57 @@ con el alcance ampliado de `D-03` (crear `§17-bis`, fusionar §50 en §4).
 
 ---
 
+#### `S-004` — 2026-08-27
+
+**Fase del método:** ninguna todavía — pre-Descubrimiento. Sigue sin abrirse.
+
+**Qué quedó hecho** (según el diff, commits `5244145`…`9fc105c`):
+
+- `_methodology/000_method.md` (1012 → ~1258 líneas): `TA-0002` incorpora `015` §36–§48 con el
+  alcance ampliado de `D-03` — `§17-bis` nuevo (los seis criterios de `015` §46), `§29.1`,
+  `§30`, `§37.1`, `§41.1`, `§50.1`, y `§4` ampliado de 3 a 6 preguntas. `TA-0003` cierra el
+  Anexo A con las entradas `A.9` y `A.10` (omisiones deliberadas de `015` §35, §49, §51).
+  `TA-0007` añade la quinta salida del Descubrimiento (decisión de alcance del prototipo, §14
+  y §14.1). `TA-0004` (Anexo A.8, resuelve conflicto GRTH/EVOL entre `005` y `015`), `TA-0005`
+  (celda «Cuándo» de §57), `TA-0006` (§32 reescrito agnóstico a infraestructura), `TA-0008`
+  (Anexo A.12, «Product Baseline»), `TA-0010` (seis frases propias remarcadas), `TA-0011`
+  (Anexo A.9 con la convención `bis`), `TA-0012` (enmienda a `D-03`), `TA-0013` (cuatro marcas
+  `↳` dobles fusionadas), y la remisión de la última `+` del cuerpo a `A.6`.
+- `TA-0014` — disputada por la ejecutora con evidencia (L-011) y **descartada por la
+  auditora**.
+- `TA-0018` y `TA-0019` cerradas: `debt_tec.md` pierde el campo `Estado` duplicado en las
+  entradas de detalle (queda solo en el tablero); revisadas `A.8`–`A.12`, ninguna requiere ADR,
+  con el criterio que lo decide escrito en el canónico.
+- `DT-008` **corregida, no saldada**: cinco de sus ocho puntos ya estaban cubiertos y su
+  premisa sobre el Gate 1 era falsa (§29–§32, §19–§27 dan más nivel operativo del que
+  `phases/` daba). El hueco real es de tres puntos —entradas exigidas, condición de salida,
+  entrega al Gate—, no de ocho. Emitida `TA-0015` (condición de salida del Descubrimiento,
+  bloqueante) y `TA-0016` (Gate 1 sin umbral, bloqueante); `TA-0017` (frenos de agentes solo en
+  prosa, no bloqueante).
+- `_persistence/decisions.md` — `D-11` (por qué `TA-0018` se salda retirando el campo, no
+  sincronizándolo) y la autorización del usuario a la enmienda de `D-03` (`TA-0012`), ya
+  escritas por la sesión principal.
+- `_persistence/lessons.md` — `L-010`, `L-011`, `L-012`, ya escritas por la sesión principal.
+- `CLAUDE.md` — afinado el puntero de la asignación de Gates para citar el §32 reescrito.
+
+**Siguiente paso concreto.** Decisión del usuario sobre `TA-0015` y `TA-0016` (bloqueantes
+para abrir el Descubrimiento) y sobre las tres opciones de `DT-008` (`T-013`).
+
+---
+
 ## 4. Qué sigue
 
-**Inmediato — Paso 1, tareas bloqueantes de la auditoría:**
+**Paso 1 de la auditoría — cerrado:** `TA-0001`, `TA-0002`, `TA-0003`, `TA-0007` implementadas
+y/o verificadas.
 
-1. `TA-0001` — **`Verificada`** por la auditora (2026-08-26)
-2. `TA-0002` + `TA-0003` — crear `§17-bis`, incorporar `015` §36–§48, fusionar §50 en §4
-3. `TA-0007` — decisión de alcance del prototipo, en el canónico §14 (un solo frente tras `D-04`)
+**Paso 2, no bloqueantes — cerrado:** `TA-0004`–`TA-0006`, `TA-0008`, `TA-0010`–`TA-0013`,
+`TA-0018`, `TA-0019` implementadas. `TA-0014` descartada por la auditora.
 
-**Después — Paso 2, no bloqueantes:** `TA-0004`, `TA-0005`, `TA-0006`, `TA-0008`.
+**Pendiente, bloqueante para el Descubrimiento:** `TA-0015` (condición de salida del
+Descubrimiento), `TA-0016` (umbral del Gate 1), y la decisión del usuario entre las tres
+opciones de `DT-008` (`T-013`). `TA-0017` (no bloqueante) sigue sin implementar.
 
-**Después — Paso 3:** devolver a la auditora para verificación.
+**Después:** devolver a la auditora para verificación de lo ejecutado en `S-004`.
 
 **Solo entonces:** abrir la fase `005_discovery` del producto RandomAI.
 
@@ -189,14 +231,14 @@ con el alcance ampliado de `D-03` (crear `§17-bis`, fusionar §50 en §4).
 
 ## 5. Lo que bloqueará el arranque real del Descubrimiento
 
-**`DT-008` — el método se quedó sin nivel operativo.** Al eliminar `phases/` (`D-04`),
-`000_method.md` conserva el **qué** de cada fase y el proyecto pierde el **cómo**:
-procedimiento, qué está prohibido en cada fase, checklist de condición de salida y qué se
-entrega a cada Gate.
+**`DT-008` — corregida en `S-004`, no saldada.** El hueco medido ya no son ocho puntos: son
+tres — **entradas exigidas**, **condición de salida** y **entrega al Gate** —, que es lo que
+emite `TA-0015` y `TA-0016`. Su premisa original (el Gate 1 se declararía sin criterio
+operativo) quedó comprobada como falsa: §29, §29.1, §30, §31, §32 y §19–§27 dan a esa fase más
+nivel operativo del que `phases/` daba.
 
-No bloquea las tareas de auditoría en curso. **Sí bloquea abrir el Descubrimiento**, porque el
-Gate 1 se declararía sin criterio operativo escrito. Requiere decisión del usuario entre las
-tres opciones de [`debt_tec.md`](debt_tec.md) → `DT-008`, registrada como `T-013`.
+Requiere decisión del usuario entre las tres opciones de [`debt_tec.md`](debt_tec.md) →
+`DT-008`, registrada como `T-013`, ya redimensionadas contra el hueco real.
 
 **Lo que dejó de bloquear:** `DT-002`, `DT-003` y `DT-006` quedaron `Descartada` — existían
 solo por `phases/`.
