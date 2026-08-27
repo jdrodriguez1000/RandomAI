@@ -19,20 +19,21 @@
 
 | Línea | Sección | Ir a |
 |---|---|---|
-| `41` | **Convenciones** | [↓](#convenciones) |
-| `56` | **Tablero** | [↓](#tablero) |
-| `79` | **D-01 · No se editan las fuentes** | [↓](#d-01--no-se-editan-las-fuentes) |
-| `120` | **D-02 · El canónico se amplía sin renumerar** | [↓](#d-02--el-canónico-se-amplía-sin-renumerar) |
-| `169` | &nbsp;&nbsp;↳ Revisión del 2026-08-26 — la decisión sobrevive, su fundamento cambia | [↓](#revisión-del-2026-08-26--la-decisión-sobrevive-su-fundamento-cambia) |
-| `188` | **D-03 · Alcance de la incorporación de 015 §35-§51** | [↓](#d-03--alcance-de-la-incorporación-de-015-35-51) |
-| `272` | **D-04 · Eliminar el directorio phases/** | [↓](#d-04--eliminar-el-directorio-phases) |
-| `309` | **D-05 · Prefijo _ en las carpetas de insumo** | [↓](#d-05--prefijo-_-en-las-carpetas-de-insumo) |
-| `341` | **D-06 · Git + GitHub como sustrato de evidencia** | [↓](#d-06--git--github-como-sustrato-de-evidencia) |
-| `366` | **D-07 · Adaptación de protocol-close a este proyecto** | [↓](#d-07--adaptación-de-protocol-close-a-este-proyecto) |
-| `411` | **D-08 · Una sesión es un bloque de tiempo, no un día** | [↓](#d-08--una-sesión-es-un-bloque-de-tiempo-no-un-día) |
-| `445` | **D-09 · La capa del cómo vive en _guide/GUIDE.md** | [↓](#d-09--la-capa-del-cómo-vive-en-_guideguidemd) |
-| `495` | **D-10 · A.1 sigue en la lista de ADR pendientes** | [↓](#d-10--a1-sigue-en-la-lista-de-adr-pendientes) |
-| `541` | **Decisiones heredadas del brief** | [↓](#decisiones-heredadas-del-brief) |
+| `42` | **Convenciones** | [↓](#convenciones) |
+| `57` | **Tablero** | [↓](#tablero) |
+| `81` | **D-01 · No se editan las fuentes** | [↓](#d-01--no-se-editan-las-fuentes) |
+| `122` | **D-02 · El canónico se amplía sin renumerar** | [↓](#d-02--el-canónico-se-amplía-sin-renumerar) |
+| `171` | &nbsp;&nbsp;↳ Revisión del 2026-08-26 — la decisión sobrevive, su fundamento cambia | [↓](#revisión-del-2026-08-26--la-decisión-sobrevive-su-fundamento-cambia) |
+| `190` | **D-03 · Alcance de la incorporación de 015 §35-§51** | [↓](#d-03--alcance-de-la-incorporación-de-015-35-51) |
+| `274` | **D-04 · Eliminar el directorio phases/** | [↓](#d-04--eliminar-el-directorio-phases) |
+| `311` | **D-05 · Prefijo _ en las carpetas de insumo** | [↓](#d-05--prefijo-_-en-las-carpetas-de-insumo) |
+| `343` | **D-06 · Git + GitHub como sustrato de evidencia** | [↓](#d-06--git--github-como-sustrato-de-evidencia) |
+| `368` | **D-07 · Adaptación de protocol-close a este proyecto** | [↓](#d-07--adaptación-de-protocol-close-a-este-proyecto) |
+| `413` | **D-08 · Una sesión es un bloque de tiempo, no un día** | [↓](#d-08--una-sesión-es-un-bloque-de-tiempo-no-un-día) |
+| `447` | **D-09 · La capa del cómo vive en _guide/GUIDE.md** | [↓](#d-09--la-capa-del-cómo-vive-en-_guideguidemd) |
+| `497` | **D-10 · A.1 sigue en la lista de ADR pendientes** | [↓](#d-10--a1-sigue-en-la-lista-de-adr-pendientes) |
+| `543` | **Decisiones heredadas del brief** | [↓](#decisiones-heredadas-del-brief) |
+| `550` | **D-11 · TA-0018 se salda retirando el estado duplicado, no sincronizándolo** | [↓](#d-11--ta-0018-se-salda-retirando-el-estado-duplicado-no-sincronizándolo) |
 
 <!--/INDEX-->
 
@@ -67,6 +68,7 @@ consecuencias.
 | `D-08` | Una sesión es un bloque de tiempo, no un día | usuario | 2026-08-26 | `Vigente` |
 | `D-09` | La capa del «cómo» vive en `_guide/GUIDE.md`, separada de reglas y método | usuario | 2026-08-26 | `Vigente` |
 | `D-10` | `A.1` sigue en la lista de ADR pendientes por consecuencia arquitectónica | usuario | 2026-08-26 | `Vigente` |
+| `D-11` | `TA-0018` se salda retirando el estado duplicado, no sincronizándolo | ejecutora | 2026-08-27 | `Vigente` |
 
 **Contexto común de `D-01`, `D-02` y `D-03`.** Las tres eran condición previa para ejecutar
 cualquier tarea de la auditoría [`0001-method`](../../RandomAi_Auditor/audits/0001-method.md)
@@ -542,3 +544,51 @@ antes: hoy no hay modelo de autorización que restringir.
 
 No son decisiones nuestras: vienen impuestas por el cliente y se registran como restricciones,
 no como decisiones. Ver [`constraints.md`](constraints.md) — `RES-001` a `RES-005`.
+
+---
+
+## D-11 · TA-0018 se salda retirando el estado duplicado, no sincronizándolo
+
+**Decide:** ejecutora · **Fecha:** 2026-08-27 · **Estado:** `Vigente`
+
+⚠️ **Decisión tomada por la ejecutora, y se declara como tal.** `TA-0018` pedía una
+evidencia concreta y se entregó otra cosa. La auditora debe poder juzgar la desviación, no
+descubrirla.
+
+**Contexto.** `TA-0018` señalaba que `DT-009` y `DT-010` tenían campo `Estado: Abierta` en su
+entrada mientras el tablero las daba `Implementada`. La evidencia pedida era, en sus términos,
+que los estados coincidieran.
+
+**Problema.** Al barrer las doce entradas —y no las dos comprobadas por la auditora— el patrón
+resultó distinto del enunciado: **solo tres entradas tenían ese campo, y dos de las tres ya
+mentían.** Las otras nueve nunca lo tuvieron. No era un error de transcripción en dos sitios:
+era un campo redundante con una tasa de fallo del 67 %.
+
+**Alternativas.** (a) sincronizar los tres campos con el tablero, que es lo pedido;
+(b) **retirar el campo de las tres entradas** y dejar el tablero como fuente única;
+(c) añadir el campo a las nueve que no lo tienen y sincronizar los doce.
+
+**Decisión.** **(b).**
+
+**Razón.** `L-008` ya está escrita en este proyecto: *un dato repetido en dos capas diverge, y
+miente la capa que menos se lee*. La opción (a) restaura la coincidencia **y deja intacto el
+mecanismo que la rompió** — volvería a divergir en el siguiente cambio de estado, y el tablero
+seguiría siendo la capa que se lee. La (c) lo empeora: multiplica por cuatro las
+oportunidades de divergencia.
+
+🔑 **Sincronizar dos copias no salda la deuda de tener dos copias.** Deja el defecto en verde
+y listo para repetirse, que es la salida barata que la regla dura 8 describe para las pruebas
+—arreglar lo que rompió, o ablandar lo que avisó— aplicada aquí a un dato.
+
+**Consecuencias.**
+
+- La severidad y el estado de una deuda viven **solo en el tablero** de `debt_tec.md`. La
+  regla queda escrita en las convenciones del propio archivo, no solo aquí.
+- **La evidencia que `TA-0018` pedía ya no se puede comprobar tal como estaba enunciada**: no
+  quedan dos estados que comparar. La comprobación equivalente es que ninguna entrada declare
+  estado propio. Si la auditora considera que esto no salda la tarea, la decisión se revierte
+  y se hace (a): **no se discute, es su veredicto.**
+- Nada se perdió: el estado de las tres deudas afectadas sigue escrito en el tablero, que es
+  donde lo lee `mkindex.py` y donde lo busca cualquiera que abra el archivo.
+
+**Trazas:** `TA-0018` · `L-008` · `DT-009` · `DT-010`
