@@ -17,17 +17,18 @@
 
 | Línea | Sección | Ir a |
 |---|---|---|
-| `36` | **Convenciones** | [↓](#convenciones) |
-| `49` | **Tablero** | [↓](#tablero) |
-| `64` | **Detalle** | [↓](#detalle) |
-| `66` | &nbsp;&nbsp;↳ SUP-001 · La fuente oficial expone el histórico completo | [↓](#sup-001--la-fuente-oficial-expone-el-histórico-completo) |
-| `83` | &nbsp;&nbsp;↳ SUP-002 · El histórico incluye premio/acumulado | [↓](#sup-002--el-histórico-incluye-premioacumulado) |
-| `97` | &nbsp;&nbsp;↳ SUP-003 · La fuente distingue Baloto de Revancha | [↓](#sup-003--la-fuente-distingue-baloto-de-revancha) |
-| `108` | &nbsp;&nbsp;↳ SUP-004 · Vercel sostiene persistencia y actualización programada | [↓](#sup-004--vercel-sostiene-persistencia-y-actualización-programada) |
-| `121` | &nbsp;&nbsp;↳ SUP-005 · El Actor Generador es el jugador | [↓](#sup-005--el-actor-generador-es-el-jugador) |
-| `138` | &nbsp;&nbsp;↳ SUP-006 · Hay volumen histórico suficiente | [↓](#sup-006--hay-volumen-histórico-suficiente) |
-| `150` | &nbsp;&nbsp;↳ SUP-008 · Las credenciales de GitHub funcionan | [↓](#sup-008--las-credenciales-de-github-funcionan) |
-| `165` | &nbsp;&nbsp;↳ SUP-007 · La prioridad no bloquea la generación | [↓](#sup-007--la-prioridad-no-bloquea-la-generación) |
+| `37` | **Convenciones** | [↓](#convenciones) |
+| `50` | **Tablero** | [↓](#tablero) |
+| `66` | **Detalle** | [↓](#detalle) |
+| `68` | &nbsp;&nbsp;↳ SUP-001 · La fuente oficial expone el histórico completo | [↓](#sup-001--la-fuente-oficial-expone-el-histórico-completo) |
+| `85` | &nbsp;&nbsp;↳ SUP-002 · El histórico incluye premio/acumulado | [↓](#sup-002--el-histórico-incluye-premioacumulado) |
+| `99` | &nbsp;&nbsp;↳ SUP-003 · La fuente distingue Baloto de Revancha | [↓](#sup-003--la-fuente-distingue-baloto-de-revancha) |
+| `110` | &nbsp;&nbsp;↳ SUP-004 · Vercel sostiene persistencia y actualización programada | [↓](#sup-004--vercel-sostiene-persistencia-y-actualización-programada) |
+| `123` | &nbsp;&nbsp;↳ SUP-005 · El Actor Generador es el jugador | [↓](#sup-005--el-actor-generador-es-el-jugador) |
+| `140` | &nbsp;&nbsp;↳ SUP-006 · Hay volumen histórico suficiente | [↓](#sup-006--hay-volumen-histórico-suficiente) |
+| `152` | &nbsp;&nbsp;↳ SUP-008 · Las credenciales de GitHub funcionan | [↓](#sup-008--las-credenciales-de-github-funcionan) |
+| `167` | &nbsp;&nbsp;↳ SUP-007 · La prioridad no bloquea la generación | [↓](#sup-007--la-prioridad-no-bloquea-la-generación) |
+| `181` | &nbsp;&nbsp;↳ SUP-009 · El flujo de Descubrimiento generaliza a cualquier proyecto | [↓](#sup-009--el-flujo-de-descubrimiento-generaliza-a-cualquier-proyecto) |
 
 <!--/INDEX-->
 
@@ -58,6 +59,7 @@ eliminada por `D-04`; la convención se conserva.
 | `SUP-006` | Existe volumen histórico suficiente para que el cálculo estadístico sea significativo | Medio | `Por validar` |
 | `SUP-007` | La restricción de prioridad (§26 del brief) nunca deja el generador sin combinación válida | Medio | `Por validar` |
 | `SUP-008` | Las credenciales de GitHub están configuradas y el push funcionará | Medio | `Por validar` |
+| `SUP-009` | El flujo de Descubrimiento diseñado en `S-005` sirve para cualquier proyecto, no solo RandomAI | Medio | `Por validar` |
 
 ---
 
@@ -173,3 +175,32 @@ principal del producto.
 **Cómo se validará.** Cálculo combinatorio en diseño técnico + prueba determinística. Con 43−5
 = 38 balotas disponibles y 16−1 = 15 superbalotas, el espacio parece amplio, pero **es
 aritmética, no opinión: hay que hacerla**.
+
+---
+
+### `SUP-009` · El flujo de Descubrimiento generaliza a cualquier proyecto
+
+**Qué se asume.** Que el flujo diseñado en `_temp/005_discovery.md` —bucle de extracción ×4,
+bloque de criterio, trazabilidad al origen y rúbrica del extractor— sirve para **cualquier
+proyecto de desarrollo de software**, y no solo para el brief de RandomAI sobre el que se
+pensó.
+
+**Por qué importa.** Es el **primer objetivo** que el usuario declaró en `S-005`: un proceso de
+Descubrimiento estandarizado. Si el supuesto es falso, lo que tendremos es un procedimiento a
+medida de este brief **con apariencia de estándar** — y eso no se descubre al escribirlo, sino
+en el segundo proyecto, con el método ya normalizado y citado.
+
+**Cómo se validará.** Corriendo el bucle de extracción completo sobre el brief de **otro**
+proyecto, de otro dominio, y midiendo cuántas piezas hay que cambiar. Mientras solo se haya
+corrido sobre este brief, `n = 1`: eso es un caso de prueba, no una evaluación. Un prompt o un
+procedimiento ajustado contra un único ejemplo se ajusta **a ese ejemplo**.
+
+**Si es falso.** Las piezas atadas a este dominio se identifican y **bajan a la capa de
+artefactos**, que es específica del proyecto, dejando fase y plantillas genéricas. No se
+descarta el flujo: se reparte mejor.
+
+**Mitigación mientras tanto.** Escribir fase y plantillas sin ejemplos del dominio, sin
+supuestos sobre el tipo de aplicación, y con las decisiones concretas de RandomAI fuera de
+esas dos capas.
+
+---

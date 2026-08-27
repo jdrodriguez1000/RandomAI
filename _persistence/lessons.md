@@ -17,21 +17,23 @@
 
 | Línea | Sección | Ir a |
 |---|---|---|
-| `40` | **Convenciones** | [↓](#convenciones) |
-| `48` | **Tablero** | [↓](#tablero) |
-| `67` | **Detalle** | [↓](#detalle) |
-| `69` | &nbsp;&nbsp;↳ L-001 · Leer 015_evolution.md por líneas, no por encabezados | [↓](#l-001--leer-015_evolutionmd-por-líneas-no-por-encabezados) |
-| `85` | &nbsp;&nbsp;↳ L-002 · No repetir el canónico sin contrastarlo | [↓](#l-002--no-repetir-el-canónico-sin-contrastarlo) |
-| `102` | &nbsp;&nbsp;↳ L-003 · Medir el impacto antes de renumerar | [↓](#l-003--medir-el-impacto-antes-de-renumerar) |
-| `123` | &nbsp;&nbsp;↳ L-004 · El alcance declarado de una auditoría es su límite | [↓](#l-004--el-alcance-declarado-de-una-auditoría-es-su-límite) |
-| `142` | &nbsp;&nbsp;↳ L-005 · Un fallo de formato puede perder contenido normativo | [↓](#l-005--un-fallo-de-formato-puede-perder-contenido-normativo) |
-| `165` | &nbsp;&nbsp;↳ L-007 · Quien delega un procedimiento no puede llevar una copia encima | [↓](#l-007--quien-delega-un-procedimiento-no-puede-llevar-una-copia-encima) |
-| `198` | &nbsp;&nbsp;↳ L-006 · Al eliminar algo, comprobar qué se apoyaba en ello | [↓](#l-006--al-eliminar-algo-comprobar-qué-se-apoyaba-en-ello) |
-| `230` | &nbsp;&nbsp;↳ L-008 · Un dato repetido en dos capas diverge, y miente la que menos se lee | [↓](#l-008--un-dato-repetido-en-dos-capas-diverge-y-miente-la-que-menos-se-lee) |
-| `273` | &nbsp;&nbsp;↳ L-009 · Escribir en el sitio destruye el original antes de saber si va a funcionar | [↓](#l-009--escribir-en-el-sitio-destruye-el-original-antes-de-saber-si-va-a-funcionar) |
-| `307` | **L-010 · Una frase de cierre bien escrita es la forma más fácil de colar una regla inventada** | [↓](#l-010--una-frase-de-cierre-bien-escrita-es-la-forma-más-fácil-de-colar-una-regla-inventada) |
-| `352` | **L-011 · Ampliar una cita introduce defectos sin tocar el texto, y el diff no los enseña** | [↓](#l-011--ampliar-una-cita-introduce-defectos-sin-tocar-el-texto-y-el-diff-no-los-enseña) |
-| `419` | **L-012 · Medí el hueco inventariando lo que se fue, no comprobando lo que falta** | [↓](#l-012--medí-el-hueco-inventariando-lo-que-se-fue-no-comprobando-lo-que-falta) |
+| `42` | **Convenciones** | [↓](#convenciones) |
+| `50` | **Tablero** | [↓](#tablero) |
+| `71` | **Detalle** | [↓](#detalle) |
+| `73` | &nbsp;&nbsp;↳ L-001 · Leer 015_evolution.md por líneas, no por encabezados | [↓](#l-001--leer-015_evolutionmd-por-líneas-no-por-encabezados) |
+| `89` | &nbsp;&nbsp;↳ L-002 · No repetir el canónico sin contrastarlo | [↓](#l-002--no-repetir-el-canónico-sin-contrastarlo) |
+| `106` | &nbsp;&nbsp;↳ L-003 · Medir el impacto antes de renumerar | [↓](#l-003--medir-el-impacto-antes-de-renumerar) |
+| `127` | &nbsp;&nbsp;↳ L-004 · El alcance declarado de una auditoría es su límite | [↓](#l-004--el-alcance-declarado-de-una-auditoría-es-su-límite) |
+| `146` | &nbsp;&nbsp;↳ L-005 · Un fallo de formato puede perder contenido normativo | [↓](#l-005--un-fallo-de-formato-puede-perder-contenido-normativo) |
+| `169` | &nbsp;&nbsp;↳ L-007 · Quien delega un procedimiento no puede llevar una copia encima | [↓](#l-007--quien-delega-un-procedimiento-no-puede-llevar-una-copia-encima) |
+| `202` | &nbsp;&nbsp;↳ L-006 · Al eliminar algo, comprobar qué se apoyaba en ello | [↓](#l-006--al-eliminar-algo-comprobar-qué-se-apoyaba-en-ello) |
+| `234` | &nbsp;&nbsp;↳ L-008 · Un dato repetido en dos capas diverge, y miente la que menos se lee | [↓](#l-008--un-dato-repetido-en-dos-capas-diverge-y-miente-la-que-menos-se-lee) |
+| `277` | &nbsp;&nbsp;↳ L-009 · Escribir en el sitio destruye el original antes de saber si va a funcionar | [↓](#l-009--escribir-en-el-sitio-destruye-el-original-antes-de-saber-si-va-a-funcionar) |
+| `311` | **L-010 · Una frase de cierre bien escrita es la forma más fácil de colar una regla inventada** | [↓](#l-010--una-frase-de-cierre-bien-escrita-es-la-forma-más-fácil-de-colar-una-regla-inventada) |
+| `356` | **L-011 · Ampliar una cita introduce defectos sin tocar el texto, y el diff no los enseña** | [↓](#l-011--ampliar-una-cita-introduce-defectos-sin-tocar-el-texto-y-el-diff-no-los-enseña) |
+| `423` | **L-012 · Medí el hueco inventariando lo que se fue, no comprobando lo que falta** | [↓](#l-012--medí-el-hueco-inventariando-lo-que-se-fue-no-comprobando-lo-que-falta) |
+| `474` | **L-013 · Caracterizar un archivo por su índice no es haberlo leído** | [↓](#l-013--caracterizar-un-archivo-por-su-índice-no-es-haberlo-leído) |
+| `519` | **L-014 · Abrir un archivo en escritura antes de tener el contenido listo lo destruye** | [↓](#l-014--abrir-un-archivo-en-escritura-antes-de-tener-el-contenido-listo-lo-destruye) |
 
 <!--/INDEX-->
 
@@ -61,6 +63,8 @@
 | `L-010` | Una frase de cierre bien escrita es la forma más fácil de colar una regla inventada | Método | 2026-08-27 |
 | `L-011` | Ampliar una cita introduce defectos sin tocar el texto, y el diff no los enseña | Método | 2026-08-27 |
 | `L-012` | Medí el hueco inventariando lo que se fue, no comprobando lo que falta | Método | 2026-08-27 |
+| `L-013` | Caracterizar un archivo por su índice no es haberlo leído | Proceso | 2026-08-27 |
+| `L-014` | Abrir un archivo en escritura antes de tener el contenido listo lo destruye | Técnica | 2026-08-27 |
 
 ---
 
@@ -464,3 +468,95 @@ detrás no es una advertencia: es una desviación de la planificación.
 están dimensionadas contra el hueco equivocado. Se redimensionan primero.
 
 **Trazas:** `DT-008` · `D-04` · `T-013` · `TA-0015` · `L-006`
+
+---
+
+## L-013 · Caracterizar un archivo por su índice no es haberlo leído
+
+**Categoría:** Proceso · **Fecha:** 2026-08-27 · Origen: `S-005`, señalado por el usuario
+
+**Qué pasó.** El usuario pidió diseñar observabilidad, evaluación y rúbricas para el agente
+que extrae información del brief. Recorrí `_guide/GUIDE.md` **por encabezados** —un `grep` de
+`^## `— y a partir de esa lista le dije que el repo no cubría nada de eso. Diseñé la capa
+entera desde cero. Cuando el usuario preguntó si había leído el archivo, lo leí completo:
+
+| Lo que afirmé | Lo que dice `GUIDE.md` |
+|---|---|
+| «observabilidad: nada» | **§3** (`:185-192`) ya la pide, junto a evaluación y seguridad de datos |
+| «rúbricas: nada» | **§0** (`:78`) las **excluyó a propósito**, con su motivo escrito |
+| «seguridad: parcial» | **§0** (`:83`) excluyó inyección de prompt, también con motivo |
+| «hace falta una capa nueva» | **§0** (`:50-56`) fija el reparto: esto es `GUIDE.md`, no un archivo aparte |
+
+**Cómo se produjo el error.** Un índice bien hecho **da la sensación de haber leído**: enumera
+todas las secciones, así que parece cubrir el contenido. Pero un índice dice **de qué habla**
+un archivo, no **qué dice**. Y lo que más importaba aquí —las exclusiones con su motivo— es
+justo lo que ningún índice recoge: una tabla dentro de una sección, sin encabezado propio.
+
+> 🔑 **«No está» es una afirmación sobre el archivo entero, y no se sostiene con un
+> recorrido por encabezados.** Afirmar una ausencia exige haber mirado donde podría estar.
+
+**Por qué importa más que un detalle.** El error no fue de matiz: **la recomendación
+estructural era equivocada.** Propuse construir una capa nueva cuando el reparto ya estaba
+decidido en `D-09`, y le dije al usuario que no existía material que sí existía y estaba
+auditado. Si no llega a preguntar, el plan de trabajo habría arrancado torcido.
+
+📌 **Y lo que se recuperó al leerlo:** las exclusiones de `GUIDE.md` §0 llevan su motivo
+escrito, y **dos de esos motivos han caducado** al introducir agentes en la construcción. Eso
+solo se ve leyendo la tabla. El propio archivo lo había previsto (`:73`): *«un salto sin
+motivo escrito se lee como veredicto sobre lo saltado»*.
+
+**Qué haremos distinto.** Antes de afirmar que algo **no está** en un archivo del repo, se lee
+entero. Un recorrido por encabezados sirve para **encontrar** algo, nunca para **descartarlo**.
+
+⚠️ **Emparenta con `L-001`**, que dice lo mismo sobre `015_evolution.md`: sus §35–§51 no
+llevan `#` y cualquier recorrido por encabezados las salta. Allí costó ~200 líneas normativas;
+aquí, una recomendación estructural errónea. **Es la misma familia de fallo, y ya van dos.**
+
+**Trazas:** `L-001` · `D-09` · `P-1` · `GUIDE.md` §0
+
+---
+
+## L-014 · Abrir un archivo en escritura antes de tener el contenido listo lo destruye
+
+**Categoría:** Técnica · **Fecha:** 2026-08-27 · Origen: `S-005`, incidente real (dos veces)
+
+**Qué pasó.** Un script de Python que editaba `_persistence/tasks.md` hacía, en este orden:
+
+```python
+io.open(p, "w", encoding="utf-8").write(s)   # <- destructivo
+```
+
+El contenido `s` llevaba pares de sustitución mal formados, así que `.write()` lanzó
+`UnicodeEncodeError`. Pero **la apertura en modo `w` ya había truncado el archivo a 0 bytes.**
+`tasks.md` quedó vacío: 354 líneas perdidas.
+
+**El fallo no estaba en el contenido: estaba en el orden.** Abrir en `w` trunca **antes** de
+escribir nada, así que cualquier error posterior deja el archivo destruido en vez de intacto.
+
+⚠️ **Y volvió a pasar en la misma sesión, con la corrección puesta.** Escribí un ayudante
+`guardar()` que decía codificar primero… pero seguía siendo una sola expresión:
+
+```python
+open(p, "wb").write(s.encode("utf-8"))   # open() se evalúa ANTES que encode()
+```
+
+Python evalúa `open(p, "wb")` —que trunca— y **después** el argumento. `lessons.md` quedó a
+cero. **Escribir la intención correcta no basta: hay que separarla en dos sentencias.**
+
+```python
+data = s.encode("utf-8")      # si algo falla, falla AQUÍ
+with open(p, "wb") as f:      # el archivo no se toca hasta que el contenido es válido
+    f.write(data)
+```
+
+🔑 **Y la lección que vale más que la técnica: lo que salvó los dos archivos fue que
+estaban commiteados.** `git checkout -- <archivo>` los devolvió íntegros en un segundo. Un
+script que reescribe un archivo del repo **se corre sobre árbol limpio, o no se corre** — si
+hay cambios sin commitear, el respaldo no existe.
+
+⚠️ **Consecuencia sobre cómo se comprueba.** Un archivo truncado **no da error después**:
+`grep` devuelve cero coincidencias y parece que la búsqueda falló, no que el archivo esté
+vacío. Tras cualquier escritura por script, comprobar el **tamaño**, no solo la ausencia de
+excepción.
+
+**Trazas:** `P-5` · `D-06`

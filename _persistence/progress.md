@@ -7,7 +7,7 @@
 > **Lo escribe `session-closer` al cerrar cada sesión**, desde la evidencia del repositorio.
 > La sección `Dónde estamos` puede actualizarla la sesión principal durante el trabajo.
 
-**Última actualización:** 2026-08-27 (S-004)
+**Última actualización:** 2026-08-27 (S-005)
 
 <!--INDEX-->
 
@@ -19,13 +19,13 @@
 | Línea | Sección | Ir a |
 |---|---|---|
 | `34` | **1. Dónde estamos** | [↓](#1-dónde-estamos) |
-| `53` | **2. Por qué no hemos empezado a construir** | [↓](#2-por-qué-no-hemos-empezado-a-construir) |
-| `65` | **3. Sesiones** | [↓](#3-sesiones) |
-| `75` | &nbsp;&nbsp;↳ Tablero de sesiones | [↓](#tablero-de-sesiones) |
-| `84` | &nbsp;&nbsp;↳ Detalle de sesiones | [↓](#detalle-de-sesiones) |
-| `214` | **4. Qué sigue** | [↓](#4-qué-sigue) |
-| `232` | **5. Lo que bloqueará el arranque real del Descubrimiento** | [↓](#5-lo-que-bloqueará-el-arranque-real-del-descubrimiento) |
-| `248` | **6. Mapa de archivos de persistencia** | [↓](#6-mapa-de-archivos-de-persistencia) |
+| `57` | **2. Por qué no hemos empezado a construir** | [↓](#2-por-qué-no-hemos-empezado-a-construir) |
+| `69` | **3. Sesiones** | [↓](#3-sesiones) |
+| `79` | &nbsp;&nbsp;↳ Tablero de sesiones | [↓](#tablero-de-sesiones) |
+| `89` | &nbsp;&nbsp;↳ Detalle de sesiones | [↓](#detalle-de-sesiones) |
+| `260` | **4. Qué sigue** | [↓](#4-qué-sigue) |
+| `287` | **5. Lo que bloqueará el arranque real del Descubrimiento** | [↓](#5-lo-que-bloqueará-el-arranque-real-del-descubrimiento) |
+| `303` | **6. Mapa de archivos de persistencia** | [↓](#6-mapa-de-archivos-de-persistencia) |
 
 <!--/INDEX-->
 
@@ -36,17 +36,21 @@
 | | |
 |---|---|
 | **Fase del método** | *Ninguna todavía* — pre-Descubrimiento |
-| **Etapa real** | Corrección del método antes de aplicarlo |
+| **Etapa real** | Diseño (no normativo) del flujo de Descubrimiento, en paralelo a la auditoría |
 | **Producto** | Sin construir. Cero líneas de código de aplicación |
-| **Bloqueo activo** | Paso 1 de la auditoría **cerrado** (`TA-0002`, `TA-0003`, `TA-0007` implementadas). Quedan 2 tareas **nuevas** bloqueantes para abrir el Descubrimiento: `TA-0015`, `TA-0016`, sin implementar — pendientes de decisión del usuario |
+| **Bloqueo activo** | Espejo de tareas ya sincronizado con la auditora (7 `TA` a `Verificada`, `TA-0020` de alta). Quedan **dos decisiones del usuario** bloqueando el paso siguiente: (1) quién declara el cierre del Descubrimiento — `TA-0015` —, y (2) si se enmienda `D-04` para readmitir `_phases/` y `_templates/` — `T-013` |
 
-**Situación en una frase:** las tres bloqueantes del Paso 1 (`TA-0002`, `TA-0003`, `TA-0007`)
-quedaron `Implementada`/`Verificada`; el resto del tablero de la auditoría `0004`
-(`TA-0004`…`TA-0013`, `TA-0018`, `TA-0019`) también se ejecutó, `TA-0014` fue `Descartada` por
-la auditora. Emergieron tres tareas nuevas —`TA-0015`, `TA-0016` (bloqueantes para el
-Descubrimiento) y `TA-0017` (no bloqueante)— todavía `No implementada`. Sigue pendiente el
-traslado a la auditora del desfase de estado en `TA-0009` (`Cancelada` aquí, `Pendiente` en su
-tablero; no podemos escribirlo nosotros, `RES-009`).
+**Situación en una frase:** el espejo `tasks.md` quedó sincronizado con el tablero de la
+auditora (20 tareas de cada lado, cero discrepancias, comprobado por script): `TA-0004`,
+`TA-0005`, `TA-0006`, `TA-0007`, `TA-0008`, `TA-0018`, `TA-0019` pasan a `Verificada`, se da de
+alta `TA-0020` y `TA-0015`–`TA-0017` pasan a `Pendiente`. En paralelo, se diseñó en
+conversación —sin normalizar— el flujo completo del Descubrimiento (`_temp/005_discovery.md`,
+`D-12`): bucle de extracción por agente ×4, bloque de criterio humano, cierre por la auditora,
+trazabilidad al origen y la capa de observabilidad/evaluación/rúbricas del extractor.
+Aparecieron sin seguimiento en git dos directorios que aportó el usuario —`_phases/` y
+`_templates/`— que resultaron ser el `phases/` que `D-04` eliminó; **no están decididos**:
+readmitirlos exige enmendar `D-04`. Sigue pendiente el traslado a la auditora del desfase de
+`TA-0009` (`RES-009`).
 
 ---
 
@@ -80,6 +84,7 @@ fila en el tablero y una entrada en el detalle**, y las dos se escriben juntas. 
 | `S-002` | 2026-08-26 | Capa del «cómo»: `_guide/GUIDE.md` creado, reglas duras 8-9 en `CLAUDE.md`, corrección de `tools/mkindex.py` |
 | `S-003` | 2026-08-26 | `TA-0001` ejecutada: corregida la atribución de fuentes sobre el Actor Invitado en `000_method.md` (§10 y Anexo A.1), con justificación añadida sobre por qué `A.1` sigue como ADR pendiente (`D-10`) |
 | `S-004` | 2026-08-27 | Paso 1 de la auditoría cerrado: `TA-0002`, `TA-0003`, `TA-0007` implementadas. Ejecutadas además `TA-0004`–`TA-0006`, `TA-0008`, `TA-0010`–`TA-0013`, `TA-0018`, `TA-0019`. `TA-0014` descartada por la auditora. `DT-008` corregida (no saldada). Emiten `TA-0015`, `TA-0016` (bloqueantes) y `TA-0017` |
+| `S-005` | 2026-08-27 | Espejo `tasks.md` sincronizado con el tablero de la auditora (7 `TA` a `Verificada`, alta de `TA-0020`, `TA-0015`–`17` a `Pendiente`). Diseñado en `_temp/005_discovery.md` (no normativo) el flujo completo del Descubrimiento (`D-12`). Aparecieron sin seguimiento `_phases/` y `_templates/`, el `phases/` de `D-04`, sin decidir su readmisión |
 
 ### Detalle de sesiones
 
@@ -211,19 +216,69 @@ para abrir el Descubrimiento) y sobre las tres opciones de `DT-008` (`T-013`).
 
 ---
 
+#### `S-005` — 2026-08-27
+
+**Fase del método:** ninguna todavía — pre-Descubrimiento. Sigue sin abrirse; lo de hoy es
+diseño previo, explícitamente no normativo.
+
+**Qué quedó hecho** (según el diff):
+
+- **Sincronización del espejo `_persistence/tasks.md`** contra
+  `../RandomAi_Auditor/audits/tasks_audit.md`: `TA-0004`, `TA-0005`, `TA-0006`, `TA-0007`,
+  `TA-0008`, `TA-0018`, `TA-0019` pasan a `Verificada`; alta de `TA-0020` (`Pendiente`);
+  `TA-0015`–`TA-0017` pasan de `No implementada` a `Pendiente` (vocabulario del tablero de la
+  auditora, no del propio). Reparados dos defectos estructurales de la tabla y ocho etiquetas
+  en prosa que seguían diciendo «Implementada, no `Verificada`» sobre tareas ya verificadas.
+  Añadida una nota de convención: el vocabulario de las `TA` es el de la auditora, este
+  archivo es espejo.
+- **`_temp/005_discovery.md` (nuevo, 551 líneas, sin seguimiento previo en git)**: diseño
+  completo del flujo de Descubrimiento — los cuatro «quienes», entradas y salidas, bucle de
+  extracción por agente (×4), bloque de criterio humano, cierre por la auditora, trazabilidad
+  al origen con tres valores, y la capa de observabilidad/evaluación/rúbrica del extractor.
+  Marcado explícitamente como archivo de trabajo, no normativo (`D-12`).
+- **Aparecieron sin seguimiento en git dos directorios que aportó el usuario**: `_phases/`
+  (con `005_discovery.md`, 210 líneas) y `_templates/_discovery/` (5 archivos). Son el
+  `phases/` que `D-04` eliminó — el propio `_temp/005_discovery.md` §10 lo constata: citan
+  `_memory/` y `tech-debt.md`, que reviven literalmente `DT-003` si se readmiten así. **No
+  están decididos.**
+- `_persistence/decisions.md` — `D-12` (por qué el diseño vive en `_temp/`, no normativo,
+  antes de repartirlo), ya escrita por la sesión principal.
+- `_persistence/assumptions.md` — `SUP-009` (el flujo de Descubrimiento generaliza a
+  cualquier proyecto, no solo RandomAI), ya escrita por la sesión principal.
+- `_persistence/lessons.md` — `L-013` (caracterizar un archivo por su índice no es haberlo
+  leído) y `L-014` (abrir un archivo en escritura antes de tener el contenido listo lo
+  destruye; incidente real, dos archivos truncados y recuperados con `git checkout --`), ya
+  escritas por la sesión principal.
+
+**Siguiente paso concreto.** Seguir trabajando en la definición de la fase de Descubrimiento
+según el orden de `_temp/005_discovery.md` §12, empezando por las dos decisiones del usuario
+que lo bloquean: quién declara el cierre del Descubrimiento (`TA-0015`) y si se enmienda
+`D-04` para readmitir `_phases/` y `_templates/` (`T-013`).
+
+---
+
 ## 4. Qué sigue
 
-**Paso 1 de la auditoría — cerrado:** `TA-0001`, `TA-0002`, `TA-0003`, `TA-0007` implementadas
-y/o verificadas.
+**Paso 1 de la auditoría — cerrado:** `TA-0001`, `TA-0002`, `TA-0003`, `TA-0007` `Verificada`.
 
 **Paso 2, no bloqueantes — cerrado:** `TA-0004`–`TA-0006`, `TA-0008`, `TA-0010`–`TA-0013`,
-`TA-0018`, `TA-0019` implementadas. `TA-0014` descartada por la auditora.
+`TA-0018`, `TA-0019` `Verificada`. `TA-0014` `Descartada` por la auditora.
 
-**Pendiente, bloqueante para el Descubrimiento:** `TA-0015` (condición de salida del
-Descubrimiento), `TA-0016` (umbral del Gate 1), y la decisión del usuario entre las tres
-opciones de `DT-008` (`T-013`). `TA-0017` (no bloqueante) sigue sin implementar.
+**Pendiente, bloqueante para el Descubrimiento — dos decisiones del usuario, según el orden
+de `_temp/005_discovery.md` §12:**
 
-**Después:** devolver a la auditora para verificación de lo ejecutado en `S-004`.
+1. **Quién declara el cierre del Descubrimiento** (`TA-0015`; recomendación del documento de
+   trabajo: la auditora, por §6 del canónico).
+2. **Si se enmienda `D-04`** para readmitir `_phases/` y `_templates/` (`T-013`) — sin esto no
+   se puede avanzar en el reparto del diseño hacia sus archivos definitivos.
+
+`TA-0016` (umbral del Gate 1) queda como bloqueante aparte, más adelante en el orden.
+`TA-0017` y `TA-0020` (no bloqueantes) siguen `Pendiente`.
+
+**Después de esas dos decisiones:** repartir `_temp/005_discovery.md` según su §11 —
+`GUIDE.md` (§9 + tres exclusiones de §0 caducadas), `_phases/005_discovery.md`,
+`_templates/_discovery/`—, resolver `TA-0016`, y solo entonces correr el flujo completo sobre
+el brief de RandomAI como primer caso de referencia.
 
 **Solo entonces:** abrir la fase `005_discovery` del producto RandomAI.
 

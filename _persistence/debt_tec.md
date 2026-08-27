@@ -6,7 +6,7 @@
 > Una deuda registrada es una decisión; una deuda no registrada es un accidente esperando.
 > Registrar no es saldar: mientras el estado no sea `Implementada` o `Aceptada`, sigue viva.
 
-**Última actualización:** 2026-08-26
+**Última actualización:** 2026-08-27 (S-005)
 
 <!--INDEX-->
 
@@ -17,21 +17,22 @@
 
 | Línea | Sección | Ir a |
 |---|---|---|
-| `40` | **Convenciones** | [↓](#convenciones) |
-| `71` | **Tablero** | [↓](#tablero) |
-| `90` | **Detalle** | [↓](#detalle) |
-| `92` | &nbsp;&nbsp;↳ DT-001 · Encabezados de 015_evolution.md sin normalizar | [↓](#dt-001--encabezados-de-015_evolutionmd-sin-normalizar) |
-| `110` | &nbsp;&nbsp;↳ DT-002 · Rutas referenciadas por phases/ que no existen | [↓](#dt-002--rutas-referenciadas-por-phases-que-no-existen) |
-| `130` | &nbsp;&nbsp;↳ DT-003 · Divergencia de nombres en la capa de persistencia | [↓](#dt-003--divergencia-de-nombres-en-la-capa-de-persistencia) |
-| `164` | &nbsp;&nbsp;↳ DT-004 · ADRs pendientes del Anexo A | [↓](#dt-004--adrs-pendientes-del-anexo-a) |
-| `188` | &nbsp;&nbsp;↳ DT-005 · Numeración no correlativa del canónico | [↓](#dt-005--numeración-no-correlativa-del-canónico) |
-| `203` | &nbsp;&nbsp;↳ DT-006 · phases/ sin auditar | [↓](#dt-006--phases-sin-auditar) |
-| `219` | &nbsp;&nbsp;↳ DT-010 · El agente session-starter sigue sin adaptar | [↓](#dt-010--el-agente-session-starter-sigue-sin-adaptar) |
-| `244` | &nbsp;&nbsp;↳ DT-009 · El agente session-closer contradice al skill | [↓](#dt-009--el-agente-session-closer-contradice-al-skill) |
-| `279` | &nbsp;&nbsp;↳ DT-008 · El método pierde su nivel operativo | [↓](#dt-008--el-método-pierde-su-nivel-operativo) |
-| `336` | &nbsp;&nbsp;↳ DT-007 · CLAUDE.md no existe | [↓](#dt-007--claudemd-no-existe) |
-| `353` | &nbsp;&nbsp;↳ DT-011 · La cita de A.3 no está verificada del todo | [↓](#dt-011--la-cita-de-a3-no-está-verificada-del-todo) |
-| `385` | &nbsp;&nbsp;↳ DT-012 · tools/mkindex.py puede no escribir de forma atómica | [↓](#dt-012--toolsmkindexpy-puede-no-escribir-de-forma-atómica) |
+| `41` | **Convenciones** | [↓](#convenciones) |
+| `72` | **Tablero** | [↓](#tablero) |
+| `92` | **Detalle** | [↓](#detalle) |
+| `94` | &nbsp;&nbsp;↳ DT-001 · Encabezados de 015_evolution.md sin normalizar | [↓](#dt-001--encabezados-de-015_evolutionmd-sin-normalizar) |
+| `112` | &nbsp;&nbsp;↳ DT-002 · Rutas referenciadas por phases/ que no existen | [↓](#dt-002--rutas-referenciadas-por-phases-que-no-existen) |
+| `132` | &nbsp;&nbsp;↳ DT-003 · Divergencia de nombres en la capa de persistencia | [↓](#dt-003--divergencia-de-nombres-en-la-capa-de-persistencia) |
+| `166` | &nbsp;&nbsp;↳ DT-004 · ADRs pendientes del Anexo A | [↓](#dt-004--adrs-pendientes-del-anexo-a) |
+| `190` | &nbsp;&nbsp;↳ DT-005 · Numeración no correlativa del canónico | [↓](#dt-005--numeración-no-correlativa-del-canónico) |
+| `205` | &nbsp;&nbsp;↳ DT-006 · phases/ sin auditar | [↓](#dt-006--phases-sin-auditar) |
+| `221` | &nbsp;&nbsp;↳ DT-010 · El agente session-starter sigue sin adaptar | [↓](#dt-010--el-agente-session-starter-sigue-sin-adaptar) |
+| `246` | &nbsp;&nbsp;↳ DT-009 · El agente session-closer contradice al skill | [↓](#dt-009--el-agente-session-closer-contradice-al-skill) |
+| `281` | &nbsp;&nbsp;↳ DT-008 · El método pierde su nivel operativo | [↓](#dt-008--el-método-pierde-su-nivel-operativo) |
+| `338` | &nbsp;&nbsp;↳ DT-007 · CLAUDE.md no existe | [↓](#dt-007--claudemd-no-existe) |
+| `355` | &nbsp;&nbsp;↳ DT-011 · La cita de A.3 no está verificada del todo | [↓](#dt-011--la-cita-de-a3-no-está-verificada-del-todo) |
+| `387` | &nbsp;&nbsp;↳ DT-012 · tools/mkindex.py puede no escribir de forma atómica | [↓](#dt-012--toolsmkindexpy-puede-no-escribir-de-forma-atómica) |
+| `415` | &nbsp;&nbsp;↳ DT-013 · progress.md §6 («Mapa de archivos») no incluye _temp/, _phases/ ni _templates/ | [↓](#dt-013--progressmd-6-mapa-de-archivos-no-incluye-_temp-_phases-ni-_templates) |
 
 <!--/INDEX-->
 
@@ -84,6 +85,7 @@ sincronizarlo: sincronizar deja el defecto listo para repetirse.
 | `DT-007` | `CLAUDE.md` no existe; el esquema de dos terminales no está escrito en ninguna parte | Media | `Implementada` |
 | `DT-011` | La cita de `A.3` del Anexo A no está verificada del todo | Baja | `Abierta` |
 | `DT-012` | `tools/mkindex.py` puede no escribir de forma atómica | Media | `Abierta` |
+| `DT-013` | `progress.md` §6 («Mapa de archivos») no incluye `_temp/`, `_phases/` ni `_templates/` | Baja | `Abierta` |
 
 ---
 
@@ -400,3 +402,30 @@ herramienta que genera todos los índices no es un cambio para hacer con prisa n
 **Qué pasa si no se salda.** Riesgo bajo de frecuencia y alto de impacto: la corrida es
 rutinaria y se ejecuta al final de cada sesión, justo cuando el trabajo aún no está
 commiteado y no hay red de `git`.
+
+> 🔑 **Ya ocurrió, dos veces, en `S-005`** — no en `mkindex.py`, sino en un script equivalente
+> escrito ad hoc para editar `tasks.md`. `_persistence/tasks.md` y `_persistence/lessons.md`
+> quedaron truncados a 0 bytes al abrirse en modo escritura antes de que el contenido nuevo
+> estuviera listo; se recuperaron con `git checkout --` porque el árbol estaba commiteado
+> (`L-014`). Confirma el riesgo que esta entrada describe: **la mitigación no es solo para
+> `mkindex.py`**, es para cualquier script que reescriba un archivo de `_persistence/`.
+
+---
+
+### `DT-013` · `progress.md` §6 («Mapa de archivos») no incluye `_temp/`, `_phases/` ni `_templates/`
+
+**Qué se debe.** El árbol de ejemplo en `progress.md` §6 dice estar tomado «tras `D-04` y
+`D-05`» y no lista `_temp/` (nuevo en `S-005`) ni `_phases/` y `_templates/` (aportados por el
+usuario en `S-005`, sin decidir).
+
+**Por qué se aplazó.** Se detectó al cerrar `S-005`. `_phases/` y `_templates/` **no están
+decididos** todavía (ver `T-013`, `D-12`), así que incluirlos en el mapa sería normalizar por
+la puerta de atrás algo que el usuario no ha resuelto. `_temp/` sí existe y es estable
+mientras dure `D-12`, y sí podría añadirse sin ese problema.
+
+**Qué la salda.** Al resolverse `T-013`, actualizar el árbol de §6 completo. Si la resolución
+tarda, se puede añadir `_temp/` de forma aislada antes.
+
+**Qué pasa si no se salda.** Bajo impacto: es un mapa de referencia, no un mecanismo del que
+dependa nada. Pero un mapa que no refleja el árbol real deja de usarse para orientarse, que es
+su único trabajo.

@@ -19,21 +19,22 @@
 
 | Línea | Sección | Ir a |
 |---|---|---|
-| `42` | **Convenciones** | [↓](#convenciones) |
-| `57` | **Tablero** | [↓](#tablero) |
-| `81` | **D-01 · No se editan las fuentes** | [↓](#d-01--no-se-editan-las-fuentes) |
-| `122` | **D-02 · El canónico se amplía sin renumerar** | [↓](#d-02--el-canónico-se-amplía-sin-renumerar) |
-| `171` | &nbsp;&nbsp;↳ Revisión del 2026-08-26 — la decisión sobrevive, su fundamento cambia | [↓](#revisión-del-2026-08-26--la-decisión-sobrevive-su-fundamento-cambia) |
-| `190` | **D-03 · Alcance de la incorporación de 015 §35-§51** | [↓](#d-03--alcance-de-la-incorporación-de-015-35-51) |
-| `274` | **D-04 · Eliminar el directorio phases/** | [↓](#d-04--eliminar-el-directorio-phases) |
-| `311` | **D-05 · Prefijo _ en las carpetas de insumo** | [↓](#d-05--prefijo-_-en-las-carpetas-de-insumo) |
-| `343` | **D-06 · Git + GitHub como sustrato de evidencia** | [↓](#d-06--git--github-como-sustrato-de-evidencia) |
-| `368` | **D-07 · Adaptación de protocol-close a este proyecto** | [↓](#d-07--adaptación-de-protocol-close-a-este-proyecto) |
-| `413` | **D-08 · Una sesión es un bloque de tiempo, no un día** | [↓](#d-08--una-sesión-es-un-bloque-de-tiempo-no-un-día) |
-| `447` | **D-09 · La capa del cómo vive en _guide/GUIDE.md** | [↓](#d-09--la-capa-del-cómo-vive-en-_guideguidemd) |
-| `497` | **D-10 · A.1 sigue en la lista de ADR pendientes** | [↓](#d-10--a1-sigue-en-la-lista-de-adr-pendientes) |
-| `543` | **Decisiones heredadas del brief** | [↓](#decisiones-heredadas-del-brief) |
-| `550` | **D-11 · TA-0018 se salda retirando el estado duplicado, no sincronizándolo** | [↓](#d-11--ta-0018-se-salda-retirando-el-estado-duplicado-no-sincronizándolo) |
+| `43` | **Convenciones** | [↓](#convenciones) |
+| `58` | **Tablero** | [↓](#tablero) |
+| `83` | **D-01 · No se editan las fuentes** | [↓](#d-01--no-se-editan-las-fuentes) |
+| `124` | **D-02 · El canónico se amplía sin renumerar** | [↓](#d-02--el-canónico-se-amplía-sin-renumerar) |
+| `173` | &nbsp;&nbsp;↳ Revisión del 2026-08-26 — la decisión sobrevive, su fundamento cambia | [↓](#revisión-del-2026-08-26--la-decisión-sobrevive-su-fundamento-cambia) |
+| `192` | **D-03 · Alcance de la incorporación de 015 §35-§51** | [↓](#d-03--alcance-de-la-incorporación-de-015-35-51) |
+| `276` | **D-04 · Eliminar el directorio phases/** | [↓](#d-04--eliminar-el-directorio-phases) |
+| `313` | **D-05 · Prefijo _ en las carpetas de insumo** | [↓](#d-05--prefijo-_-en-las-carpetas-de-insumo) |
+| `345` | **D-06 · Git + GitHub como sustrato de evidencia** | [↓](#d-06--git--github-como-sustrato-de-evidencia) |
+| `370` | **D-07 · Adaptación de protocol-close a este proyecto** | [↓](#d-07--adaptación-de-protocol-close-a-este-proyecto) |
+| `415` | **D-08 · Una sesión es un bloque de tiempo, no un día** | [↓](#d-08--una-sesión-es-un-bloque-de-tiempo-no-un-día) |
+| `449` | **D-09 · La capa del cómo vive en _guide/GUIDE.md** | [↓](#d-09--la-capa-del-cómo-vive-en-_guideguidemd) |
+| `499` | **D-10 · A.1 sigue en la lista de ADR pendientes** | [↓](#d-10--a1-sigue-en-la-lista-de-adr-pendientes) |
+| `545` | **Decisiones heredadas del brief** | [↓](#decisiones-heredadas-del-brief) |
+| `552` | **D-11 · TA-0018 se salda retirando el estado duplicado, no sincronizándolo** | [↓](#d-11--ta-0018-se-salda-retirando-el-estado-duplicado-no-sincronizándolo) |
+| `600` | **D-12 · Diseñar el flujo del Descubrimiento en _temp/ antes de normalizarlo** | [↓](#d-12--diseñar-el-flujo-del-descubrimiento-en-_temp-antes-de-normalizarlo) |
 
 <!--/INDEX-->
 
@@ -69,6 +70,7 @@ consecuencias.
 | `D-09` | La capa del «cómo» vive en `_guide/GUIDE.md`, separada de reglas y método | usuario | 2026-08-26 | `Vigente` |
 | `D-10` | `A.1` sigue en la lista de ADR pendientes por consecuencia arquitectónica | usuario | 2026-08-26 | `Vigente` |
 | `D-11` | `TA-0018` se salda retirando el estado duplicado, no sincronizándolo | ejecutora | 2026-08-27 | `Vigente` |
+| `D-12` | Diseñar el flujo del Descubrimiento en `_temp/`, no normativo, antes de repartirlo | usuario | 2026-08-27 | `Vigente` |
 
 **Contexto común de `D-01`, `D-02` y `D-03`.** Las tres eran condición previa para ejecutar
 cualquier tarea de la auditoría [`0001-method`](../../RandomAi_Auditor/audits/0001-method.md)
@@ -592,3 +594,57 @@ y listo para repetirse, que es la salida barata que la regla dura 8 describe par
   donde lo lee `mkindex.py` y donde lo busca cualquiera que abra el archivo.
 
 **Trazas:** `TA-0018` · `L-008` · `DT-009` · `DT-010`
+
+---
+
+## D-12 · Diseñar el flujo del Descubrimiento en `_temp/` antes de normalizarlo
+
+**Decide:** usuario · **Fecha:** 2026-08-27 · **Estado:** `Vigente`
+
+**Contexto.** `TA-0015` está bloqueante: el Descubrimiento no tiene condición de salida
+escrita. Durante `S-005` el usuario aportó dos directorios sin seguimiento en git
+—`_phases/005_discovery.md` y `_templates/_discovery/`— que resultaron ser el `phases/`
+eliminado por `D-04`, y planteó tres objetivos nuevos: que la fase sirva **para cualquier
+proyecto de desarrollo de software**, que sus salidas puedan **generarse con agentes de IA**,
+y que el flujo tenga observabilidad, evaluación, rúbricas y seguridad. El diseño completo
+emergió en conversación —bucle de extracción, trazabilidad al origen, rúbrica del extractor— y
+el usuario declaró explícitamente que todavía no lo entendía del todo.
+
+**Problema.** Ese diseño no cabía en ningún archivo existente sin normalizarlo. Escribirlo en
+el canónico o en `_phases/` lo convierte en norma **antes de que el usuario lo haya
+acordado**, y además obliga a enmendar `D-04` de inmediato, que es una decisión aparte y suya.
+Dejarlo solo en la conversación lo pierde al cerrar la sesión.
+
+**Alternativas.**
+
+| | Opción | Por qué |
+|---|---|---|
+| a | Escribir directo en `000_method.md` y `_phases/` | normaliza un diseño sin acordar, y consume la enmienda de `D-04` antes de tiempo |
+| b | Dejarlo en la conversación | se pierde al cerrar sesión. Es exactamente lo que `CLAUDE.md` advierte sobre el porqué |
+| **c** | **Carpeta `_temp/`, explícitamente no normativa** | **elegida** |
+
+**Decisión.** **(c).** El diseño completo vive en `_temp/005_discovery.md`, marcado como
+archivo de trabajo, hasta que el usuario lo dé por entendido y acordado.
+
+**Razón.** Separa **acordar** de **obligar**. Un documento en `_temp/` se puede citar,
+discutir y corregir sin que nadie pueda invocarlo como norma, y sin gastar decisiones que
+todavía no están tomadas. El coste de escribirlo dos veces es menor que el de normalizar algo
+que después haya que desnormalizar.
+
+**Consecuencias.**
+
+- `_temp/` **no es fuente de verdad y nada la cita.** Ni el canónico, ni `CLAUDE.md`, ni
+  `GUIDE.md`, ni los registros de `_persistence/` dependen de ella.
+- ⚠️ **Riesgo asumido: es una tercera capa que puede envejecer.** Es el defecto de `L-007` y
+  `L-008` —una segunda fuente de verdad diverge sin avisar—. Se acepta **solo porque es
+  temporal y está declarada como tal**; si sobrevive a esta decisión, se convierte en deuda.
+- El propio documento lleva en su §11 el reparto de destino de cada pieza, para que
+  disolverlo sea mecánico y no una segunda interpretación.
+
+**Condición de levantamiento.** Cuando el flujo quede acordado, el contenido se reparte según
+su §11 —canónico, `_phases/`, `_templates/`, `GUIDE.md`, `CLAUDE.md`— y **`_temp/` se
+elimina**. La condición está enunciada sobre el riesgo —que exista una capa no normativa que
+alguien pueda confundir con norma—, no sobre este archivo concreto: **cualquier** contenido
+que quede en `_temp/` cae bajo ella.
+
+**Trazas:** `TA-0015` · `T-013` · `DT-008` · `D-04` · `L-007` · `L-008`

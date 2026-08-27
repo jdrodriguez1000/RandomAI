@@ -4,7 +4,7 @@
 > Cumple la regla de trazabilidad del método (`000_method.md` §47): *nada se construye sin
 > una razón trazable*. Ninguna tarea existe sin origen.
 
-**Última actualización:** 2026-08-26 (S-003)
+**Última actualización:** 2026-08-27 (S-005)
 
 <!--INDEX-->
 
@@ -18,10 +18,10 @@
 | `30` | **Convenciones** | [↓](#convenciones) |
 | `32` | &nbsp;&nbsp;↳ Códigos | [↓](#códigos) |
 | `42` | &nbsp;&nbsp;↳ Estados | [↓](#estados) |
-| `59` | **Tablero — Tareas de auditoría (TA)** | [↓](#tablero--tareas-de-auditoría-ta) |
-| `276` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
-| `291` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
-| `340` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
+| `65` | **Tablero — Tareas de auditoría (TA)** | [↓](#tablero--tareas-de-auditoría-ta) |
+| `295` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
+| `310` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
+| `372` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
 
 <!--/INDEX-->
 
@@ -53,6 +53,12 @@ Cuando exista construcción, las `T-NNN` deberán ser trazables a una Vertical S
 > `Verificada`, y **solo lo asigna la auditora** tras comprobar la evidencia con sus propios
 > ojos (`tasks_audit.md`, regla de verificación). Que aquí figure `Implementada` significa
 > que está lista para verificación, no que esté cerrada.
+>
+> 📌 **La tabla de arriba es el vocabulario de las `T-nnn`.** Las `TA-nnnn` llevan el del
+> tablero de la auditora —`Pendiente`, `En curso`, `Verificada`, `Rechazada`, `Descartada`—
+> porque este archivo es **espejo**, no fuente: traducirlos aquí crearía un segundo
+> vocabulario donde el mismo estado puede divergir (`L-008`). El único estado propio que se
+> escribe sobre una `TA` es `Implementada`, y solo mientras espera verificación.
 
 ---
 
@@ -64,24 +70,26 @@ Origen: [`0001-method`](../../RandomAi_Auditor/audits/0001-method.md)
 |---|---|---|---|---|
 | `TA-0001` | Corregir atribución sobre «Actor Invitado» (§10 y Anexo A.1); retirar `➕` de §10 | Alta | Bloqueante | `Verificada` |
 | `TA-0002` | Incorporar contenido normativo omitido de `015` §35–§48 | Alta | Bloqueante | `Verificada` |
-| `TA-0007` | Añadir «decisión de alcance del prototipo» a las salidas del Descubrimiento (§14) | Alta | Bloqueante | `Implementada` |
+| `TA-0007` | Añadir «decisión de alcance del prototipo» a las salidas del Descubrimiento (§14) | Alta | Bloqueante | `Verificada` |
 | `TA-0003` | Declarar en el Anexo A las omisiones deliberadas de `015` §35–§51 | Alta | No bloqueante | `Verificada` |
-| `TA-0004` | Añadir Anexo A.8: alcance del Prototipo de Evolución | Media | No bloqueante | `Implementada` |
-| `TA-0005` | Corregir la fila «Cuándo» de la tabla §57 | Media | No bloqueante | `Implementada` |
-| `TA-0006` | Reformular §32 de forma agnóstica a la infraestructura | Media | No bloqueante | `Implementada` |
-| `TA-0008` | Registrar en el Anexo A la resolución sobre «Product Baseline» | Baja | No bloqueante | `Implementada` |
+| `TA-0004` | Añadir Anexo A.8: alcance del Prototipo de Evolución | Media | No bloqueante | `Verificada` |
+| `TA-0005` | Corregir la fila «Cuándo» de la tabla §57 | Media | No bloqueante | `Verificada` |
+| `TA-0006` | Reformular §32 de forma agnóstica a la infraestructura | Media | No bloqueante | `Verificada` |
+| `TA-0008` | Registrar en el Anexo A la resolución sobre «Product Baseline» | Baja | No bloqueante | `Verificada` |
 | `TA-0009` | Normalizar encabezados de `015_evolution.md` §35–§51 | Media | No bloqueante | `Descartada` |
 | `TA-0010` | Frases normativas propias entregadas bajo un `↳` sin `➕` ni entrada en Anexo A | Media | No bloqueante | `Verificada` |
 | `TA-0011` | `§17-bis` remite a «Ver Anexo A» para la convención `bis`; el Anexo no la contenía | Media | No bloqueante | `Verificada` |
 | `TA-0012` | La fila «§42 → completa §47» de `D-03` sigue escrita y contradice al canónico | Media | No bloqueante | `Verificada` |
 | `TA-0013` | Doble `↳` consecutivo en cuatro puntos del canónico | Baja | No bloqueante | `Verificada` |
 | `TA-0014` | Marcas `↳` ampliadas que cubren texto anterior no procedente de la fuente nueva | Media | No bloqueante | `Descartada` |
+| `TA-0015` | El Descubrimiento no tiene condición de salida escrita | Alta | **Bloqueante** | `Pendiente` |
+| `TA-0016` | El Gate 1 tiene escala numérica (§24) y ningún umbral | Alta | **Bloqueante** | `Pendiente` |
+| `TA-0017` | Los frenos de los dos agentes viven solo en prosa | Media | No bloqueante | `Pendiente` |
+| `TA-0018` | Estado de deuda duplicado entre tablero y entrada | Media | No bloqueante | `Verificada` |
+| `TA-0019` | La lista de ADR pendientes no se revisó al pasar el Anexo de 7 a 12 | Media | No bloqueante | `Verificada` |
+| `TA-0020` | Estado duplicado que sobrevive en `DT-001` y `DT-005`, en otro formato | Media | No bloqueante | `Pendiente` |
 
-| `TA-0015` | El Descubrimiento no tiene condición de salida escrita | Alta | **Bloqueante** | `No implementada` |
-| `TA-0016` | El Gate 1 tiene escala numérica (§24) y ningún umbral | Alta | **Bloqueante** | `No implementada` |
-| `TA-0017` | Los frenos de los dos agentes viven solo en prosa | Media | No bloqueante | `No implementada` |
-| `TA-0018` | Estado de deuda duplicado entre tablero y entrada | Media | No bloqueante | `Implementada` |
-| `TA-0019` | La lista de ADR pendientes no se revisó al pasar el Anexo de 7 a 12 | Media | No bloqueante | `Implementada` |**`TA-0009` · Razón del descarte:** decisión `D-01` del usuario — las fuentes se conservan
+**`TA-0009` · Razón del descarte:** decisión `D-01` del usuario — las fuentes se conservan
 intactas (`000_method.md:6-7`). El defecto queda documentado en la auditoría y en `DT-001`.
 El traslado a la auditora ya se hizo: su tablero registra `Descartada`
 (`tasks_audit.md:66`, comprobado en `S-004`). ⚠️ **Nota de nomenclatura:** aquí figuró como
@@ -93,7 +101,7 @@ los fija el tablero de la auditora; este archivo es espejo, no fuente.
 qué `A.1` sigue en la lista de ADR pendientes del Anexo A, registrada como `D-10`. La
 auditora asignó el estado de cierre `Verificada` (`tasks_audit.md:59`, comprobado en `S-004`).
 
-**`TA-0002` · Implementada, no `Verificada`.** Ejecutada en `S-004` sobre
+**`TA-0002` · `Verificada`.** Ejecutada en `S-004` sobre
 `000_method.md` (1012 → 1212 líneas). Las 13 secciones de `015` §36–§48 tienen
 contrapartida localizable, más la fusión de `015` §50 en el §4:
 
@@ -119,7 +127,7 @@ Cada bloque incorporado lleva su marca `↳`. No hubo renumeración: `§18`, `§
 **Pendiente de la ejecutora:** ninguna. `TA-0003` quedó implementada en la misma sesión
 `S-004`. El único estado de cierre es `Verificada` y lo asigna la auditora.
 
-**`TA-0010`, `TA-0011`, `TA-0013` · Implementadas, no `Verificadas`.** Origen:
+**`TA-0010`, `TA-0011`, `TA-0013` · `Verificadas`.** Origen:
 auditoría `0002-metodo-ampliado`. Las tres son defectos introducidos por `TA-0002` en la
 misma sesión `S-004`, y se corrigieron en ella:
 
@@ -134,14 +142,14 @@ misma sesión `S-004`, y se corrigieron en ella:
   que el límite del prototipo *debe quedar explícito*, no que sea criterio de aprobación.
   Ese es el hallazgo real: no era decoración, era regla desplazada.
 
-**`TA-0012` · Implementada, no `Verificada`.** El usuario autorizó la enmienda el
+**`TA-0012` · `Verificada`.** El usuario autorizó la enmienda el
 2026-08-27. La fila de `§42` en `D-03` pasa a «Incorporar → `§17-bis`, emparejada con
 §43», con nota de enmienda fechada bajo la tabla (`decisions.md:214, 225`). Se enmienda
 `D-03` en lugar de abrir una `D-11`: una decisión nueva no borra la anterior, y `D-03` es
 la que se cita desde aquí y desde el tablero de la auditora. `D-03` conserva código, fecha
 y estado `Vigente`; el alcance decidido no cambia.
 
-**`TA-0003` · Implementada, no `Verificada`.** Creada la entrada **Anexo A.10** en
+**`TA-0003` · `Verificada`.** Creada la entrada **Anexo A.10** en
 `000_method.md`: qué se omitió de `015` §35–§51 y por qué. Cierra el rango completo —14
 secciones incorporadas al cuerpo + 3 omitidas = §35–§51—, comprobado por script: ninguna
 sección sin resolver, ninguna en dos sitios a la vez.
@@ -201,7 +209,7 @@ citado, no sobre la fuente añadida.
 
 **Devuelto a la auditora** para que resuelva: la ejecutora no cierra sus propias tareas.
 
-**`TA-0007` · Implementada, no `Verificada`.** Última bloqueante del Paso 1. Añadida a
+**`TA-0007` · `Verificada`.** Última bloqueante del Paso 1. Añadida a
 `§14` la quinta salida —**decisión de alcance del prototipo**— y creada `§14.1` con su
 desarrollo. Las tres evidencias:
 
@@ -217,7 +225,7 @@ registra**. Situarla como salida del Descubrimiento es adición del canónico, y
 como tal en vez de entregarla bajo el `↳` de `005 §39 · 015 §45, §47`. Es el defecto que
 la auditoría `0002` encontró en `TA-0002`; esta vez se evitó al escribir, no al corregir.
 
-**`TA-0004`, `TA-0005`, `TA-0006`, `TA-0008` · Implementadas, no `Verificadas`.** Las
+**`TA-0004`, `TA-0005`, `TA-0006`, `TA-0008` · `Verificadas`.** Las
 cuatro no bloqueantes, ejecutadas en `S-004`. **Con esto no queda ninguna `TA` sin
 implementar.**
 
@@ -251,7 +259,7 @@ consolidado. **Las doce `➕` del cuerpo remiten ahora a su entrada.**
 de `§4` contra la fuente añadida en vez de contra el conjunto citado — el mismo defecto que
 su propio hallazgo describía. Lo que valía quedó en `L-011`.
 
-**`TA-0018` · Implementada.** Barridas las doce entradas de `debt_tec.md`, no dos. El
+**`TA-0018` · `Verificada`.** Barridas las doce entradas de `debt_tec.md`, no dos. El
 resultado es más estrecho y más claro que el enunciado: **solo tres entradas tenían campo
 `Estado:` propio, y dos de las tres ya mentían** (`DT-009` y `DT-010` decían `Abierta`
 estando `Implementada`). Las otras nueve nunca lo tuvieron.
@@ -261,11 +269,22 @@ repetirse: es `L-008` —un dato en dos capas diverge, y miente la capa que meno
 propia `debt_tec.md` lo estaba incumpliendo. La severidad y el estado viven ahora en el
 tablero y solo ahí, con la regla escrita en las convenciones del archivo.
 
-**`TA-0019` · Implementada.** Revisadas `A.8`–`A.12`: **ninguna requiere ADR.** Y se escribió
+**`TA-0019` · `Verificada`.** Revisadas `A.8`–`A.12`: **ninguna requiere ADR.** Y se escribió
 en el canónico **el criterio que lo decide**, que hasta ahora era implícito: *¿la decisión
 restringe el diseño del producto, o solo este documento?* Sin criterio escrito, la lista se
 volvería a quedar sin revisar en la siguiente ampliación — que es exactamente lo que pasó.
 `DT-004` sigue `Abierta` con `A.1`, `A.2`, `A.5` y `A.6`, sin cambios.
+
+**`TA-0020` · `Pendiente`, emitida al cierre de `S-004`.** Residuo de `TA-0018`: `DT-001:99`
+y `DT-005:196` conservan el estado en otro formato —la frase suelta «**Estado: Aceptada.**»—
+y el barrido no los vio. Hoy **coinciden** con el tablero, así que no mienten; pero repiten el
+dato, que es lo que la convención escrita en el mismo commit prohíbe.
+
+🔑 **Lo que la auditora señala vale más que las dos líneas:** el barrido buscó un
+**formato**, no el concepto, y un recorrido anclado en cómo está escrito algo declara limpio
+todo lo que se escribió distinto. Pide comprobar si el mismo sesgo afecta a los otros barridos
+de esta ronda —el de las marcas `➕`, el de los `↳` consecutivos—, hechos con la misma
+técnica.
 
 **`DT-008` · corregida, no saldada.** La auditoría `0004` demostró que estaba mal medida:
 cinco de sus ocho puntos están cubiertos, faltan tres —entradas exigidas, condición de salida,
@@ -317,6 +336,12 @@ verificó— con la corrección encima y marcada como dominante. Ver `L-012`.
 | `T-024` | Escribir las plantillas ejecutables de prueba | `D-09` | `Suspendida` |
 | `T-025` | Pedir a la auditora que corra la auditoría del historial público | `D-09` | `No implementada` |
 | `T-022` | Decidir si igualar el modelo de `session-starter` (`haiku`) al de `session-closer` (`sonnet`) | `session-closer` | `No implementada` |
+| `T-026` | Sincronizar el espejo `tasks.md` contra `tasks_audit.md`: 7 `TA` a `Verificada`, alta de `TA-0020`, `TA-0015`–`17` a `Pendiente` | `tasks_audit.md` (auditora) | `Implementada` |
+| `T-027` | Diseñar el flujo de Descubrimiento en `_temp/005_discovery.md`, no normativo | usuario | `Implementada` |
+| `T-028` | Repartir `_temp/005_discovery.md` §11 en `GUIDE.md` (§9 + tres exclusiones de §0 caducadas) | `_temp/005_discovery.md` §11 | `No implementada` |
+| `T-029` | Actualizar `_phases/005_discovery.md` (rutas, 5ª salida, referencia a la condición de salida) | `_temp/005_discovery.md` §11 | `No implementada` |
+| `T-030` | Actualizar `_templates/_discovery/` (campo `origen` + plantilla de B3) | `_temp/005_discovery.md` §11 | `No implementada` |
+| `T-031` | Correr el flujo de Descubrimiento sobre el brief de RandomAI como primer caso de referencia | `_temp/005_discovery.md` §12 | `No implementada` |
 
 **`T-006` y `T-008` · Razón de cancelación:** decisión `D-04`. Ambas existían únicamente para
 servir a `phases/`; sin ese directorio no tienen objeto. Ver `DT-002` y `DT-003`, ambas
@@ -328,6 +353,13 @@ de la guía en el lenguaje elegido, y se amplía la tabla de «qué nunca sube a
 
 **`T-013`** no bloquea las tareas de auditoría en curso, pero **sí bloqueará la apertura de la
 fase de Descubrimiento**. Requiere decisión del usuario entre las tres opciones de `DT-008`.
+
+**`T-028`, `T-029`, `T-030`, `T-031` — bloqueadas por dos decisiones del usuario**, según el
+orden de `_temp/005_discovery.md` §12: (1) quién declara el cierre del Descubrimiento
+(`TA-0015`), y (2) si se enmienda `D-04` para readmitir `_phases/` y `_templates/` (`T-013`).
+`_phases/` y `_templates/` existen ya en el árbol de trabajo, sin seguimiento previo, pero
+**no están decididos**: son el `phases/` que `D-04` eliminó, y su readmisión revive
+literalmente `DT-003` si no se resuelve antes (`_temp/005_discovery.md` §10).
 
 **`T-022`** — detectada al cierre de `S-001`: `session-starter.md` declara `model: haiku` y
 `session-closer.md` declara `model: sonnet` (`.claude/agents/`, línea 5 de cada uno). El
@@ -346,9 +378,21 @@ TA-0001 (Verificada) → TA-0002 (+TA-0003) → TA-0007
    ↓
 TA-0004 · TA-0005 · TA-0006 (T-007 ya hecha) · TA-0008
    ↓
-Verificación por la auditora
+Verificación por la auditora  — hasta aquí, todo Verificada
    ↓
-T-013  (decisión del usuario sobre DT-008)
+TA-0015                 (bloqueante: quién declara el cierre del Descubrimiento)
+T-013                   (bloqueante: ¿se enmienda D-04 para readmitir _phases/ y _templates/?)
+   ↓
+T-028  GUIDE.md         (§9 + tres exclusiones de §0 caducadas)
+T-029  _phases/005_discovery.md
+T-030  _templates/_discovery/
+TA-0016                 (umbral del Gate 1, bloqueante aparte)
+   ↓
+TA-0017 · TA-0020       (no bloqueantes)
+T-031  correr el flujo sobre este brief (primer caso de referencia)
    ↓
 Fase 005_discovery
 ```
+
+Orden completo, con su razón, en `_temp/005_discovery.md` §12 (documento de trabajo, no
+normativo).
