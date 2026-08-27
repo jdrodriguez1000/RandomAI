@@ -19,22 +19,23 @@
 
 | Línea | Sección | Ir a |
 |---|---|---|
-| `43` | **Convenciones** | [↓](#convenciones) |
-| `58` | **Tablero** | [↓](#tablero) |
-| `83` | **D-01 · No se editan las fuentes** | [↓](#d-01--no-se-editan-las-fuentes) |
-| `124` | **D-02 · El canónico se amplía sin renumerar** | [↓](#d-02--el-canónico-se-amplía-sin-renumerar) |
-| `173` | &nbsp;&nbsp;↳ Revisión del 2026-08-26 — la decisión sobrevive, su fundamento cambia | [↓](#revisión-del-2026-08-26--la-decisión-sobrevive-su-fundamento-cambia) |
-| `192` | **D-03 · Alcance de la incorporación de 015 §35-§51** | [↓](#d-03--alcance-de-la-incorporación-de-015-35-51) |
-| `276` | **D-04 · Eliminar el directorio phases/** | [↓](#d-04--eliminar-el-directorio-phases) |
-| `313` | **D-05 · Prefijo _ en las carpetas de insumo** | [↓](#d-05--prefijo-_-en-las-carpetas-de-insumo) |
-| `345` | **D-06 · Git + GitHub como sustrato de evidencia** | [↓](#d-06--git--github-como-sustrato-de-evidencia) |
-| `370` | **D-07 · Adaptación de protocol-close a este proyecto** | [↓](#d-07--adaptación-de-protocol-close-a-este-proyecto) |
-| `415` | **D-08 · Una sesión es un bloque de tiempo, no un día** | [↓](#d-08--una-sesión-es-un-bloque-de-tiempo-no-un-día) |
-| `449` | **D-09 · La capa del cómo vive en _guide/GUIDE.md** | [↓](#d-09--la-capa-del-cómo-vive-en-_guideguidemd) |
-| `499` | **D-10 · A.1 sigue en la lista de ADR pendientes** | [↓](#d-10--a1-sigue-en-la-lista-de-adr-pendientes) |
-| `545` | **Decisiones heredadas del brief** | [↓](#decisiones-heredadas-del-brief) |
-| `552` | **D-11 · TA-0018 se salda retirando el estado duplicado, no sincronizándolo** | [↓](#d-11--ta-0018-se-salda-retirando-el-estado-duplicado-no-sincronizándolo) |
-| `600` | **D-12 · Diseñar el flujo del Descubrimiento en _temp/ antes de normalizarlo** | [↓](#d-12--diseñar-el-flujo-del-descubrimiento-en-_temp-antes-de-normalizarlo) |
+| `44` | **Convenciones** | [↓](#convenciones) |
+| `59` | **Tablero** | [↓](#tablero) |
+| `85` | **D-01 · No se editan las fuentes** | [↓](#d-01--no-se-editan-las-fuentes) |
+| `126` | **D-02 · El canónico se amplía sin renumerar** | [↓](#d-02--el-canónico-se-amplía-sin-renumerar) |
+| `175` | &nbsp;&nbsp;↳ Revisión del 2026-08-26 — la decisión sobrevive, su fundamento cambia | [↓](#revisión-del-2026-08-26--la-decisión-sobrevive-su-fundamento-cambia) |
+| `194` | **D-03 · Alcance de la incorporación de 015 §35-§51** | [↓](#d-03--alcance-de-la-incorporación-de-015-35-51) |
+| `278` | **D-04 · Eliminar el directorio phases/** | [↓](#d-04--eliminar-el-directorio-phases) |
+| `321` | **D-05 · Prefijo _ en las carpetas de insumo** | [↓](#d-05--prefijo-_-en-las-carpetas-de-insumo) |
+| `353` | **D-06 · Git + GitHub como sustrato de evidencia** | [↓](#d-06--git--github-como-sustrato-de-evidencia) |
+| `378` | **D-07 · Adaptación de protocol-close a este proyecto** | [↓](#d-07--adaptación-de-protocol-close-a-este-proyecto) |
+| `423` | **D-08 · Una sesión es un bloque de tiempo, no un día** | [↓](#d-08--una-sesión-es-un-bloque-de-tiempo-no-un-día) |
+| `457` | **D-09 · La capa del cómo vive en _guide/GUIDE.md** | [↓](#d-09--la-capa-del-cómo-vive-en-_guideguidemd) |
+| `507` | **D-10 · A.1 sigue en la lista de ADR pendientes** | [↓](#d-10--a1-sigue-en-la-lista-de-adr-pendientes) |
+| `553` | **Decisiones heredadas del brief** | [↓](#decisiones-heredadas-del-brief) |
+| `560` | **D-11 · TA-0018 se salda retirando el estado duplicado, no sincronizándolo** | [↓](#d-11--ta-0018-se-salda-retirando-el-estado-duplicado-no-sincronizándolo) |
+| `608` | **D-12 · Diseñar el flujo del Descubrimiento en _temp/ antes de normalizarlo** | [↓](#d-12--diseñar-el-flujo-del-descubrimiento-en-_temp-antes-de-normalizarlo) |
+| `688` | **D-13 · Readmitir _phases/ y _templates/, limitados a la fase en curso** | [↓](#d-13--readmitir-_phases-y-_templates-limitados-a-la-fase-en-curso) |
 
 <!--/INDEX-->
 
@@ -71,6 +72,7 @@ consecuencias.
 | `D-10` | `A.1` sigue en la lista de ADR pendientes por consecuencia arquitectónica | usuario | 2026-08-26 | `Vigente` |
 | `D-11` | `TA-0018` se salda retirando el estado duplicado, no sincronizándolo | ejecutora | 2026-08-27 | `Vigente` |
 | `D-12` | Diseñar el flujo del Descubrimiento en `_temp/`, no normativo, antes de repartirlo | usuario | 2026-08-27 | `Vigente` |
+| `D-13` | Readmitir `_phases/` y `_templates/`, limitados a la fase que se esté ejecutando | usuario | 2026-08-27 | `Vigente` |
 
 **Contexto común de `D-01`, `D-02` y `D-03`.** Las tres eran condición previa para ejecutar
 cualquier tarea de la auditoría [`0001-method`](../../RandomAi_Auditor/audits/0001-method.md)
@@ -306,7 +308,13 @@ salida, qué registra en la capa de persistencia y qué entrega al Gate siguient
   condiciones de salida, qué está prohibido en cada fase, qué se entrega al Gate. Al abrir la
   fase de Descubrimiento no habrá procedimiento escrito.
 
-**Trazas:** `DT-002` · `DT-003` · `DT-006` · `DT-008` · `T-006` · `T-008` · `TA-0007` · `L-006`
+✏️ **Enmendada el 2026-08-27 por `D-13`.** La eliminación se mantiene en lo esencial —el
+`phases/` de ocho fases no vuelve—, pero se **readmite el operativo de la fase que se esté
+ejecutando**, hoy solo el Descubrimiento. `D-04` deja de leerse como «no existe directorio
+operativo» y pasa a leerse como «no existe operativo de fases que no se han abierto». Ver
+`D-13` y `RES-012`.
+
+**Trazas:** `DT-002` · `DT-003` · `DT-006` · `DT-008` · `T-006` · `T-008` · `TA-0007` · `L-006` · `D-13`
 
 ---
 
@@ -641,6 +649,26 @@ que después haya que desnormalizar.
   redacción original decía «nada la cita», que era falso en el mismo commit que la escribió.
   La distinción que vale es entre **citable** e **invocable como norma**, no entre citada y no
   citada.)*
+- 📌 **Qué pasa con esas cuatro tareas cuando `_temp/` se elimine** *(escrito el 2026-08-27,
+  evidencia 2 de `TA-0022`)*. No es una elección entre ejecutarlas antes o reasignar su origen:
+  cada una cae de un lado por lo que hace, y el orden lo fija la propia condición de
+  levantamiento.
+  - **`T-028`, `T-029` y `T-030` se ejecutan antes del borrado, por construcción.** Son el
+    reparto de §11. El borrado no es un evento independiente que pueda adelantárseles: es su
+    **consecuencia**. Si `_temp/` ha desaparecido, es porque ya se ejecutaron.
+  - **`T-031` y `SUP-009` sí sobreviven al borrado, y su origen se reasigna.** `T-031` no
+    reparte el flujo: lo **consume** —correr el Descubrimiento sobre el brief—, y su origen es
+    §12, no §11. `SUP-009` se funda en el flujo, no en el archivo. Cuando el reparto se
+    complete, el origen de ambos pasa a los destinos que absorban el flujo —`_phases/005_discovery.md`,
+    `_templates/_discovery/` y `GUIDE.md` §9—, y esa reasignación se escribe **en el mismo
+    commit que borra `_temp/`**. Aplazarla deja dos registros apuntando a un archivo que ya no
+    existe.
+  - ⚠️ **El caso que rompe el orden.** Si `T-013` resuelve **no** readmitir `_phases/` y
+    `_templates/`, `T-029` y `T-030` se quedan sin destino y el reparto de §11 no se puede
+    completar. Entonces **`_temp/` no se borra**: la condición de levantamiento no se cumple
+    mientras quede contenido sin destino al que ir. Borrar igualmente perdería el diseño, que
+    es exactamente lo que la alternativa (b) descartó.
+
 - ⚠️ **Riesgo asumido: es una tercera capa que puede envejecer.** Es el defecto de `L-007` y
   `L-008` —una segunda fuente de verdad diverge sin avisar—. Se acepta **solo porque es
   temporal y está declarada como tal**; si sobrevive a esta decisión, se convierte en deuda.
@@ -654,3 +682,83 @@ alguien pueda confundir con norma—, no sobre este archivo concreto: **cualquie
 que quede en `_temp/` cae bajo ella.
 
 **Trazas:** `TA-0015` · `T-013` · `DT-008` · `D-04` · `L-007` · `L-008`
+
+---
+
+## D-13 · Readmitir `_phases/` y `_templates/`, limitados a la fase en curso
+
+**Decide:** usuario · **Fecha:** 2026-08-27 · **Estado:** `Vigente` · **Enmienda `D-04`**
+
+**Contexto.** `D-04` eliminó `phases/` (8 archivos, ~88 KB) y con ello el nivel operativo del
+método: `000_method.md` dice **qué** es cada fase, `phases/` era lo único que decía **cómo**
+ejecutarla. El hueco quedó como `DT-008`, severidad Alta, con `T-013` para saldarlo. En `S-005`
+el usuario aportó `_phases/` y `_templates/`, que resultaron ser la parte de Descubrimiento de
+aquel directorio. Quedaron **seguidos por git sin decisión** (`TA-0021`), estado que no podía
+sostenerse: o se enmendaba `D-04`, o tocaba `git rm --cached`.
+
+**Problema.** Readmitir el directorio entero reintroduce lo que `D-04` retiró, incluyendo el
+operativo de siete fases que no se han abierto — documentos que nadie ha auditado, escritos
+antes de saber qué necesita cada fase, y que envejecerían sin que nadie los mirase hasta que
+llegara su turno.
+
+**Alternativas.**
+
+| | Opción | Por qué |
+|---|---|---|
+| a | Reconstruir el operativo dentro de `000_method.md` | engorda el canónico y choca con `RES-007` si obliga a numerar |
+| b | Readmitir `_phases/` y `_templates/` **completos** | devuelve siete fases sin auditar y sin necesidad demostrada |
+| c | Operar sin procedimiento escrito | coste cero hoy, pero las condiciones de salida dejan de ser verificables — y eso es justo lo que `TA-0015` tiene abierto y **bloqueante** |
+| **d** | **Readmitirlos, limitados a la fase que se esté ejecutando** | **elegida** |
+
+**Decisión.** **(d).** `_phases/` y `_templates/` se readmiten como directorios legítimos del
+repo y quedan seguidos por git. **Solo contienen el operativo de la fase abierta o ya
+alcanzada.** Hoy eso es el Descubrimiento y nada más. El operativo de cada fase posterior se
+escribe **al abrir esa fase**, no antes.
+
+**Razón.** Es la opción (b) sin su defecto. Recupera exactamente lo que `DT-008` reclamaba
+—entradas exigidas, condición de salida y entrega al Gate, que `_phases/005_discovery.md`
+cubre en sus §3, §6 y §8— sin readmitir siete documentos cuya necesidad nadie ha comprobado.
+Y respeta la regla que gobierna todo el proyecto: **no se construye lo que todavía no se
+entiende** (`000_method.md` §2). Escribir hoy el operativo de la Arquitectura sería exactamente
+eso.
+
+🔑 **Lo que decide entre (b) y (d) no es el ahorro de trabajo, es de quién es la autoridad.**
+Un documento operativo escrito antes de abrir su fase se convierte en norma sin que nadie haya
+decidido que lo fuera — es el mismo defecto que `D-12` evita con `_temp/`, un escalón más
+arriba.
+
+**Verificación previa** (corrida el 2026-08-27, no recordada):
+
+- `find _phases _templates -type f` devuelve **6 archivos, 1121 líneas**: `005_discovery.md` y
+  cinco plantillas de `_discovery/`. **No hay ninguna otra fase.** Lo aportado ya venía
+  restringido; la decisión lo hace explícito y vinculante hacia adelante.
+- `git ls-files` los devuelve los 6: están seguidos desde `S-005`.
+- `git log --all --diff-filter=D -- 'phases/*'` no devuelve nada: **`phases/` nunca llegó a
+  git**, porque `D-04` lo eliminó antes de que `T-015` inicializara el repositorio. ⚠️ **Estos
+  6 archivos son la única copia que existe de esa parte, y no hay original contra el que
+  comparar qué quedó fuera.**
+
+**Consecuencias.**
+
+- **`T-013` queda resuelta.** Su enunciado —«resolver el hueco operativo tras eliminar
+  `phases/`»— tiene ya respuesta escrita.
+- **`DT-008` se salda para el Descubrimiento, no para el resto.** Los tres puntos que le
+  quedaban vivos están cubiertos por `_phases/005_discovery.md` §3, §6 y §8. El hueco de las
+  demás fases **deja de ser deuda y pasa a ser aplazamiento deliberado**, gobernado por
+  `RES-012`.
+- **`TA-0021` queda ejecutable.** Los registros que dicen «no están decididos» en presente ya
+  no son ciertos y deben reescribirse. Ya no procede `git rm --cached`.
+- **`T-029` y `T-030` recuperan su destino**, y con ellas el reparto de `_temp/` §11 y el
+  borrado que exige la condición de levantamiento de `D-12`.
+- ⚠️ **Riesgo asumido: entra contenido sin auditar.** Los 6 archivos son material que `D-04`
+  retiró y que nadie ha revisado desde entonces — el riesgo que `DT-006` registraba antes de
+  descartarse. Se acepta porque el volumen es abarcable (1121 líneas) y porque `T-029` y
+  `T-030` van a reescribirlos contra el diseño de `_temp/005_discovery.md` §11. **Ya hay un
+  defecto localizado:** `_phases/005_discovery.md` §7 escribe en `_memory/`, ruta que no
+  existe (era `DT-003`).
+
+**Condición de levantamiento.** Ninguna sobre la readmisión. La restricción de alcance
+(`RES-012`) se levanta **por fase y de una en una**: cada fase deja de estar restringida
+cuando se abre.
+
+**Trazas:** `D-04` · `DT-008` · `T-013` · `TA-0021` · `RES-012` · `D-12` · `T-029` · `T-030`

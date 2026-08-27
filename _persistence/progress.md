@@ -7,7 +7,7 @@
 > **Lo escribe `session-closer` al cerrar cada sesión**, desde la evidencia del repositorio.
 > La sección `Dónde estamos` puede actualizarla la sesión principal durante el trabajo.
 
-**Última actualización:** 2026-08-27 (S-005)
+**Última actualización:** 2026-08-27 (S-006)
 
 <!--INDEX-->
 
@@ -19,13 +19,13 @@
 | Línea | Sección | Ir a |
 |---|---|---|
 | `34` | **1. Dónde estamos** | [↓](#1-dónde-estamos) |
-| `67` | **2. Por qué no hemos empezado a construir** | [↓](#2-por-qué-no-hemos-empezado-a-construir) |
-| `79` | **3. Sesiones** | [↓](#3-sesiones) |
-| `89` | &nbsp;&nbsp;↳ Tablero de sesiones | [↓](#tablero-de-sesiones) |
-| `99` | &nbsp;&nbsp;↳ Detalle de sesiones | [↓](#detalle-de-sesiones) |
-| `295` | **4. Qué sigue** | [↓](#4-qué-sigue) |
-| `326` | **5. Lo que bloqueará el arranque real del Descubrimiento** | [↓](#5-lo-que-bloqueará-el-arranque-real-del-descubrimiento) |
-| `342` | **6. Mapa de archivos de persistencia** | [↓](#6-mapa-de-archivos-de-persistencia) |
+| `73` | **2. Por qué no hemos empezado a construir** | [↓](#2-por-qué-no-hemos-empezado-a-construir) |
+| `85` | **3. Sesiones** | [↓](#3-sesiones) |
+| `95` | &nbsp;&nbsp;↳ Tablero de sesiones | [↓](#tablero-de-sesiones) |
+| `106` | &nbsp;&nbsp;↳ Detalle de sesiones | [↓](#detalle-de-sesiones) |
+| `343` | **4. Qué sigue** | [↓](#4-qué-sigue) |
+| `379` | **5. Lo que bloqueará el arranque real del Descubrimiento** | [↓](#5-lo-que-bloqueará-el-arranque-real-del-descubrimiento) |
+| `400` | **6. Mapa de archivos de persistencia** | [↓](#6-mapa-de-archivos-de-persistencia) |
 
 <!--/INDEX-->
 
@@ -38,7 +38,7 @@
 | **Fase del método** | *Ninguna todavía* — pre-Descubrimiento |
 | **Etapa real** | Diseño (no normativo) del flujo de Descubrimiento, en paralelo a la auditoría |
 | **Producto** | Sin construir. Cero líneas de código de aplicación |
-| **Bloqueo activo** | Espejo de tareas sincronizado con la auditora (22 filas de cada lado, cero discrepancias, comprobado por script), incluidas `TA-0021` y `TA-0022` de la auditoría `0005-cierre-s005`. Quedan **dos decisiones del usuario** bloqueando el paso siguiente: (1) quién declara el cierre del Descubrimiento — `TA-0015`, ahora con **tres** opciones —, y (2) si se enmienda `D-04` para readmitir `_phases/` y `_templates/` — `T-013` |
+| **Bloqueo activo** | Espejo de tareas sincronizado con la auditora (**23** filas de cada lado, cero discrepancias, comprobado por conteo en `S-006`), incluida `TA-0023` del addendum de `0005-cierre-s005`. Queda **una decisión del usuario** bloqueando el paso siguiente: quién declara el cierre del Descubrimiento — `TA-0015`, con **dos** opciones disponibles y una vía posible aún sin comprobar. `T-013` se resolvió el 2026-08-27 (`D-13`: `_phases/` y `_templates/` readmitidos, limitados a la fase en curso por `RES-012`) |
 
 **Situación en una frase:** `S-005` tuvo dos tramos del mismo bloque de tiempo (`D-08`). En el
 primero, el espejo `tasks.md` quedó sincronizado con el tablero de la auditora (20 tareas de
@@ -54,13 +54,19 @@ enmendar `D-04`. En el segundo tramo, tras el primer cierre, la auditora emitió
 `0005-cierre-s005` con dos hallazgos sobre ese mismo cierre —`_phases/`/`_templates/`
 seguidos por git sin decisión (`TA-0021`) y la consecuencia de `D-12` que negaba lo que su
 propio commit demostraba (`TA-0022`)—, ambos comprobados de forma independiente y aceptados:
-el espejo se dio de alta (22 filas de cada lado), la consecuencia de `D-12` se enmendó con
+el espejo se dio de alta (22 filas de cada lado **en ese momento**), la consecuencia de `D-12` se enmendó con
 nota fechada, y `DT-013` se amplió de tres directorios a cuatro (`_guide/` también falta del
-mapa de §6, sin relación con `T-013`). La auditora aportó además una tercera opción para
-`TA-0015` — un criterio mecánico, comprobable sin interpretar, que pueda declarar cualquiera,
-sin meterla a ella en el camino crítico — cuya viabilidad depende de auditar
-`_temp/005_discovery.md` §8 y §9, todavía **sin auditar**. Sigue pendiente el traslado a la
-auditora del desfase de `TA-0009` (`RES-009`).
+mapa de §6, sin relación con `T-013`). La auditora aportó además, para `TA-0015`, una **vía
+posible** —no una tercera opción—: un criterio mecánico, comprobable sin interpretar, que
+pueda declarar cualquiera sin meterla a ella en el camino crítico. Es una hipótesis suya
+**sin comprobar**, propuesta sin haber leído `_temp/005_discovery.md` §8 y §9; solo será una
+opción si esa auditoría demuestra que tal criterio existe. En `S-006` la propia auditora
+advierte que ese documento sigue **entero** sin auditar, no solo §8 y §9.
+
+**Saneamiento de este bloque (`S-006`, `TA-0023`).** Se retiraron cuatro afirmaciones en
+presente que los tableros desmentían o dejaban cortas —entre ellas un traslado a la auditora
+sobre `TA-0009` que ya no había que hacer, y que el reporte de arranque venía sirviendo como
+estado vigente. El barrido y su método están en `L-015`.
 
 ---
 
@@ -95,6 +101,7 @@ fila en el tablero y una entrada en el detalle**, y las dos se escriben juntas. 
 | `S-003` | 2026-08-26 | `TA-0001` ejecutada: corregida la atribución de fuentes sobre el Actor Invitado en `000_method.md` (§10 y Anexo A.1), con justificación añadida sobre por qué `A.1` sigue como ADR pendiente (`D-10`) |
 | `S-004` | 2026-08-27 | Paso 1 de la auditoría cerrado: `TA-0002`, `TA-0003`, `TA-0007` implementadas. Ejecutadas además `TA-0004`–`TA-0006`, `TA-0008`, `TA-0010`–`TA-0013`, `TA-0018`, `TA-0019`. `TA-0014` descartada por la auditora. `DT-008` corregida (no saldada). Emiten `TA-0015`, `TA-0016` (bloqueantes) y `TA-0017` |
 | `S-005` | 2026-08-27 | Espejo `tasks.md` sincronizado con el tablero de la auditora (7 `TA` a `Verificada`, alta de `TA-0020`, `TA-0015`–`17` a `Pendiente`). Diseñado en `_temp/005_discovery.md` (no normativo) el flujo completo del Descubrimiento (`D-12`). Aparecieron sin seguimiento `_phases/` y `_templates/`, el `phases/` de `D-04`, sin decidir su readmisión. Tras el primer cierre, auditoría `0005-cierre-s005` (`TA-0021`, `TA-0022`) aceptada y reparada; tercera opción sobre la mesa para `TA-0015` |
+| `S-006` | 2026-08-27 | `TA-0023` ejecutada (addendum de `0005-cierre-s005`): barrido íntegro del bloque vivo de `progress.md`, cuatro afirmaciones corregidas, no una (`L-015`). Espejo `tasks.md` a 23/23 sin discrepancias. Evidencia 2 de `TA-0022` escrita en `D-12` (orden de `T-028`–`T-031` frente al borrado de `_temp/`). `D-13` (usuario): `_phases/` y `_templates/` readmitidos, limitados a la fase en curso (`RES-012`); `T-013` `Implementada`, `DT-008` `Implementada` para el Descubrimiento. `DT-014` nueva: los 6 archivos readmitidos citan 35 rutas que no existen, revive `DT-003` |
 
 ### Detalle de sesiones
 
@@ -292,6 +299,47 @@ opciones) y si se enmienda `D-04` para readmitir `_phases/` y `_templates/` (`T-
 
 ---
 
+#### `S-006` — 2026-08-27
+
+**Fase del método:** ninguna todavía — pre-Descubrimiento. Sigue sin abrirse.
+
+**Qué quedó hecho** (según el diff):
+
+- **`TA-0023` ejecutada** (addendum de la auditoría `0005-cierre-s005`, hallazgo aceptado): el
+  bloque vivo de `progress.md` afirmaba en presente un traslado pendiente sobre `TA-0009` que
+  ya no existía como tal. El barrido no se limitó a esa frase: delimitó todo el bloque vivo
+  (§1, §4, §5, §6) por su tiempo verbal y verificó cada proposición contra su fuente
+  autoritativa. Encontró **cuatro** afirmaciones falsas o incompletas, no una: el traslado de
+  `TA-0009` ya resuelto, el espejo declarado «22 de cada lado» cuando la auditora ya tenía 23,
+  `TA-0015` presentada con «tres opciones» cuando la tercera es una hipótesis sin comprobar, y
+  la lista de pendientes que omitía `TA-0023` misma. El método del barrido queda en `L-015`,
+  con nota de reincidencia sobre patrón de escritura de archivos añadida a `L-014`.
+- **Espejo `_persistence/tasks.md` verificado 23/23** contra
+  `RandomAi_Auditor/audits/tasks_audit.md`, cero discrepancias; alta de `TA-0023`.
+- **Evidencia 2 de `TA-0022`** escrita en `D-12` → *Consecuencias*: el orden entre
+  `T-028`–`T-030` (preceden al borrado de `_temp/`, son el reparto) y `T-031`/`SUP-009`
+  (sobreviven, su origen se reasigna en el mismo commit que borra), más el caso que rompía el
+  orden si `T-013` no readmitía `_phases/`/`_templates/`. Reflejado en `tasks.md` y en
+  `assumptions.md` → `SUP-009`.
+- **`DT-013`**: enunciado corregido de tres a cuatro directorios (ya lo traía la ampliación de
+  `S-005`, quedó sin unificar en el enunciado hasta hoy).
+- **`D-13` (decisión del usuario):** readmitir `_phases/` y `_templates/`, limitados a la fase
+  que se esté ejecutando — hoy solo el Descubrimiento. Enmienda `D-04` con nota fechada.
+  `T-013` pasa a `Implementada`; `DT-008` pasa a `Implementada`, con alcance restringido al
+  Descubrimiento. Nueva restricción `RES-012`: el operativo de una fase no se escribe antes de
+  abrir esa fase.
+- **`DT-014` nueva:** los 6 archivos readmitidos por `D-13` citan 35 rutas que no existen
+  (`_memory/`, `phases/`, `templates/`, `tech-debt.md`) — revive `DT-003`, que quedó
+  `Descartada` sobre un objeto que ya no existía, no sobre el defecto.
+
+**Siguiente paso concreto.** Queda una sola decisión del usuario bloqueando el Descubrimiento:
+quién declara su cierre (`TA-0015`, dos opciones disponibles — auditora o ejecutora — más una
+vía posible sin comprobar). Junto a eso, saldar `DT-014` amplía el alcance de `T-029` a las
+rutas de las plantillas y probablemente exige ampliar `T-030` o abrir tarea aparte para las
+cinco plantillas de `_templates/_discovery/`.
+
+---
+
 ## 4. Qué sigue
 
 **Paso 1 de la auditoría — cerrado:** `TA-0001`, `TA-0002`, `TA-0003`, `TA-0007` `Verificada`.
@@ -299,22 +347,27 @@ opciones) y si se enmienda `D-04` para readmitir `_phases/` y `_templates/` (`T-
 **Paso 2, no bloqueantes — cerrado:** `TA-0004`–`TA-0006`, `TA-0008`, `TA-0010`–`TA-0013`,
 `TA-0018`, `TA-0019` `Verificada`. `TA-0014` `Descartada` por la auditora.
 
-**Pendiente, bloqueante para el Descubrimiento — dos decisiones del usuario, según el orden
-de `_temp/005_discovery.md` §12:**
+**Pendiente, bloqueante para el Descubrimiento — una decisión del usuario**, según el orden
+de `_temp/005_discovery.md` §12 (la segunda, `T-013`, se resolvió el 2026-08-27 por `D-13`):
 
 1. **Quién declara el cierre del Descubrimiento** (`TA-0015`; recomendación del documento de
-   trabajo: la auditora, por §6 del canónico). Hay **tres** opciones sobre la mesa: la
-   auditora, la ejecutora, o un criterio mecánico comprobable sin interpretar que pueda
-   declarar cualquiera (aportada por la auditora en `0005-cierre-s005`). Esta tercera depende
-   de auditar `_temp/005_discovery.md` §8 y §9, todavía sin auditar.
-2. **Si se enmienda `D-04`** para readmitir `_phases/` y `_templates/` (`T-013`) — sin esto no
-   se puede avanzar en el reparto del diseño hacia sus archivos definitivos, y es de lo que
-   cuelga el arreglo de fondo de `TA-0021`.
+   trabajo: la auditora, por §6 del canónico). Hay **dos** opciones disponibles: la auditora o
+   la ejecutora. Existe además una **vía posible**, que no es todavía una opción: un criterio
+   mecánico comprobable sin interpretar que pueda declarar cualquiera (aportada por la
+   auditora en `0005-cierre-s005`). ⚠️ Es una hipótesis **sin comprobar** —se propuso sin
+   haber leído `_temp/005_discovery.md` §8 y §9—, y solo pasa a ser opción si la auditoría de
+   ese documento demuestra que tal criterio existe. Presentarla al usuario al mismo nivel que
+   las otras dos le da un peso que no tiene.
+2. ✅ **`T-013` — resuelta el 2026-08-27 por `D-13`.** El usuario eligió una **cuarta** opción
+   sobre las tres de `DT-008`: readmitir `_phases/` y `_templates/` **limitados a la fase que
+   se esté ejecutando** (`RES-012`) — hoy solo el Descubrimiento. Desbloquea `T-029` y `T-030`,
+   deja `TA-0021` ejecutable y salda `DT-008` para esta fase. ⚠️ Trae `DT-014`: los 6 archivos
+   readmitidos citan **35 rutas que no existen**.
 
 `TA-0016` (umbral del Gate 1) queda como bloqueante aparte, más adelante en el orden.
-`TA-0017`, `TA-0020`, `TA-0021` y `TA-0022` (no bloqueantes) siguen `Pendiente`.
+`TA-0017`, `TA-0020`, `TA-0021`, `TA-0022` y `TA-0023` (no bloqueantes) siguen `Pendiente`.
 
-**Después de esas dos decisiones:** repartir `_temp/005_discovery.md` según su §11 —
+**Después de esa decisión:** repartir `_temp/005_discovery.md` según su §11 —
 `GUIDE.md` (§9 + tres exclusiones de §0 caducadas), `_phases/005_discovery.md`,
 `_templates/_discovery/`—, resolver `TA-0016`, y solo entonces correr el flujo completo sobre
 el brief de RandomAI como primer caso de referencia.
@@ -325,17 +378,22 @@ el brief de RandomAI como primer caso de referencia.
 
 ## 5. Lo que bloqueará el arranque real del Descubrimiento
 
-**`DT-008` — corregida en `S-004`, no saldada.** El hueco medido ya no son ocho puntos: son
-tres — **entradas exigidas**, **condición de salida** y **entrega al Gate** —, que es lo que
-emite `TA-0015` y `TA-0016`. Su premisa original (el Gate 1 se declararía sin criterio
-operativo) quedó comprobada como falsa: §29, §29.1, §30, §31, §32 y §19–§27 dan a esa fase más
-nivel operativo del que `phases/` daba.
+**`DT-008` — corregida en `S-004`, `Implementada` para el Descubrimiento desde el 2026-08-27
+(`D-13`).** El hueco medido ya no son ocho puntos: son tres — **entradas exigidas**,
+**condición de salida** y **entrega al Gate** —, que es lo que emite `TA-0015` y `TA-0016`. Su
+premisa original (el Gate 1 se declararía sin criterio operativo) quedó comprobada como falsa:
+§29, §29.1, §30, §31, §32 y §19–§27 dan a esa fase más nivel operativo del que `phases/` daba.
+El usuario resolvió `T-013` con una cuarta opción sobre las tres de
+[`debt_tec.md`](debt_tec.md) → `DT-008`: readmitir `_phases/` y `_templates/` limitados a la
+fase en curso (`RES-012`). Cubre los tres puntos para el Descubrimiento; las demás fases
+quedan sin operativo por aplazamiento deliberado, no por deuda.
 
-Requiere decisión del usuario entre las tres opciones de [`debt_tec.md`](debt_tec.md) →
-`DT-008`, registrada como `T-013`, ya redimensionadas contra el hueco real.
+**Lo único que queda bloqueando** es `TA-0015` (quién declara el cierre del Descubrimiento) y,
+aparte en el orden, `TA-0016` (umbral del Gate 1).
 
 **Lo que dejó de bloquear:** `DT-002`, `DT-003` y `DT-006` quedaron `Descartada` — existían
-solo por `phases/`.
+solo por `phases/`. ⚠️ `DT-003` revive con otro objeto en `DT-014`, sobre las rutas que citan
+los 6 archivos readmitidos por `D-13`.
 
 ---
 

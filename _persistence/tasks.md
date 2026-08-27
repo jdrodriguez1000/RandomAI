@@ -19,9 +19,9 @@
 | `32` | &nbsp;&nbsp;↳ Códigos | [↓](#códigos) |
 | `42` | &nbsp;&nbsp;↳ Estados | [↓](#estados) |
 | `65` | **Tablero — Tareas de auditoría (TA)** | [↓](#tablero--tareas-de-auditoría-ta) |
-| `328` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
-| `343` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
-| `405` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
+| `355` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
+| `370` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
+| `444` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
 
 <!--/INDEX-->
 
@@ -90,6 +90,7 @@ Origen: [`0001-method`](../../RandomAi_Auditor/audits/0001-method.md)
 | `TA-0020` | Estado duplicado que sobrevive en `DT-001` y `DT-005`, en otro formato | Media | No bloqueante | `Pendiente` |
 | `TA-0021` | `_phases/` y `_templates/` quedaron seguidos por git mientras tres registros dicen lo contrario | Alta | No bloqueante | `Pendiente` |
 | `TA-0022` | La consecuencia de `D-12` dice «nada la cita» y cuatro tareas la citan | Media | No bloqueante | `Pendiente` |
+| `TA-0023` | El bloque vivo de `progress.md` pide un traslado de `TA-0009` que ya no existe | Media | No bloqueante | `Pendiente` |
 
 **`TA-0009` · Razón del descarte:** decisión `D-01` del usuario — las fuentes se conservan
 intactas (`000_method.md:6-7`). El defecto queda documentado en la auditoría y en `DT-001`.
@@ -319,6 +320,32 @@ en ese flujo. El cuerpo de la decisión distingue bien —citable, no invocable 
 frase de la consecuencia la que dice de más, y al decirlo de más **subestima el riesgo que la
 propia decisión declara asumido**: cuatro tareas dependen de un archivo destinado a borrarse.
 
+  ↳ **Evidencia 1** resuelta en `S-005` (enmienda fechada de `D-12`, con la distinción entre
+  citable e invocable). **Evidencia 2 resuelta en `S-006`:** `D-12` escribe ya qué pasa con
+  `T-028`–`T-031` al eliminarse `_temp/`. El resultado **no fue elegir** entre «ejecutarlas
+  antes» o «reasignar el origen»: cada tarea cae de un lado por lo que hace. `T-028`–`T-030`
+  **son** el reparto, así que preceden al borrado por construcción; `T-031` y `SUP-009`
+  consumen el flujo y sobreviven, luego su origen se reasigna a los destinos **en el mismo
+  commit que borra `_temp/`**. Y aparece un caso que la tarea no preveía: si `T-013` decide no
+  readmitir `_phases/` y `_templates/`, `T-029` y `T-030` se quedan sin destino y **`_temp/`
+  no se puede borrar**.
+
+**`TA-0023` · `Pendiente`, emitida por la auditoría `0005` (addendum). Hallazgo aceptado y
+ejecutado en `S-006`.** `progress.md:62-63` decía, en presente y dentro del bloque vivo, que
+seguía pendiente trasladar a la auditora el desfase de `TA-0009`. Comprobado contra **los dos
+tableros**, no contra el texto anterior: `tasks.md:79` y `tasks_audit.md:66` dicen los dos
+`Descartada`. No había desfase, luego no había traslado. La frase mandaba al usuario a una
+gestión inexistente y **se propagaba**: el reporte de arranque de `S-006` la leyó y la sirvió
+como estado presente, citando además `RES-009` —restricción permanente— como si fuera la causa
+de un pendiente.
+
+🔎 **Lo más incómodo del hallazgo:** la contradicción vivía dentro del propio repo desde `S-004`.
+`tasks.md:96-98` ya decía «el traslado a la auditora **ya se hizo**». Dos archivos de
+`_persistence/` afirmaban lo contrario el uno del otro durante dos sesiones.
+
+**Evidencia 2 — el barrido y con qué se hizo:** ver `L-015`. Encontró tres afirmaciones más,
+corregidas en el mismo commit.
+
 **`DT-008` · corregida, no saldada.** La auditoría `0004` demostró que estaba mal medida:
 cinco de sus ocho puntos están cubiertos, faltan tres —entradas exigidas, condición de salida,
 entrega al Gate— **y su premisa principal era falsa**: el Gate 1 tiene hoy más nivel operativo
@@ -356,7 +383,7 @@ verificó— con la corrección encima y marcada como dominante. Ver `L-012`.
 | `T-006` | Reconciliar la divergencia `_persistence/` vs `_memory/` en `phases/` | `DT-003` | `Cancelada` |
 | `T-007` | Crear `CLAUDE.md` con el esquema de dos terminales | `TA-0006` | `Implementada` |
 | `T-008` | Crear `templates/` con las plantillas que `phases/` referencia | `DT-002` | `Cancelada` |
-| `T-013` | Resolver el hueco operativo del método tras eliminar `phases/` | `DT-008` | `No implementada` |
+| `T-013` | Resolver el hueco operativo del método tras eliminar `phases/` | `DT-008` | `Implementada` |
 | `T-014` | Confirmar la eliminación de `phases/` y dejar el repo coherente | `D-04` | `Implementada` |
 | `T-015` | Inicializar git y enlazar el remoto de GitHub | `D-06` | `Implementada` |
 | `T-016` | Mover el generador de índices del scratchpad a `tools/mkindex.py` | `D-07` | `Implementada` |
@@ -384,15 +411,27 @@ servir a `phases/`; sin ese directorio no tienen objeto. Ver `DT-002` y `DT-003`
 reanudación:** que se decida la tecnología. Ese día se escriben las plantillas del capítulo 5
 de la guía en el lenguaje elegido, y se amplía la tabla de «qué nunca sube a Git».
 
-**`T-013`** no bloquea las tareas de auditoría en curso, pero **sí bloqueará la apertura de la
-fase de Descubrimiento**. Requiere decisión del usuario entre las tres opciones de `DT-008`.
+**`T-013` · `Implementada` el 2026-08-27 por `D-13`.** El usuario resolvió con una **cuarta**
+opción, que no estaba en las tres de `DT-008`: readmitir `_phases/` y `_templates/` **limitados
+a la fase que se esté ejecutando** — la (b) sin su defecto. Recupera los tres puntos que `DT-008`
+reclamaba (`_phases/005_discovery.md` §3, §6 y §8) sin readmitir siete fases sin auditar. La
+regla de alcance queda como `RES-012`. **Deja de bloquear la apertura del Descubrimiento.**
 
-**`T-028`, `T-029`, `T-030`, `T-031` — bloqueadas por dos decisiones del usuario**, según el
-orden de `_temp/005_discovery.md` §12: (1) quién declara el cierre del Descubrimiento
-(`TA-0015`), y (2) si se enmienda `D-04` para readmitir `_phases/` y `_templates/` (`T-013`).
-`_phases/` y `_templates/` existen ya en el árbol de trabajo, sin seguimiento previo, pero
-**no están decididos**: son el `phases/` que `D-04` eliminó, y su readmisión revive
-literalmente `DT-003` si no se resuelve antes (`_temp/005_discovery.md` §10).
+**`T-028`–`T-031` · su origen `_temp/` está destinado a desaparecer.** Las cuatro declaran
+origen `_temp/005_discovery.md`, cuya condición de levantamiento (`D-12`) manda eliminarlo.
+El orden está fijado en `D-12` → *Consecuencias* y no admite interpretación: `T-028`, `T-029`
+y `T-030` **son** el reparto y preceden al borrado; `T-031` lo consume y **su origen se
+reasigna** a `_phases/005_discovery.md`, `_templates/_discovery/` y `GUIDE.md` §9 en el mismo
+commit que borre `_temp/`. Si `T-013` no readmite `_phases/` y `_templates/`, el reparto no se
+puede completar y `_temp/` **no se borra**. Escrito por `TA-0022`, evidencia 2.
+
+**`T-028`, `T-029`, `T-030`, `T-031` — queda una sola decisión del usuario** (`TA-0015`);
+`T-013` se resolvió el 2026-08-27 por `D-13`, y `T-029` y `T-030` recuperan destino. Según el
+orden de `_temp/005_discovery.md` §12, la que queda es **quién declara el cierre del
+Descubrimiento** (`TA-0015`). `_phases/` y `_templates/` **están decididos** desde el
+2026-08-27: `D-13` los readmite, limitados a la fase en curso (`RES-012`). ⚠️ La readmisión
+revivió `DT-003` tal como este párrafo anticipaba —35 rutas inexistentes en los 6 archivos—;
+queda registrado como `DT-014` y lo salda `T-029`, que hay que **ampliar a las plantillas**.
 
 **`T-022`** — detectada al cierre de `S-001`: `session-starter.md` declara `model: haiku` y
 `session-closer.md` declara `model: sonnet` (`.claude/agents/`, línea 5 de cada uno). El

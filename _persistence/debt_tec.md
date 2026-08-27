@@ -17,22 +17,23 @@
 
 | Línea | Sección | Ir a |
 |---|---|---|
-| `41` | **Convenciones** | [↓](#convenciones) |
-| `72` | **Tablero** | [↓](#tablero) |
-| `92` | **Detalle** | [↓](#detalle) |
-| `94` | &nbsp;&nbsp;↳ DT-001 · Encabezados de 015_evolution.md sin normalizar | [↓](#dt-001--encabezados-de-015_evolutionmd-sin-normalizar) |
-| `112` | &nbsp;&nbsp;↳ DT-002 · Rutas referenciadas por phases/ que no existen | [↓](#dt-002--rutas-referenciadas-por-phases-que-no-existen) |
-| `132` | &nbsp;&nbsp;↳ DT-003 · Divergencia de nombres en la capa de persistencia | [↓](#dt-003--divergencia-de-nombres-en-la-capa-de-persistencia) |
-| `166` | &nbsp;&nbsp;↳ DT-004 · ADRs pendientes del Anexo A | [↓](#dt-004--adrs-pendientes-del-anexo-a) |
-| `190` | &nbsp;&nbsp;↳ DT-005 · Numeración no correlativa del canónico | [↓](#dt-005--numeración-no-correlativa-del-canónico) |
-| `205` | &nbsp;&nbsp;↳ DT-006 · phases/ sin auditar | [↓](#dt-006--phases-sin-auditar) |
-| `221` | &nbsp;&nbsp;↳ DT-010 · El agente session-starter sigue sin adaptar | [↓](#dt-010--el-agente-session-starter-sigue-sin-adaptar) |
-| `246` | &nbsp;&nbsp;↳ DT-009 · El agente session-closer contradice al skill | [↓](#dt-009--el-agente-session-closer-contradice-al-skill) |
-| `281` | &nbsp;&nbsp;↳ DT-008 · El método pierde su nivel operativo | [↓](#dt-008--el-método-pierde-su-nivel-operativo) |
-| `338` | &nbsp;&nbsp;↳ DT-007 · CLAUDE.md no existe | [↓](#dt-007--claudemd-no-existe) |
-| `355` | &nbsp;&nbsp;↳ DT-011 · La cita de A.3 no está verificada del todo | [↓](#dt-011--la-cita-de-a3-no-está-verificada-del-todo) |
-| `387` | &nbsp;&nbsp;↳ DT-012 · tools/mkindex.py puede no escribir de forma atómica | [↓](#dt-012--toolsmkindexpy-puede-no-escribir-de-forma-atómica) |
-| `415` | &nbsp;&nbsp;↳ DT-013 · progress.md §6 («Mapa de archivos») no incluye _temp/, _phases/ ni _templates/ | [↓](#dt-013--progressmd-6-mapa-de-archivos-no-incluye-_temp-_phases-ni-_templates) |
+| `42` | **Convenciones** | [↓](#convenciones) |
+| `73` | **Tablero** | [↓](#tablero) |
+| `94` | **Detalle** | [↓](#detalle) |
+| `96` | &nbsp;&nbsp;↳ DT-001 · Encabezados de 015_evolution.md sin normalizar | [↓](#dt-001--encabezados-de-015_evolutionmd-sin-normalizar) |
+| `114` | &nbsp;&nbsp;↳ DT-002 · Rutas referenciadas por phases/ que no existen | [↓](#dt-002--rutas-referenciadas-por-phases-que-no-existen) |
+| `134` | &nbsp;&nbsp;↳ DT-003 · Divergencia de nombres en la capa de persistencia | [↓](#dt-003--divergencia-de-nombres-en-la-capa-de-persistencia) |
+| `175` | &nbsp;&nbsp;↳ DT-004 · ADRs pendientes del Anexo A | [↓](#dt-004--adrs-pendientes-del-anexo-a) |
+| `199` | &nbsp;&nbsp;↳ DT-005 · Numeración no correlativa del canónico | [↓](#dt-005--numeración-no-correlativa-del-canónico) |
+| `214` | &nbsp;&nbsp;↳ DT-006 · phases/ sin auditar | [↓](#dt-006--phases-sin-auditar) |
+| `230` | &nbsp;&nbsp;↳ DT-010 · El agente session-starter sigue sin adaptar | [↓](#dt-010--el-agente-session-starter-sigue-sin-adaptar) |
+| `255` | &nbsp;&nbsp;↳ DT-009 · El agente session-closer contradice al skill | [↓](#dt-009--el-agente-session-closer-contradice-al-skill) |
+| `290` | &nbsp;&nbsp;↳ DT-008 · El método pierde su nivel operativo | [↓](#dt-008--el-método-pierde-su-nivel-operativo) |
+| `355` | &nbsp;&nbsp;↳ DT-007 · CLAUDE.md no existe | [↓](#dt-007--claudemd-no-existe) |
+| `372` | &nbsp;&nbsp;↳ DT-011 · La cita de A.3 no está verificada del todo | [↓](#dt-011--la-cita-de-a3-no-está-verificada-del-todo) |
+| `404` | &nbsp;&nbsp;↳ DT-012 · tools/mkindex.py puede no escribir de forma atómica | [↓](#dt-012--toolsmkindexpy-puede-no-escribir-de-forma-atómica) |
+| `432` | &nbsp;&nbsp;↳ DT-013 · progress.md §6 («Mapa de archivos») no incluye cuatro directorios del árbol real | [↓](#dt-013--progressmd-6-mapa-de-archivos-no-incluye-cuatro-directorios-del-árbol-real) |
+| `465` | &nbsp;&nbsp;↳ DT-014 · Los 6 archivos readmitidos por D-13 citan 35 rutas que no existen | [↓](#dt-014--los-6-archivos-readmitidos-por-d-13-citan-35-rutas-que-no-existen) |
 
 <!--/INDEX-->
 
@@ -79,13 +80,14 @@ sincronizarlo: sincronizar deja el defecto listo para repetirse.
 | `DT-004` | ADRs pendientes del Anexo A del canónico (A.1, A.2, A.5, A.6) | Media | `Abierta` |
 | `DT-005` | La numeración del canónico dejará de ser correlativa (`§17-bis`) | Baja | `Aceptada` |
 | `DT-006` | `phases/` sin auditar — 8 archivos, ~88 KB | Media | `Descartada` |
-| `DT-008` | El método pierde su nivel operativo al eliminar `phases/` | Alta | `Abierta` |
+| `DT-008` | El método pierde su nivel operativo al eliminar `phases/` | Alta | `Implementada` |
 | `DT-009` | El agente `session-closer` contradice al skill que dice invocar | Alta | `Implementada` |
 | `DT-010` | El agente `session-starter` sigue escrito contra el proyecto de origen | Alta | `Implementada` |
 | `DT-007` | `CLAUDE.md` no existe; el esquema de dos terminales no está escrito en ninguna parte | Media | `Implementada` |
 | `DT-011` | La cita de `A.3` del Anexo A no está verificada del todo | Baja | `Abierta` |
 | `DT-012` | `tools/mkindex.py` puede no escribir de forma atómica | Media | `Abierta` |
-| `DT-013` | `progress.md` §6 («Mapa de archivos») no incluye `_temp/`, `_phases/` ni `_templates/` | Baja | `Abierta` |
+| `DT-013` | `progress.md` §6 («Mapa de archivos») no incluye cuatro directorios del árbol real | Baja | `Abierta` |
+| `DT-014` | Los 6 archivos readmitidos por `D-13` citan 35 rutas que no existen | Media | `Abierta` |
 
 ---
 
@@ -160,6 +162,13 @@ enriquecen lo que `phases/` contemplaba.
 
 **Qué pasa si no se salda.** Las fases apuntarán a una carpeta inexistente y la ejecutora
 escribirá en dos sitios distintos, o en ninguno.
+
+🚨 **El descarte no eliminó el defecto: lo dejó latente, y volvió el 2026-08-27.** `D-13`
+readmitió el material de Descubrimiento del `phases/` eliminado, y con él sus rutas: `_memory/`
+aparece 5 veces y `tech-debt.md` 1 vez en el árbol actual. Esta entrada **sigue `Descartada`**
+—su enunciado habla de `phases/`, que no existe—, pero el defecto vive ahora en `DT-014`.
+🔑 Descartar una deuda porque desaparece su objeto no la resuelve; la condición de descarte
+debería enunciarse sobre el **defecto**, no sobre el archivo que lo contiene.
 
 ---
 
@@ -333,6 +342,14 @@ comprobado falso, ver arriba.
 crítico entero:** `TA-0016` bloquea el Gate 1 —escala numérica en `§24` sin ningún umbral—
 **se decida lo que se decida en `T-013`**.
 
+✅ **Saldada el 2026-08-27 por `D-13`, y solo para el Descubrimiento.** Los tres puntos que
+quedaban vivos tras la corrección de `S-004` —entradas exigidas, condición de salida, entrega
+al Gate— los cubre `_phases/005_discovery.md` en sus §3, §6 y §8. ⚠️ **El hueco de las demás
+fases no se ha cerrado: ha dejado de ser deuda.** `RES-012` lo convierte en aplazamiento
+deliberado —el operativo de cada fase se escribe al abrirla—, de modo que ya no es algo que se
+deba, sino algo que se hará a su tiempo. Si `RES-012` se levantara sin escribir ese operativo,
+la deuda vuelve. ⚠️ El material readmitido llega con `DT-014` encima: 35 rutas que no existen.
+
 ---
 
 ### `DT-007` · `CLAUDE.md` no existe
@@ -412,11 +429,12 @@ commiteado y no hay red de `git`.
 
 ---
 
-### `DT-013` · `progress.md` §6 («Mapa de archivos») no incluye `_temp/`, `_phases/` ni `_templates/`
+### `DT-013` · `progress.md` §6 («Mapa de archivos») no incluye cuatro directorios del árbol real
 
 **Qué se debe.** El árbol de ejemplo en `progress.md` §6 dice estar tomado «tras `D-04` y
-`D-05`» y no lista `_temp/` (nuevo en `S-005`) ni `_phases/` y `_templates/` (aportados por el
-usuario en `S-005`, sin decidir).
+`D-05`» y no lista `_temp/` (nuevo en `S-005`), `_phases/` y `_templates/` (aportados por el
+usuario en `S-005`, sin decidir) ni `_guide/` (desde `S-003`, decidido y seguido por git).
+**Son cuatro, no tres** — ver la ampliación de abajo, que este enunciado ya recoge.
 
 🚨 **Ampliado el 2026-08-27, tras el barrido que sugirió la auditoría `0005`: son cuatro, no
 tres.** Contrastado el mapa contra `git ls-files`, **`_guide/` también falta**, y no tiene nada
@@ -441,3 +459,43 @@ forma aislada, porque es estable mientras dure `D-12`.
 **Qué pasa si no se salda.** Bajo impacto: es un mapa de referencia, no un mecanismo del que
 dependa nada. Pero un mapa que no refleja el árbol real deja de usarse para orientarse, que es
 su único trabajo.
+
+---
+
+### `DT-014` · Los 6 archivos readmitidos por `D-13` citan 35 rutas que no existen
+
+**Qué se debe.** `D-13` readmitió `_phases/005_discovery.md` y las cinco plantillas de
+`_templates/_discovery/`. Ese material se escribió para el `phases/` que `D-04` eliminó, y
+**conserva las rutas de entonces**. Medido el 2026-08-27 con
+`grep -rnoE "_memory/|tech-debt\.md|templates/|phases/" _phases _templates`:
+
+| Ruta escrita | Veces | Debería ser |
+|---|---|---|
+| `_memory/` | 5 | `_persistence/` |
+| `phases/` | 6 | `_phases/` |
+| `templates/` | 1 | `_templates/` |
+| `tech-debt.md` | 1 | `debt_tec.md` |
+
+Las restantes hasta 35 son apariciones de `_discovery/`, que hay que revisar una a una: algunas
+son legítimas (`_templates/_discovery/`) y otras heredan la ruta vieja.
+
+🚨 **Esto revive `DT-003` literalmente.** Aquella deuda —divergencia `_persistence/` vs
+`_memory/`, `debt_tec.md` vs `tech-debt.md`— se descartó por `D-04` con la razón «ya no hay con
+qué divergir». **Ahora vuelve a haberlo.** Se registra como deuda nueva y no como reapertura
+porque el enunciado de `DT-003` hablaba de un directorio que ya no existe; el defecto es el
+mismo, el objeto es otro.
+
+🔑 **Lo que enseña.** Descartar una deuda porque desaparece su objeto no elimina el defecto:
+lo deja **latente en el material retirado**. `D-04` no arregló la divergencia de rutas, la
+apartó de la vista — y volvió con el material, dos decisiones después. La condición de descarte
+de una deuda debería enunciarse sobre el defecto, no sobre el archivo que lo contiene (mismo
+principio que la condición de levantamiento de una decisión, `CLAUDE.md` → Persistencia).
+
+**Qué la salda.** `T-029` ya declara «rutas» en su alcance y cubre `_phases/005_discovery.md`.
+⚠️ **Las cinco plantillas no tienen tarea que las cubra:** `T-030` habla del campo `origen` y
+de la plantilla de B3, no de rutas. Hay que ampliar `T-030` o abrir tarea aparte.
+
+**Qué pasa si no se salda.** Un procedimiento que manda escribir en `_memory/` es un
+procedimiento que **no se puede ejecutar**: la carpeta no existe. Y al ser operativo —a
+diferencia de `DT-013`, que es un mapa de referencia— alguien lo seguirá al pie de la letra en
+cuanto se abra el Descubrimiento.

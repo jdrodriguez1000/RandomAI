@@ -18,18 +18,19 @@
 
 | Línea | Sección | Ir a |
 |---|---|---|
-| `38` | **Convenciones** | [↓](#convenciones) |
-| `49` | **Tablero** | [↓](#tablero) |
-| `67` | **Detalle** | [↓](#detalle) |
-| `69` | &nbsp;&nbsp;↳ RES-001 · Sin IA generativa en el producto | [↓](#res-001--sin-ia-generativa-en-el-producto) |
-| `86` | &nbsp;&nbsp;↳ RES-002 · Despliegue en Vercel | [↓](#res-002--despliegue-en-vercel) |
-| `99` | &nbsp;&nbsp;↳ RES-003 · Fuente de datos oficial | [↓](#res-003--fuente-de-datos-oficial) |
-| `112` | &nbsp;&nbsp;↳ RES-004 · Alcance MVP estricto | [↓](#res-004--alcance-mvp-estricto) |
-| `124` | &nbsp;&nbsp;↳ RES-005 · Actualización incremental | [↓](#res-005--actualización-incremental) |
-| `133` | &nbsp;&nbsp;↳ RES-006 · Fuentes inmutables | [↓](#res-006--fuentes-inmutables) |
-| `145` | &nbsp;&nbsp;↳ RES-007 · El canónico no se renumera | [↓](#res-007--el-canónico-no-se-renumera) |
-| `173` | &nbsp;&nbsp;↳ RES-008 · La ejecutora no declara sus propios Gates | [↓](#res-008--la-ejecutora-no-declara-sus-propios-gates) |
-| `185` | &nbsp;&nbsp;↳ RES-009 · La ejecutora no escribe en el repo de la auditora | [↓](#res-009--la-ejecutora-no-escribe-en-el-repo-de-la-auditora) |
+| `39` | **Convenciones** | [↓](#convenciones) |
+| `50` | **Tablero** | [↓](#tablero) |
+| `69` | **Detalle** | [↓](#detalle) |
+| `71` | &nbsp;&nbsp;↳ RES-001 · Sin IA generativa en el producto | [↓](#res-001--sin-ia-generativa-en-el-producto) |
+| `88` | &nbsp;&nbsp;↳ RES-002 · Despliegue en Vercel | [↓](#res-002--despliegue-en-vercel) |
+| `101` | &nbsp;&nbsp;↳ RES-003 · Fuente de datos oficial | [↓](#res-003--fuente-de-datos-oficial) |
+| `114` | &nbsp;&nbsp;↳ RES-004 · Alcance MVP estricto | [↓](#res-004--alcance-mvp-estricto) |
+| `126` | &nbsp;&nbsp;↳ RES-005 · Actualización incremental | [↓](#res-005--actualización-incremental) |
+| `135` | &nbsp;&nbsp;↳ RES-006 · Fuentes inmutables | [↓](#res-006--fuentes-inmutables) |
+| `147` | &nbsp;&nbsp;↳ RES-007 · El canónico no se renumera | [↓](#res-007--el-canónico-no-se-renumera) |
+| `175` | &nbsp;&nbsp;↳ RES-008 · La ejecutora no declara sus propios Gates | [↓](#res-008--la-ejecutora-no-declara-sus-propios-gates) |
+| `187` | &nbsp;&nbsp;↳ RES-009 · La ejecutora no escribe en el repo de la auditora | [↓](#res-009--la-ejecutora-no-escribe-en-el-repo-de-la-auditora) |
+| `197` | &nbsp;&nbsp;↳ RES-012 · El operativo de una fase no se escribe antes de abrir esa fase | [↓](#res-012--el-operativo-de-una-fase-no-se-escribe-antes-de-abrir-esa-fase) |
 
 <!--/INDEX-->
 
@@ -61,6 +62,7 @@ eliminada por `D-04`; la convención se conserva.
 | `RES-009` | La ejecutora **no escribe** en el repo de la auditora | Proceso | `Vigente` |
 | `RES-010` | El repositorio de GitHub es **público** | Técnica | `Vigente` |
 | `RES-011` | Con git **solo se añade historia**, nunca se reescribe | Proceso | `Vigente` |
+| `RES-012` | El operativo de una fase no se escribe antes de abrir esa fase | Método | `Vigente` |
 
 ---
 
@@ -189,3 +191,40 @@ que es coherente, no que sea cierto.* El veredicto de un Gate lo emite la termin
 `RandomAi_Auditor/` es artefacto de la auditora. Los estados de `tasks_audit.md` —en particular
 `Verificada` y `Descartada`— los asigna ella. La ejecutora **lee** la auditoría, refleja los
 estados en su propio [`tasks.md`](tasks.md), y el usuario traslada los cambios.
+
+---
+
+### `RES-012` · El operativo de una fase no se escribe antes de abrir esa fase
+
+**Origen:** Método (`D-13`, decisión del usuario). **Vigente.**
+
+`_phases/` y `_templates/` contienen **únicamente** el operativo de la fase que se está
+ejecutando o de las ya alcanzadas. Hoy: el Descubrimiento, y nada más.
+
+**Qué prohíbe, en concreto.** Crear, adelantar o «dejar preparado» el archivo de fase o las
+plantillas de una fase que aún no se ha abierto — Arquitectura, Implementación, Evolución o
+cualquier otra. Tampoco por conveniencia («ya que estoy»), ni como borrador, ni en `_temp/`.
+
+**Qué no prohíbe.** Que el canónico `000_method.md` describa **qué** es cada fase: eso ya
+existe, es su trabajo, y no es operativo. La restricción es sobre el **cómo**, no sobre el
+**qué**.
+
+🔑 **El porqué, que vale más que la regla.** Un documento operativo escrito antes de abrir su
+fase se convierte en norma sin que nadie haya decidido que lo fuera: cuando llega el turno de
+esa fase, ya está escrito, y lo escrito se ejecuta en vez de discutirse. Es el defecto que
+`D-12` evita con `_temp/`, un escalón más arriba. Y choca de frente con `000_method.md` §2 —**no
+se construye aquello que todavía no se entiende suficientemente bien**—: el operativo de una
+fase se entiende **al llegar a ella**, con lo aprendido en las anteriores, no antes.
+
+⚠️ **Y hay un coste que esta restricción acepta a sabiendas.** Al abrir cada fase habrá que
+escribir su operativo, y eso es trabajo que no está hecho. Se prefiere ese coste al de heredar
+ocho documentos que nadie ha revisado y que nadie va a revisar hasta que sea tarde.
+
+**Cómo se comprueba.** `find _phases _templates -type f` no devuelve ningún archivo de una fase
+que no esté abierta. Comprobado el 2026-08-27: 6 archivos, todos de Descubrimiento.
+
+**Condición de levantamiento.** No se levanta entera: **se levanta por fase y de una en una.**
+Cada fase sale de la restricción en el momento en que se abre. La restricción como tal muere
+cuando se haya alcanzado la última fase del método.
+
+**Trazas:** `D-13` · `D-04` · `DT-008` · `D-12` · `000_method.md` §2

@@ -17,23 +17,24 @@
 
 | Línea | Sección | Ir a |
 |---|---|---|
-| `42` | **Convenciones** | [↓](#convenciones) |
-| `50` | **Tablero** | [↓](#tablero) |
-| `71` | **Detalle** | [↓](#detalle) |
-| `73` | &nbsp;&nbsp;↳ L-001 · Leer 015_evolution.md por líneas, no por encabezados | [↓](#l-001--leer-015_evolutionmd-por-líneas-no-por-encabezados) |
-| `89` | &nbsp;&nbsp;↳ L-002 · No repetir el canónico sin contrastarlo | [↓](#l-002--no-repetir-el-canónico-sin-contrastarlo) |
-| `106` | &nbsp;&nbsp;↳ L-003 · Medir el impacto antes de renumerar | [↓](#l-003--medir-el-impacto-antes-de-renumerar) |
-| `127` | &nbsp;&nbsp;↳ L-004 · El alcance declarado de una auditoría es su límite | [↓](#l-004--el-alcance-declarado-de-una-auditoría-es-su-límite) |
-| `146` | &nbsp;&nbsp;↳ L-005 · Un fallo de formato puede perder contenido normativo | [↓](#l-005--un-fallo-de-formato-puede-perder-contenido-normativo) |
-| `169` | &nbsp;&nbsp;↳ L-007 · Quien delega un procedimiento no puede llevar una copia encima | [↓](#l-007--quien-delega-un-procedimiento-no-puede-llevar-una-copia-encima) |
-| `202` | &nbsp;&nbsp;↳ L-006 · Al eliminar algo, comprobar qué se apoyaba en ello | [↓](#l-006--al-eliminar-algo-comprobar-qué-se-apoyaba-en-ello) |
-| `234` | &nbsp;&nbsp;↳ L-008 · Un dato repetido en dos capas diverge, y miente la que menos se lee | [↓](#l-008--un-dato-repetido-en-dos-capas-diverge-y-miente-la-que-menos-se-lee) |
-| `277` | &nbsp;&nbsp;↳ L-009 · Escribir en el sitio destruye el original antes de saber si va a funcionar | [↓](#l-009--escribir-en-el-sitio-destruye-el-original-antes-de-saber-si-va-a-funcionar) |
-| `311` | **L-010 · Una frase de cierre bien escrita es la forma más fácil de colar una regla inventada** | [↓](#l-010--una-frase-de-cierre-bien-escrita-es-la-forma-más-fácil-de-colar-una-regla-inventada) |
-| `356` | **L-011 · Ampliar una cita introduce defectos sin tocar el texto, y el diff no los enseña** | [↓](#l-011--ampliar-una-cita-introduce-defectos-sin-tocar-el-texto-y-el-diff-no-los-enseña) |
-| `423` | **L-012 · Medí el hueco inventariando lo que se fue, no comprobando lo que falta** | [↓](#l-012--medí-el-hueco-inventariando-lo-que-se-fue-no-comprobando-lo-que-falta) |
-| `474` | **L-013 · Caracterizar un archivo por su índice no es haberlo leído** | [↓](#l-013--caracterizar-un-archivo-por-su-índice-no-es-haberlo-leído) |
-| `519` | **L-014 · Abrir un archivo en escritura antes de tener el contenido listo lo destruye** | [↓](#l-014--abrir-un-archivo-en-escritura-antes-de-tener-el-contenido-listo-lo-destruye) |
+| `43` | **Convenciones** | [↓](#convenciones) |
+| `51` | **Tablero** | [↓](#tablero) |
+| `73` | **Detalle** | [↓](#detalle) |
+| `75` | &nbsp;&nbsp;↳ L-001 · Leer 015_evolution.md por líneas, no por encabezados | [↓](#l-001--leer-015_evolutionmd-por-líneas-no-por-encabezados) |
+| `91` | &nbsp;&nbsp;↳ L-002 · No repetir el canónico sin contrastarlo | [↓](#l-002--no-repetir-el-canónico-sin-contrastarlo) |
+| `108` | &nbsp;&nbsp;↳ L-003 · Medir el impacto antes de renumerar | [↓](#l-003--medir-el-impacto-antes-de-renumerar) |
+| `129` | &nbsp;&nbsp;↳ L-004 · El alcance declarado de una auditoría es su límite | [↓](#l-004--el-alcance-declarado-de-una-auditoría-es-su-límite) |
+| `148` | &nbsp;&nbsp;↳ L-005 · Un fallo de formato puede perder contenido normativo | [↓](#l-005--un-fallo-de-formato-puede-perder-contenido-normativo) |
+| `171` | &nbsp;&nbsp;↳ L-007 · Quien delega un procedimiento no puede llevar una copia encima | [↓](#l-007--quien-delega-un-procedimiento-no-puede-llevar-una-copia-encima) |
+| `204` | &nbsp;&nbsp;↳ L-006 · Al eliminar algo, comprobar qué se apoyaba en ello | [↓](#l-006--al-eliminar-algo-comprobar-qué-se-apoyaba-en-ello) |
+| `236` | &nbsp;&nbsp;↳ L-008 · Un dato repetido en dos capas diverge, y miente la que menos se lee | [↓](#l-008--un-dato-repetido-en-dos-capas-diverge-y-miente-la-que-menos-se-lee) |
+| `279` | &nbsp;&nbsp;↳ L-009 · Escribir en el sitio destruye el original antes de saber si va a funcionar | [↓](#l-009--escribir-en-el-sitio-destruye-el-original-antes-de-saber-si-va-a-funcionar) |
+| `313` | **L-010 · Una frase de cierre bien escrita es la forma más fácil de colar una regla inventada** | [↓](#l-010--una-frase-de-cierre-bien-escrita-es-la-forma-más-fácil-de-colar-una-regla-inventada) |
+| `358` | **L-011 · Ampliar una cita introduce defectos sin tocar el texto, y el diff no los enseña** | [↓](#l-011--ampliar-una-cita-introduce-defectos-sin-tocar-el-texto-y-el-diff-no-los-enseña) |
+| `425` | **L-012 · Medí el hueco inventariando lo que se fue, no comprobando lo que falta** | [↓](#l-012--medí-el-hueco-inventariando-lo-que-se-fue-no-comprobando-lo-que-falta) |
+| `476` | **L-013 · Caracterizar un archivo por su índice no es haberlo leído** | [↓](#l-013--caracterizar-un-archivo-por-su-índice-no-es-haberlo-leído) |
+| `521` | **L-014 · Abrir un archivo en escritura antes de tener el contenido listo lo destruye** | [↓](#l-014--abrir-un-archivo-en-escritura-antes-de-tener-el-contenido-listo-lo-destruye) |
+| `574` | &nbsp;&nbsp;↳ L-015 · Un barrido de estado que busca frases encuentra las que ya sospechaba | [↓](#l-015--un-barrido-de-estado-que-busca-frases-encuentra-las-que-ya-sospechaba) |
 
 <!--/INDEX-->
 
@@ -65,6 +66,7 @@
 | `L-012` | Medí el hueco inventariando lo que se fue, no comprobando lo que falta | Método | 2026-08-27 |
 | `L-013` | Caracterizar un archivo por su índice no es haberlo leído | Proceso | 2026-08-27 |
 | `L-014` | Abrir un archivo en escritura antes de tener el contenido listo lo destruye | Técnica | 2026-08-27 |
+| `L-015` | Un barrido de estado que busca frases encuentra las que ya sospechaba | Proceso | 2026-08-27 |
 
 ---
 
@@ -560,3 +562,58 @@ vacío. Tras cualquier escritura por script, comprobar el **tamaño**, no solo l
 excepción.
 
 **Trazas:** `P-5` · `D-06`
+
+🔁 **Reincidencia en `S-006`.** Dos scripts de saneamiento volvieron a usar
+`io.open(p,'w',...).write(s)`. No hubo daño —los `assert` de unicidad iban antes del `open` y
+el árbol estaba limpio en `1ebb15c`—, pero la lección se escribió en `S-005` y se incumplió en
+la sesión siguiente. **Leer la lección no la aplica.** Lo que la aplicaría es una comprobación
+mecánica: ningún script del proyecto abre en `w` en la misma expresión que escribe.
+
+---
+
+### `L-015` · Un barrido de estado que busca frases encuentra las que ya sospechaba
+
+**Categoría:** Proceso · 2026-08-27 · nace de `TA-0023` (evidencia 2) y de `TA-0020`/`LG-08`.
+
+**Qué pasó.** El bloque vivo de `progress.md` afirmaba en presente que seguía pendiente
+trasladar a la auditora un desfase de `TA-0009` que estaba resuelto desde `S-004`. La auditora
+pidió comprobar si había **más** frases heredadas así, y advirtió del sesgo: el barrido de
+`TA-0018` había buscado un **formato** y dejó vivas dos apariciones escritas de otra manera.
+
+**Por qué `grep` era la respuesta equivocada.** Buscar `'sigue pendiente'` habría encontrado la
+frase que ya sabíamos y habría declarado limpio el resto. Una búsqueda por redacción solo puede
+encontrar lo que se escribió como uno espera; las afirmaciones heredadas no comparten
+redacción, comparten **función**: dicen algo en presente sobre un estado que vive en otro
+archivo.
+
+**Con qué se hizo, y por qué eso sí encuentra las variantes.** No se buscó nada. Se
+**delimitó una región y se verificó entera**:
+
+1. **Delimitar el bloque vivo por su tiempo verbal, no por su título.** Habla del estado
+   presente: §1 «Dónde estamos», §4 «Qué sigue», §5 «Lo que bloqueará el arranque» y §6 «Mapa
+   de archivos». Queda fuera §3 «Detalle de sesiones», que es historia fechada y **no se
+   toca** aunque contenga la misma frase (`progress.md:182`).
+2. **Enumerar todas las proposiciones comprobables de esa región** —unas 20 en ~120 líneas—,
+   sin filtrar por cómo estén escritas. La región es corta: la exhaustividad es viable, y es
+   justo lo que elimina el sesgo.
+3. **Verificar cada una contra su fuente autoritativa, no contra el texto anterior:**
+   `tasks_audit.md` y `tasks.md` para las `TA`; `debt_tec.md` para las `DT`; `git ls-files`
+   para el árbol; una corrida para los conteos.
+
+**Qué encontró que un `grep` no habría encontrado.** Tres afirmaciones más, ninguna con la
+redacción de la primera: el espejo declarado sincronizado «22 de cada lado» cuando la auditora
+ya tenía 23; `TA-0015` presentada como «tres opciones» cuando la tercera es una hipótesis sin
+comprobar; y una lista de pendientes que omitía `TA-0023`. Las tres eran ciertas cuando se
+escribieron.
+
+🔑 **La lección.** Una afirmación heredada no envejece por estar mal redactada, sino por
+**dejar de comprobarse**. Lo que la detecta no es una búsqueda mejor, es que la región tenga
+dueño y se reverifique entera contra los tableros cada vez que se toca. Un barrido sin región
+delimitada es una búsqueda de confirmación con otro nombre.
+
+⚠️ **Y el corolario que costó un reporte:** una frase falsa en el bloque vivo **se propaga**.
+El arranque de `S-006` la leyó y la sirvió al usuario como estado vigente, añadiendo de su
+cosecha que `RES-009` estaba «activa» como pendiente cuando es una restricción permanente. El
+bloque vivo es la entrada de todo lo que se lee después.
+
+**Trazas:** `TA-0023` · `TA-0020` · `L-012` · `L-013` · `P-1`

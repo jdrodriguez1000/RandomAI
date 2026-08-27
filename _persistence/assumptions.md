@@ -203,4 +203,10 @@ descarta el flujo: se reparte mejor.
 supuestos sobre el tipo de aplicación, y con las decisiones concretas de RandomAI fuera de
 esas dos capas.
 
+📌 **Este supuesto se funda en el flujo, no en el archivo que hoy lo contiene.** Cuando
+`_temp/005_discovery.md` se reparta y se elimine (`D-12`), el fundamento de `SUP-009` pasa a
+`_phases/005_discovery.md`, `_templates/_discovery/` y `GUIDE.md` §9, y **la referencia se
+reescribe en ese mismo commit**. Escrito por `TA-0022`, evidencia 2; el detalle del orden está
+en `D-12` → *Consecuencias*.
+
 ---
