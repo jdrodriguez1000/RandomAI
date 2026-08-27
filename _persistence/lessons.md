@@ -17,19 +17,20 @@
 
 | Línea | Sección | Ir a |
 |---|---|---|
-| `38` | **Convenciones** | [↓](#convenciones) |
-| `46` | **Tablero** | [↓](#tablero) |
-| `63` | **Detalle** | [↓](#detalle) |
-| `65` | &nbsp;&nbsp;↳ L-001 · Leer 015_evolution.md por líneas, no por encabezados | [↓](#l-001--leer-015_evolutionmd-por-líneas-no-por-encabezados) |
-| `81` | &nbsp;&nbsp;↳ L-002 · No repetir el canónico sin contrastarlo | [↓](#l-002--no-repetir-el-canónico-sin-contrastarlo) |
-| `98` | &nbsp;&nbsp;↳ L-003 · Medir el impacto antes de renumerar | [↓](#l-003--medir-el-impacto-antes-de-renumerar) |
-| `119` | &nbsp;&nbsp;↳ L-004 · El alcance declarado de una auditoría es su límite | [↓](#l-004--el-alcance-declarado-de-una-auditoría-es-su-límite) |
-| `138` | &nbsp;&nbsp;↳ L-005 · Un fallo de formato puede perder contenido normativo | [↓](#l-005--un-fallo-de-formato-puede-perder-contenido-normativo) |
-| `161` | &nbsp;&nbsp;↳ L-007 · Quien delega un procedimiento no puede llevar una copia encima | [↓](#l-007--quien-delega-un-procedimiento-no-puede-llevar-una-copia-encima) |
-| `194` | &nbsp;&nbsp;↳ L-006 · Al eliminar algo, comprobar qué se apoyaba en ello | [↓](#l-006--al-eliminar-algo-comprobar-qué-se-apoyaba-en-ello) |
-| `226` | &nbsp;&nbsp;↳ L-008 · Un dato repetido en dos capas diverge, y miente la que menos se lee | [↓](#l-008--un-dato-repetido-en-dos-capas-diverge-y-miente-la-que-menos-se-lee) |
-| `269` | &nbsp;&nbsp;↳ L-009 · Escribir en el sitio destruye el original antes de saber si va a funcionar | [↓](#l-009--escribir-en-el-sitio-destruye-el-original-antes-de-saber-si-va-a-funcionar) |
-| `303` | **L-010 · Una frase de cierre bien escrita es la forma más fácil de colar una regla inventada** | [↓](#l-010--una-frase-de-cierre-bien-escrita-es-la-forma-más-fácil-de-colar-una-regla-inventada) |
+| `39` | **Convenciones** | [↓](#convenciones) |
+| `47` | **Tablero** | [↓](#tablero) |
+| `65` | **Detalle** | [↓](#detalle) |
+| `67` | &nbsp;&nbsp;↳ L-001 · Leer 015_evolution.md por líneas, no por encabezados | [↓](#l-001--leer-015_evolutionmd-por-líneas-no-por-encabezados) |
+| `83` | &nbsp;&nbsp;↳ L-002 · No repetir el canónico sin contrastarlo | [↓](#l-002--no-repetir-el-canónico-sin-contrastarlo) |
+| `100` | &nbsp;&nbsp;↳ L-003 · Medir el impacto antes de renumerar | [↓](#l-003--medir-el-impacto-antes-de-renumerar) |
+| `121` | &nbsp;&nbsp;↳ L-004 · El alcance declarado de una auditoría es su límite | [↓](#l-004--el-alcance-declarado-de-una-auditoría-es-su-límite) |
+| `140` | &nbsp;&nbsp;↳ L-005 · Un fallo de formato puede perder contenido normativo | [↓](#l-005--un-fallo-de-formato-puede-perder-contenido-normativo) |
+| `163` | &nbsp;&nbsp;↳ L-007 · Quien delega un procedimiento no puede llevar una copia encima | [↓](#l-007--quien-delega-un-procedimiento-no-puede-llevar-una-copia-encima) |
+| `196` | &nbsp;&nbsp;↳ L-006 · Al eliminar algo, comprobar qué se apoyaba en ello | [↓](#l-006--al-eliminar-algo-comprobar-qué-se-apoyaba-en-ello) |
+| `228` | &nbsp;&nbsp;↳ L-008 · Un dato repetido en dos capas diverge, y miente la que menos se lee | [↓](#l-008--un-dato-repetido-en-dos-capas-diverge-y-miente-la-que-menos-se-lee) |
+| `271` | &nbsp;&nbsp;↳ L-009 · Escribir en el sitio destruye el original antes de saber si va a funcionar | [↓](#l-009--escribir-en-el-sitio-destruye-el-original-antes-de-saber-si-va-a-funcionar) |
+| `305` | **L-010 · Una frase de cierre bien escrita es la forma más fácil de colar una regla inventada** | [↓](#l-010--una-frase-de-cierre-bien-escrita-es-la-forma-más-fácil-de-colar-una-regla-inventada) |
+| `350` | **L-011 · Ampliar una cita introduce defectos sin tocar el texto, y el diff no los enseña** | [↓](#l-011--ampliar-una-cita-introduce-defectos-sin-tocar-el-texto-y-el-diff-no-los-enseña) |
 
 <!--/INDEX-->
 
@@ -57,6 +58,7 @@
 | `L-008` | Un dato repetido en dos capas diverge, y miente la capa que menos se lee | Método | 2026-08-26 |
 | `L-009` | Escribir en el sitio destruye el original antes de saber si va a funcionar | Técnica | 2026-08-26 |
 | `L-010` | Una frase de cierre bien escrita es la forma más fácil de colar una regla inventada | Método | 2026-08-27 |
+| `L-011` | Ampliar una cita introduce defectos sin tocar el texto, y el diff no los enseña | Método | 2026-08-27 |
 
 ---
 
@@ -342,3 +344,51 @@ fidelidad del contenido incorporado y la fidelidad de sus bordes son dos comprob
 distintas.**
 
 **Trazas:** `TA-0002` · `TA-0010` · `L-005` · `P-1`
+
+---
+
+## L-011 · Ampliar una cita introduce defectos sin tocar el texto, y el diff no los enseña
+
+**Categoría:** Método · **Fecha:** 2026-08-27 · Origen: auditoría `0003` (`TA-0014`)
+
+**Qué pasó.** Al fusionar `015 §50` en el `§4` del canónico, la marca pasó de `↳ *015 §2*`
+a `↳ *015 §2, §50*`. La auditora contrastó las filas MVP y EVOL de la tabla contra `015
+§50`, no las encontró, y abrió `TA-0014`.
+
+Comprobado: **esas filas vienen de `015 §2`** (`015_evolution.md:45-53`), que sigue citado
+en la misma marca. La marca es un **conjunto**, no una atribución fila a fila, y cada
+afirmación de `§4` está cubierta por uno de los dos. El hallazgo concreto no se sostiene y
+se devolvió con evidencia.
+
+**Pero la clase de defecto que persigue es real, y ese es el valor de la lección.**
+
+> 🔑 **`L-010` y esta son la misma comprobación en dos direcciones.** En `L-010` se añadió
+> texto bajo una marca existente. Aquí se amplía una marca sobre texto existente. En ambos
+> casos el resultado es idéntico: una afirmación queda atribuida a una fuente que no la
+> dice.
+
+**Por qué esta dirección es la peligrosa.** La primera deja rastro: hay líneas nuevas en el
+`git diff`, y una revisión del contenido las encuentra. **La segunda no cambia ni una
+palabra del texto afectado.** El diff muestra una sola línea tocada —la de la marca— y el
+texto que esa línea pasó a cubrir aparece como contexto sin modificar. Quien revise el
+cambio lee «se añadió una fuente» y da por hecho que añadir fuentes solo puede mejorar la
+atribución.
+
+📌 **Y hay un sesgo que lo remata:** al ampliar una marca uno comprueba —si comprueba— que
+**la fuente nueva aporta algo al bloque**. Esa comprobación siempre sale bien: por eso se
+añadió. La que hay que hacer es la contraria y es más cara: **¿el conjunto citado cubre
+cada afirmación que queda debajo?**
+
+**Qué haremos distinto.** Toda ampliación de una marca `↳` obliga a recorrer el bloque
+entero contra el **conjunto** de fuentes citadas, no contra la añadida. Se hace **cada
+vez**, aunque la ampliación parezca inofensiva. En esta sesión se aplicó a las seis marcas
+que `TA-0002` amplió —`§4`, `§29`, `§30`, `§37`, `§41`, `§50`— y las seis salieron limpias;
+que saliera limpia no la hace prescindible, porque el coste de saltársela es un defecto
+invisible al diff.
+
+⚠️ **Corolario sobre el trabajo ajeno.** El hallazgo era incorrecto en su caso concreto y
+correcto en su método. Verificarlo antes de aceptarlo (`P-1`) evitó tocar un `§4` que
+estaba bien; descartarlo entero por eso habría perdido la lección. **Un hallazgo puede
+fallar en el ejemplo y acertar en la regla.**
+
+**Trazas:** `TA-0002` · `TA-0010` · `TA-0014` · `L-010` · `P-1`
