@@ -19,9 +19,9 @@
 | `32` | &nbsp;&nbsp;↳ Códigos | [↓](#códigos) |
 | `42` | &nbsp;&nbsp;↳ Estados | [↓](#estados) |
 | `59` | **Tablero — Tareas de auditoría (TA)** | [↓](#tablero--tareas-de-auditoría-ta) |
-| `86` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
-| `101` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
-| `150` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
+| `140` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
+| `155` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
+| `204` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
 
 <!--/INDEX-->
 
@@ -62,26 +62,80 @@ Origen: [`0001-method`](../../RandomAi_Auditor/audits/0001-method.md)
 
 | Código | Tarea | Imp. | Urg. | Estado |
 |---|---|---|---|---|
-| `TA-0001` | Corregir atribución sobre «Actor Invitado» (§10 y Anexo A.1); retirar `➕` de §10 | Alta | Bloqueante | `Implementada` |
-| `TA-0002` | Incorporar contenido normativo omitido de `015` §35–§48 | Alta | Bloqueante | `No implementada` |
+| `TA-0001` | Corregir atribución sobre «Actor Invitado» (§10 y Anexo A.1); retirar `➕` de §10 | Alta | Bloqueante | `Verificada` |
+| `TA-0002` | Incorporar contenido normativo omitido de `015` §35–§48 | Alta | Bloqueante | `Implementada` |
 | `TA-0007` | Añadir «decisión de alcance del prototipo» a las salidas del Descubrimiento (§14) | Alta | Bloqueante | `No implementada` |
 | `TA-0003` | Declarar en el Anexo A las omisiones deliberadas de `015` §35–§51 | Alta | No bloqueante | `No implementada` |
 | `TA-0004` | Añadir Anexo A.8: alcance del Prototipo de Evolución | Media | No bloqueante | `No implementada` |
 | `TA-0005` | Corregir la fila «Cuándo» de la tabla §57 | Media | No bloqueante | `No implementada` |
 | `TA-0006` | Reformular §32 de forma agnóstica a la infraestructura | Media | No bloqueante | `No implementada` |
 | `TA-0008` | Registrar en el Anexo A la resolución sobre «Product Baseline» | Baja | No bloqueante | `No implementada` |
-| `TA-0009` | Normalizar encabezados de `015_evolution.md` §35–§51 | Media | No bloqueante | `Cancelada` |
+| `TA-0009` | Normalizar encabezados de `015_evolution.md` §35–§51 | Media | No bloqueante | `Descartada` |
+| `TA-0010` | Frases normativas propias entregadas bajo un `↳` sin `➕` ni entrada en Anexo A | Media | No bloqueante | `Implementada` |
+| `TA-0011` | `§17-bis` remite a «Ver Anexo A» para la convención `bis`; el Anexo no la contenía | Media | No bloqueante | `Implementada` |
+| `TA-0012` | La fila «§42 → completa §47» de `D-03` sigue escrita y contradice al canónico | Media | No bloqueante | `Implementada` |
+| `TA-0013` | Doble `↳` consecutivo en cuatro puntos del canónico | Baja | No bloqueante | `Implementada` |
 
-**`TA-0009` · Razón de cancelación:** decisión `D-01` del usuario — las fuentes se conservan
+**`TA-0009` · Razón del descarte:** decisión `D-01` del usuario — las fuentes se conservan
 intactas (`000_method.md:6-7`). El defecto queda documentado en la auditoría y en `DT-001`.
-**Pendiente:** el usuario debe trasladar este estado a la auditora, que en su tablero lo
-registrará como `Descartada`. ⚠️ **Desfase detectado:** en el tablero de la auditora sigue
-figurando `Pendiente`, no `Descartada`. No se puede corregir desde aquí (`RES-009`).
+El traslado a la auditora ya se hizo: su tablero registra `Descartada`
+(`tasks_audit.md:66`, comprobado en `S-004`). ⚠️ **Nota de nomenclatura:** aquí figuró como
+`Cancelada` —estado de tareas propias `T-nnn`— hasta `S-004`. Los estados de las `TA-nnnn`
+los fija el tablero de la auditora; este archivo es espejo, no fuente.
 
-**`TA-0001` · Implementada, no `Verificada`.** Corregidos §10 y el Anexo A.1 de
+**`TA-0001` · `Verificada` por la auditora.** Corregidos §10 y el Anexo A.1 de
 `000_method.md` (evidencia: `git diff` de `S-003`). Se añadió además la justificación de por
-qué `A.1` sigue en la lista de ADR pendientes del Anexo A, registrada como `D-10`. El único
-estado de cierre es `Verificada` y lo asigna la auditora.
+qué `A.1` sigue en la lista de ADR pendientes del Anexo A, registrada como `D-10`. La
+auditora asignó el estado de cierre `Verificada` (`tasks_audit.md:59`, comprobado en `S-004`).
+
+**`TA-0002` · Implementada, no `Verificada`.** Ejecutada en `S-004` sobre
+`000_method.md` (1012 → 1212 líneas). Las 13 secciones de `015` §36–§48 tienen
+contrapartida localizable, más la fusión de `015` §50 en el §4:
+
+| `015` | Destino en el canónico |
+|---|---|
+| §36, §37 | `§37.1` — No construir no significa no diseñar (Parte VI, junto a ARCHIT) |
+| §38 | `§50.1` — La viabilidad se evalúa periódicamente |
+| §39 | `§29.1` — Qué NO valida el prototipo (Parte V) |
+| §40 | `§30` — ampliado: éxito de prototipo ≠ adopción |
+| §41 | `§41.1` — GRTH no puede degenerar en Waterfall (Parte VII) |
+| §42, §43 | `§17-bis.3` — Los dos riesgos simétricos |
+| §44 | `§17-bis.5` — Límites del método |
+| §45 | `§17-bis.1` — Cuándo debe extenderse el prototipo |
+| §46 | `§17-bis.2` — **Los seis criterios**, enumerados completos |
+| §47 | `§17-bis.4` — Aplicaciones que requieren adaptación |
+| §48 | `§17-bis.6` — Principio de excepción |
+| §50 | `§4` — de 3 a 6 preguntas (se añaden WSLT, GRTH, RELEASE OBJETIVO) |
+
+`§17` y `§48` referencian `§17-bis`: ninguno de los dos se lee ya como regla absoluta.
+Cada bloque incorporado lleva su marca `↳`. No hubo renumeración: `§18`, `§30`, `§47`,
+`§61` y `§62` conservan su número (`RES-007`).
+
+**Pendiente de la ejecutora:** `TA-0003` — declarar en el Anexo A las omisiones
+deliberadas (`015` §35, §49, §51). El único estado de cierre es `Verificada` y lo
+asigna la auditora.
+
+**`TA-0010`, `TA-0011`, `TA-0013` · Implementadas, no `Verificadas`.** Origen:
+auditoría `0002-metodo-ampliado`. Las tres son defectos introducidos por `TA-0002` en la
+misma sesión `S-004`, y se corrigieron en ella:
+
+- **`TA-0013`** — fusionadas las cuatro marcas `↳` dobles (`§29`, `§37`, `§41`, `§50`).
+  Cada sección vuelve a tener una sola marca, con las fuentes acumuladas.
+- **`TA-0011`** — creada la entrada **Anexo A.9**, que enuncia la convención `bis` con su
+  porqué. `§17-bis` ya no remite a un Anexo que no la contenía. **`A.8` queda reservada**
+  para `TA-0004`, para que las dos tareas no colisionen en el mismo número.
+- **`TA-0010`** — seis frases marcadas `➕` con remisión a `A.9`, y **dos retiradas por
+  endurecer la fuente**: `015 §41` dice que cada iteración *debería* entregar capacidad
+  demostrable, y el cierre que escribí lo convertía en definición absoluta; `015 §39` dice
+  que el límite del prototipo *debe quedar explícito*, no que sea criterio de aprobación.
+  Ese es el hallazgo real: no era decoración, era regla desplazada.
+
+**`TA-0012` · Implementada, no `Verificada`.** El usuario autorizó la enmienda el
+2026-08-27. La fila de `§42` en `D-03` pasa a «Incorporar → `§17-bis`, emparejada con
+§43», con nota de enmienda fechada bajo la tabla (`decisions.md:214, 225`). Se enmienda
+`D-03` en lugar de abrir una `D-11`: una decisión nueva no borra la anterior, y `D-03` es
+la que se cita desde aquí y desde el tablero de la auditora. `D-03` conserva código, fecha
+y estado `Vigente`; el alcance decidido no cambia.
 
 ### Notas de alcance
 
@@ -152,7 +206,7 @@ lectura automática del diff. Sin decisión registrada.
 Primero las **bloqueantes** por importancia, después las **no bloqueantes** por importancia:
 
 ```text
-TA-0001 (Implementada, a verificación) → TA-0002 (+TA-0003) → TA-0007
+TA-0001 (Verificada) → TA-0002 (+TA-0003) → TA-0007
    ↓
 TA-0004 · TA-0005 · TA-0006 (T-007 ya hecha) · TA-0008
    ↓

@@ -54,11 +54,19 @@ Esto **no** significa especificarlo todo antes de programar. Significa:
 Cada etapa responde **una pregunta distinta**, y cada una cuesta más que la anterior.
 Solo se paga la siguiente cuando la anterior dio evidencia.
 
+El método completo se resume en **seis preguntas**, una por etapa:
+
 | Etapa | Pregunta que responde |
 |---|---|
-| **PROTOTIPO** | ¿La solución propuesta tiene sentido para el Actor Generador? |
+| **PROTOTIPO** | ¿Vale la pena construir? ¿La solución propuesta tiene sentido para el Actor Generador? |
+| **WSLT** | ¿Podemos hacer que la solución funcione de punta a punta? |
+| **GRTH** | ¿Podemos hacer crecer la solución hasta entregar el mínimo valor necesario? |
 | **MVP** | ¿El Actor Generador realmente adopta y usa la solución construida? |
 | **EVOL** | ¿Cómo aumentamos el valor de algo que ya demostró adopción? |
+| **RELEASE OBJETIVO** | ¿Hemos alcanzado el alcance definido para este objetivo del producto? |
+
+Y después del Release Objetivo: **el producto continúa evolucionando cuando exista una
+razón para hacerlo.** Ver §60.
 
 > **No se realiza una inversión mayor hasta obtener evidencia suficiente que la
 > justifique.**
@@ -66,7 +74,7 @@ Solo se paga la siguiente cuando la anterior dio evidencia.
 Esto permite **detener una iniciativa temprano** cuando la evidencia dice que no vale
 la pena continuar.
 
-↳ *015 §2*
+↳ *015 §2, §50*
 
 ## 5. El ciclo completo
 
@@ -328,7 +336,107 @@ existencia de la aplicación.
 **Duración:** máximo aproximado de **3 a 4 semanas**. El límite existe para mantenerlo
 como una inversión pequeña; no se perfecciona indefinidamente.
 
+⚠️ **«Solo el Generador» es la regla general, no una regla absoluta.** Hay condiciones
+bajo las cuales el prototipo debe ampliarse a otros actores. Están enunciadas en
+**§17-bis**, que se lee junto con esta sección.
+
 ↳ *005 §8 · 015 §8, §9*
+
+## 17-bis. Cuándo el alcance debe extenderse más allá del Generador
+
+> **Por qué lleva `bis`.** El canónico se amplía, nunca se renumera: hay referencias
+> por número en repositorios que este documento no puede editar. La convención y su
+> porqué están en **Anexo A.9**.
+
+Concentrar el prototipo y el MVP en el Actor Generador es el **principio general** del
+método, no un dogma. Esta sección enuncia las condiciones bajo las cuales debe
+extenderse, y el principio de excepción que las gobierna.
+
+### 17-bis.1. Cuándo debe extenderse el prototipo
+
+La regla general es **Prototipo → Generador**. Pero debe ampliarse a otros actores
+**cuando el valor de la hipótesis dependa necesariamente de ellos**.
+
+Por ejemplo: si el Generador solo obtiene valor cuando un Coordinador procesa
+inmediatamente su solicitud, puede ser necesario validar también al Coordinador.
+
+↳ *015 §45*
+
+### 17-bis.2. Cuándo debe extenderse el MVP — los seis criterios
+
+El MVP normalmente se concentra en el Generador. Sin embargo, **otro actor debe
+incorporarse anticipadamente cuando**:
+
+1. El producto no puede entregar valor sin él.
+2. La operación existente no puede absorber el nuevo volumen.
+3. Existe una dependencia técnica crítica.
+4. Existe una obligación regulatoria.
+5. Existe una integración indispensable.
+6. La propuesta de valor depende de varios actores simultáneamente.
+
+↳ *015 §46*
+
+### 17-bis.3. Los dos riesgos simétricos
+
+La decisión de alcance falla en **dos direcciones opuestas**, y ninguna es más segura
+que la otra.
+
+**Expansión prematura.** Durante la construcción aparecen solicitudes —dashboards,
+módulos administrativos, funcionalidades del Supervisor o del Coordinador,
+integraciones—. Estas solicitudes **no deben entrar automáticamente al MVP**. Debe
+evaluarse si realmente son necesarias para que el Generador obtenga el valor
+principal.
+
+**Expansión tardía.** El riesgo contrario también existe. Si otros actores son
+indispensables para que el producto funcione, **esperar hasta EVOL puede ser un
+error**. Por esta razón la metodología necesita excepciones.
+
+↳ *015 §42, §43*
+
+### 17-bis.4. Aplicaciones donde el método puede requerir adaptación
+
+El alcance debe evaluarse con especial cuidado en:
+
+- sistemas altamente regulados;
+- sistemas críticos;
+- sistemas donde varios actores generan valor conjuntamente;
+- marketplaces;
+- sistemas con fuertes dependencias externas;
+- sistemas donde el proceso completo debe estar digitalizado desde el inicio;
+- soluciones donde una operación manual temporal no sea viable.
+
+En estos casos **puede ser necesario ampliar el alcance del prototipo o del MVP**.
+
+↳ *015 §47*
+
+### 17-bis.5. Límites del método
+
+El método funciona mejor cuando:
+
+- existe un Actor Generador claramente identificable;
+- el valor principal puede comenzar en ese actor;
+- los demás actores pueden continuar temporalmente con procesos existentes;
+- existe posibilidad de operación híbrida;
+- el producto puede evolucionar progresivamente.
+
+➕ Fuera de esas condiciones, el método **no deja de aplicarse**: se aplica con la
+adaptación que exige §17-bis.4. *(A.9)*
+
+↳ *015 §44*
+
+### 17-bis.6. Principio de excepción
+
+> **El método no debe convertirse en una regla rígida.**
+
+**Principio general:** comenzar por el Generador y minimizar el alcance inicial.
+
+**La excepción:** incorporar otros actores cuando exista una **razón crítica** que haga
+imposible validar, operar o entregar el valor del producto sin ellos.
+
+➕ Una excepción invocada **sin** esa razón crítica no es una excepción: es expansión
+prematura (§17-bis.3). *(A.9)*
+
+↳ *015 §48*
 
 ## 18. Qué busca validar
 
@@ -505,7 +613,27 @@ El prototipo se considera exitoso cuando hay evidencia suficiente de que:
 > una forma válida de resolver la necesidad — **y la empresa valida el proceso de
 > negocio representado.**
 
-↳ *005 §12 · 010 §29*
+### 29.1. Qué NO valida el prototipo
+
+🚨 **Esto debe quedar explícito.** El prototipo valida el **camino feliz**. No valida
+necesariamente:
+
+- errores;
+- excepciones;
+- cancelaciones;
+- datos incorrectos;
+- duplicados;
+- falta de disponibilidad;
+- problemas de conectividad;
+- situaciones extraordinarias.
+
+> **El éxito del prototipo no significa que todo el comportamiento del producto haya
+> sido validado.**
+
+➕ Aprobar el Gate 1 con estos aspectos sin validar es lo normal y lo esperado. Lo que
+no es admisible es **aprobarlo creyendo que sí se validaron**. *(A.9)*
+
+↳ *005 §12 · 010 §29 · 015 §39*
 
 ## 30. Qué significa aprobar, y qué no
 
@@ -517,7 +645,14 @@ Significa exactamente esto:
 
 Y **no** autoriza EVOL. Solo autoriza el MVP.
 
-↳ *005 §12 · 015 §15, §24*
+**Tampoco demuestra que el producto tendrá adopción.** Un prototipo exitoso demuestra
+una sola cosa: *existe evidencia suficiente para construir el MVP*. La adopción es una
+pregunta distinta y se valida después, mediante el MVP y el Gate 2 (§51).
+
+➕ Confundir ambas cosas es lo que lleva a invertir en evolución sobre un producto que
+nadie llegó a usar. *(A.9)*
+
+↳ *005 §12 · 015 §15, §24, §40*
 
 ## 31. Resultados posibles
 
@@ -601,7 +736,33 @@ En dos niveles:
 
 > **La arquitectura también aprende.**
 
-↳ *005 §17*
+### 37.1. No construir no significa no diseñar
+
+🚨 **El riesgo principal del método es este:** construir una solución excelente para el
+Generador pero **difícil de extender** hacia el Coordinador, el Ejecutor, el
+Supervisor, el Administrador de Plataforma o los Integradores.
+
+Que un actor no esté dentro del MVP **no significa que pueda ignorarse**. Debe existir
+conciencia sobre:
+
+- información;
+- estados;
+- entidades;
+- relaciones;
+- trazabilidad;
+- permisos;
+- extensibilidad.
+
+**La regla, en una frase:**
+
+> **No construir funcionalidades futuras innecesariamente, pero tampoco tomar
+> decisiones que imposibiliten su futura construcción.**
+
+➕ La mitigación no es construir de más: es **evitar decisiones estructurales
+irreversibles**. Distinguir una de otra es responsabilidad de ARCHIT, y el criterio
+aplicado queda registrado en los ADR (§38). *(A.9)*
+
+↳ *005 §17 · 015 §36, §37*
 
 ## 38. ADR — Architecture Decision Records
 
@@ -657,7 +818,18 @@ WSLT → GRTH-01 → GRTH-02 → GRTH-03 → MVP
 
 Cada GRTH incorpora nuevas capacidades hasta alcanzar el alcance definido para el MVP.
 
-↳ *005 §21 · 015 §18, §19*
+### 41.1. GRTH no puede degenerar en Waterfall
+
+🚨 **GRTH debe mantener la filosofía incremental.** Cada iteración debería entregar una
+**capacidad demostrable**.
+
+No debe convertirse en:
+
+> *«Primero definimos todo el MVP y luego construimos todo.»*
+
+La evolución debe mantenerse basada en **Vertical Slices** (§42).
+
+↳ *005 §21 · 015 §18, §19, §41*
 
 ## 42. Vertical Slices
 
@@ -772,6 +944,11 @@ importante no son las semanas:
 > **El MVP debe permanecer enfocado en entregar el mínimo valor real al Actor
 > Generador.**
 
+⚠️ **«Enfocado en el Generador» no es una regla absoluta.** Los seis criterios que
+obligan a incorporar anticipadamente a otro actor están en **§17-bis.2**, y el
+principio de excepción que los gobierna en **§17-bis.6**. Esta sección se lee junto con
+ambos.
+
 ↳ *010 §3 · 015 §20, §21*
 
 ## 49. Operación híbrida
@@ -800,9 +977,24 @@ No basta decir *«el Coordinador seguirá usando Excel»*. Hay que preguntar:
 > genera el MVP?**
 
 Si la respuesta es no, puede ser necesario **incorporar anticipadamente** al
-Coordinador u otro actor.
+Coordinador u otro actor (§17-bis.2, criterio 2).
 
-↳ *015 §23*
+### 50.1. La viabilidad se evalúa periódicamente, no una sola vez
+
+🚨 **El riesgo operacional no aparece al principio: aparece con el volumen.** La
+operación híbrida puede funcionar al arrancar y dejar de ser viable después.
+
+```text
+20 solicitudes    → Excel funciona
+5.000 solicitudes → Excel puede ser inviable
+```
+
+Por eso **debe evaluarse periódicamente** la capacidad de los procesos existentes.
+
+➕ Comprobada una sola vez, al inicio, no es una condición de viabilidad: es una
+foto. *(A.9)*
+
+↳ *015 §23, §38*
 
 ## 51. Gate 2 — ¿Vale la pena seguir invirtiendo?
 
@@ -998,9 +1190,43 @@ cuerpo aparece aquí.
 | **A.5** | ➕ **El veredicto de un Gate no lo emite quien construyó** | ninguna fuente asigna dueño al veredicto | Adición. Conecta el método con el esquema de dos terminales (§32) |
 | **A.6** | ➕ **La métrica de adopción del Gate 2 se define antes de medir** | `015 §25` lista métricas posibles sin decir cuándo se eligen | Adición. Elegir la métrica después de ver el resultado no es medir |
 | **A.7** | **Se elimina la voz de deliberación** | las tres fuentes usan «se consideró…», «hasta este punto», «inicialmente se denominó…» | El método se enuncia en presente y sin condicionales. La deliberación queda en `sources/` |
+| **A.9** | ➕ **El canónico se amplía, nunca se renumera** — las secciones nuevas llevan sufijo `bis` (`§17-bis`) en lugar de desplazar las siguientes | ninguna fuente contempla el problema: son documentos que no habían sido citados todavía | Adición. Hay referencias por número de sección en repositorios que este documento no puede editar; renumerar las rompería en silencio. Ver la nota de detalle abajo |
 
 ⚠️ **Pendiente:** A.1, A.2, A.5 y A.6 merecen un ADR propio con contexto, alternativas
 y consecuencias. Aún no se han escrito.
+
+⚠️ **A.8 está reservada** para la resolución del conflicto sobre el alcance del
+Prototipo de Evolución. Aún no se ha escrito.
+
+## A.9 — La convención `bis`, en detalle
+
+**El problema.** Este documento se cita **por número de sección** desde repositorios que
+no puede editar. Insertar una sección nueva en medio y desplazar las siguientes rompe
+cada una de esas citas **sin que nada falle de forma visible**: la referencia sigue
+resolviendo, pero apunta a otro contenido.
+
+**La regla.**
+
+> **El canónico se amplía, nunca se renumera.**
+
+Una sección nueva que deba ir entre `§N` y `§N+1` se numera **`§N-bis`**, con
+subsecciones `§N-bis.1`, `§N-bis.2`… La numeración del documento deja de ser
+correlativa, y eso es el precio aceptado.
+
+**Consecuencia asumida.** Leer el índice ya no dice cuántas secciones hay. Se prefiere
+un índice menos elegante a un conjunto de citas silenciosamente equivocadas.
+
+**Adiciones ➕ que esta entrada cubre.** Frases normativas del cuerpo que no proceden de
+las fuentes y se marcan con ➕ remitiendo aquí:
+
+| Sección | Qué añade |
+|---|---|
+| `§17-bis.5` | Fuera de los límites del método, este no deja de aplicarse: se aplica con adaptación |
+| `§17-bis.6` | Una excepción sin razón crítica es expansión prematura, no excepción |
+| `§29.1` | Aprobar el Gate 1 con el no-happy-path sin validar es normal; creer que se validó, no |
+| `§30` | Confundir éxito de prototipo con adopción lleva a evolucionar un producto sin usuarios |
+| `§37.1` | Distinguir «no construir de más» de «no impedir» es responsabilidad de ARCHIT, y queda en los ADR |
+| `§50.1` | Comprobada una sola vez, la viabilidad no es condición: es una foto |
 
 **Por qué A.1 sigue en esa lista.** No porque el conflicto entre fuentes siga abierto — no lo
 está: `010 §12` y `015 §5` excluyen al Actor Invitado con argumento y `005 §5.6` queda

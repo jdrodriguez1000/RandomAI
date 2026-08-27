@@ -25,14 +25,14 @@
 | `120` | **D-02 · El canónico se amplía sin renumerar** | [↓](#d-02--el-canónico-se-amplía-sin-renumerar) |
 | `169` | &nbsp;&nbsp;↳ Revisión del 2026-08-26 — la decisión sobrevive, su fundamento cambia | [↓](#revisión-del-2026-08-26--la-decisión-sobrevive-su-fundamento-cambia) |
 | `188` | **D-03 · Alcance de la incorporación de 015 §35-§51** | [↓](#d-03--alcance-de-la-incorporación-de-015-35-51) |
-| `245` | **D-04 · Eliminar el directorio phases/** | [↓](#d-04--eliminar-el-directorio-phases) |
-| `282` | **D-05 · Prefijo _ en las carpetas de insumo** | [↓](#d-05--prefijo-_-en-las-carpetas-de-insumo) |
-| `314` | **D-06 · Git + GitHub como sustrato de evidencia** | [↓](#d-06--git--github-como-sustrato-de-evidencia) |
-| `339` | **D-07 · Adaptación de protocol-close a este proyecto** | [↓](#d-07--adaptación-de-protocol-close-a-este-proyecto) |
-| `384` | **D-08 · Una sesión es un bloque de tiempo, no un día** | [↓](#d-08--una-sesión-es-un-bloque-de-tiempo-no-un-día) |
-| `418` | **D-09 · La capa del cómo vive en _guide/GUIDE.md** | [↓](#d-09--la-capa-del-cómo-vive-en-_guideguidemd) |
-| `468` | **D-10 · A.1 sigue en la lista de ADR pendientes** | [↓](#d-10--a1-sigue-en-la-lista-de-adr-pendientes) |
-| `514` | **Decisiones heredadas del brief** | [↓](#decisiones-heredadas-del-brief) |
+| `266` | **D-04 · Eliminar el directorio phases/** | [↓](#d-04--eliminar-el-directorio-phases) |
+| `303` | **D-05 · Prefijo _ en las carpetas de insumo** | [↓](#d-05--prefijo-_-en-las-carpetas-de-insumo) |
+| `335` | **D-06 · Git + GitHub como sustrato de evidencia** | [↓](#d-06--git--github-como-sustrato-de-evidencia) |
+| `360` | **D-07 · Adaptación de protocol-close a este proyecto** | [↓](#d-07--adaptación-de-protocol-close-a-este-proyecto) |
+| `405` | **D-08 · Una sesión es un bloque de tiempo, no un día** | [↓](#d-08--una-sesión-es-un-bloque-de-tiempo-no-un-día) |
+| `439` | **D-09 · La capa del cómo vive en _guide/GUIDE.md** | [↓](#d-09--la-capa-del-cómo-vive-en-_guideguidemd) |
+| `489` | **D-10 · A.1 sigue en la lista de ADR pendientes** | [↓](#d-10--a1-sigue-en-la-lista-de-adr-pendientes) |
+| `535` | **Decisiones heredadas del brief** | [↓](#decisiones-heredadas-del-brief) |
 
 <!--/INDEX-->
 
@@ -211,7 +211,7 @@ el §4** del canónico, y se **omiten §35, §49 y §51** declarándolas en el A
 | §39 Riesgo de validar solo el Happy Path | Incorporar → Parte V, junto a §29 |
 | §40 Éxito de prototipo no es éxito de producto | Incorporar → completa §30 |
 | §41 GRTH degenerando en Waterfall | Incorporar → Parte VII, junto a GRTH |
-| §42 Expansión prematura | Incorporar → completa §47 |
+| §42 Expansión prematura | Incorporar → `§17-bis`, emparejada con §43 *(enmendado, ver abajo)* |
 | §43 Expansión tardía | Incorporar → justifica el Principio de excepción |
 | §44 Límites de la metodología | Incorporar → `§17-bis` |
 | §45 Cuándo extender el prototipo | Incorporar → `§17-bis` |
@@ -221,6 +221,27 @@ el §4** del canónico, y se **omiten §35, §49 y §51** declarándolas en el A
 | §49 Principios fundamentales (28 ítems) | **Omitir** — duplica §61 |
 | §50 Modelo conceptual (6 preguntas) | **Fusionar en §4** |
 | §51 Filosofía final | **Omitir** — duplica §62 |
+
+> **Enmienda · 2026-08-27 · `TA-0012`.** La fila de `§42` decía **«Incorporar → completa
+> §47»**. En una columna cuyas filas vecinas nombran secciones **del canónico** (§50, §29,
+> §30), eso se lee como el `§47` del canónico — que es **«Regla de trazabilidad»**, sin
+> relación alguna con la expansión prematura. El `§47` que la fila quería nombrar era el de
+> **`015`** (Aplicaciones que requieren adaptación), cuyo destino es `§17-bis`.
+>
+> **Qué se corrige:** solo el destino escrito en la fila. `015 §42` va a **`§17-bis.3`**,
+> emparejado con `§43`, porque expansión prematura y expansión tardía son el mismo riesgo en
+> direcciones opuestas y se leen juntos o no se leen.
+>
+> **Qué NO cambia:** el alcance decidido —13 secciones, §36–§48, más la fusión de §50 en el
+> §4— es el mismo. La enmienda no altera qué se incorpora, solo dónde dice esta tabla que se
+> incorpora. El canónico ya quedó correcto al ejecutar `TA-0002`; lo que estaba mal era esta
+> fila.
+>
+> **Por qué se enmienda `D-03` y no se abre una `D-11`.** Una decisión nueva no borra la
+> anterior: dejaría dos textos vigentes contradiciéndose, y `D-03` es el que se cita desde
+> `tasks.md` y desde el tablero de la auditora. 🔑 **Una contradicción documentada en dos
+> sitios no está resuelta: está duplicada.** `D-03` conserva su código, su fecha original y
+> su estado `Vigente`.
 
 **Razón.** Cierra el bloque entero sin silencios, que es lo que `TA-0003` exige. El mínimo de
 `TA-0002` dejaba fuera §47. Incorporarlo todo habría introducido duplicación reconocida con
@@ -238,7 +259,7 @@ el §4** del canónico, y se **omiten §35, §49 y §51** declarándolas en el A
   en lugar de 6. La auditora debe saberlo al verificar: encontrará **más** de lo que pidió, no
   menos.
 
-**Trazas:** `TA-0002` · `TA-0003` · `TA-0007` · `L-004`
+**Trazas:** `TA-0002` · `TA-0003` · `TA-0007` · `TA-0012` · `L-004`
 
 ---
 

@@ -38,11 +38,11 @@
 | **Fase del método** | *Ninguna todavía* — pre-Descubrimiento |
 | **Etapa real** | Corrección del método antes de aplicarlo |
 | **Producto** | Sin construir. Cero líneas de código de aplicación |
-| **Bloqueo activo** | 2 tareas bloqueantes de auditoría abiertas: `TA-0002`, `TA-0007`. `TA-0001` queda `Implementada` (no `Verificada` — eso lo asigna la auditora) |
+| **Bloqueo activo** | 2 tareas bloqueantes de auditoría abiertas: `TA-0002`, `TA-0007`. `TA-0001` está `Verificada` por la auditora (`tasks_audit.md:59`) |
 
 **Situación en una frase:** `TA-0001` está resuelta en el canónico —§10 y Anexo A.1 corregidos,
-más la justificación de por qué `A.1` sigue como ADR pendiente (`D-10`)— y a la espera de que
-la auditora la verifique; `TA-0002`+`TA-0003` (alcance ampliado por `D-03`) es el siguiente
+más la justificación de por qué `A.1` sigue como ADR pendiente (`D-10`)— y ya `Verificada` por
+la auditora; `TA-0002`+`TA-0003` (alcance ampliado por `D-03`) es el siguiente
 paso bloqueante y **no se empezó a petición expresa del usuario**. Sigue pendiente el traslado
 a la auditora del desfase de estado en `TA-0009` (`Cancelada` aquí, `Pendiente` en su tablero;
 no podemos escribirlo nosotros, `RES-009`).
@@ -175,7 +175,7 @@ con el alcance ampliado de `D-03` (crear `§17-bis`, fusionar §50 en §4).
 
 **Inmediato — Paso 1, tareas bloqueantes de la auditoría:**
 
-1. `TA-0001` — **Implementada**, a la espera de verificación por la auditora
+1. `TA-0001` — **`Verificada`** por la auditora (2026-08-26)
 2. `TA-0002` + `TA-0003` — crear `§17-bis`, incorporar `015` §36–§48, fusionar §50 en §4
 3. `TA-0007` — decisión de alcance del prototipo, en el canónico §14 (un solo frente tras `D-04`)
 

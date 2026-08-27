@@ -17,18 +17,19 @@
 
 | Línea | Sección | Ir a |
 |---|---|---|
-| `37` | **Convenciones** | [↓](#convenciones) |
-| `45` | **Tablero** | [↓](#tablero) |
-| `61` | **Detalle** | [↓](#detalle) |
-| `63` | &nbsp;&nbsp;↳ L-001 · Leer 015_evolution.md por líneas, no por encabezados | [↓](#l-001--leer-015_evolutionmd-por-líneas-no-por-encabezados) |
-| `79` | &nbsp;&nbsp;↳ L-002 · No repetir el canónico sin contrastarlo | [↓](#l-002--no-repetir-el-canónico-sin-contrastarlo) |
-| `96` | &nbsp;&nbsp;↳ L-003 · Medir el impacto antes de renumerar | [↓](#l-003--medir-el-impacto-antes-de-renumerar) |
-| `117` | &nbsp;&nbsp;↳ L-004 · El alcance declarado de una auditoría es su límite | [↓](#l-004--el-alcance-declarado-de-una-auditoría-es-su-límite) |
-| `136` | &nbsp;&nbsp;↳ L-005 · Un fallo de formato puede perder contenido normativo | [↓](#l-005--un-fallo-de-formato-puede-perder-contenido-normativo) |
-| `159` | &nbsp;&nbsp;↳ L-007 · Quien delega un procedimiento no puede llevar una copia encima | [↓](#l-007--quien-delega-un-procedimiento-no-puede-llevar-una-copia-encima) |
-| `192` | &nbsp;&nbsp;↳ L-006 · Al eliminar algo, comprobar qué se apoyaba en ello | [↓](#l-006--al-eliminar-algo-comprobar-qué-se-apoyaba-en-ello) |
-| `224` | &nbsp;&nbsp;↳ L-008 · Un dato repetido en dos capas diverge, y miente la que menos se lee | [↓](#l-008--un-dato-repetido-en-dos-capas-diverge-y-miente-la-que-menos-se-lee) |
-| `267` | &nbsp;&nbsp;↳ L-009 · Escribir en el sitio destruye el original antes de saber si va a funcionar | [↓](#l-009--escribir-en-el-sitio-destruye-el-original-antes-de-saber-si-va-a-funcionar) |
+| `38` | **Convenciones** | [↓](#convenciones) |
+| `46` | **Tablero** | [↓](#tablero) |
+| `63` | **Detalle** | [↓](#detalle) |
+| `65` | &nbsp;&nbsp;↳ L-001 · Leer 015_evolution.md por líneas, no por encabezados | [↓](#l-001--leer-015_evolutionmd-por-líneas-no-por-encabezados) |
+| `81` | &nbsp;&nbsp;↳ L-002 · No repetir el canónico sin contrastarlo | [↓](#l-002--no-repetir-el-canónico-sin-contrastarlo) |
+| `98` | &nbsp;&nbsp;↳ L-003 · Medir el impacto antes de renumerar | [↓](#l-003--medir-el-impacto-antes-de-renumerar) |
+| `119` | &nbsp;&nbsp;↳ L-004 · El alcance declarado de una auditoría es su límite | [↓](#l-004--el-alcance-declarado-de-una-auditoría-es-su-límite) |
+| `138` | &nbsp;&nbsp;↳ L-005 · Un fallo de formato puede perder contenido normativo | [↓](#l-005--un-fallo-de-formato-puede-perder-contenido-normativo) |
+| `161` | &nbsp;&nbsp;↳ L-007 · Quien delega un procedimiento no puede llevar una copia encima | [↓](#l-007--quien-delega-un-procedimiento-no-puede-llevar-una-copia-encima) |
+| `194` | &nbsp;&nbsp;↳ L-006 · Al eliminar algo, comprobar qué se apoyaba en ello | [↓](#l-006--al-eliminar-algo-comprobar-qué-se-apoyaba-en-ello) |
+| `226` | &nbsp;&nbsp;↳ L-008 · Un dato repetido en dos capas diverge, y miente la que menos se lee | [↓](#l-008--un-dato-repetido-en-dos-capas-diverge-y-miente-la-que-menos-se-lee) |
+| `269` | &nbsp;&nbsp;↳ L-009 · Escribir en el sitio destruye el original antes de saber si va a funcionar | [↓](#l-009--escribir-en-el-sitio-destruye-el-original-antes-de-saber-si-va-a-funcionar) |
+| `303` | **L-010 · Una frase de cierre bien escrita es la forma más fácil de colar una regla inventada** | [↓](#l-010--una-frase-de-cierre-bien-escrita-es-la-forma-más-fácil-de-colar-una-regla-inventada) |
 
 <!--/INDEX-->
 
@@ -55,6 +56,7 @@
 | `L-007` | Quien delega un procedimiento no puede llevar una copia encima | Proceso | 2026-08-26 |
 | `L-008` | Un dato repetido en dos capas diverge, y miente la capa que menos se lee | Método | 2026-08-26 |
 | `L-009` | Escribir en el sitio destruye el original antes de saber si va a funcionar | Técnica | 2026-08-26 |
+| `L-010` | Una frase de cierre bien escrita es la forma más fácil de colar una regla inventada | Método | 2026-08-27 |
 
 ---
 
@@ -295,3 +297,48 @@ siete archivos de `_persistence/` en cada corrida. **Comprobado: no escribe de f
 — `tools/mkindex.py:95` usa `write_text`, que trunca al abrir. Registrado como `DT-012`.
 
 **Trazas:** `L-008` · `D-06` · `DT-012`
+
+---
+
+## L-010 · Una frase de cierre bien escrita es la forma más fácil de colar una regla inventada
+
+**Categoría:** Método · **Fecha:** 2026-08-27 · Origen: auditoría `0002-metodo-ampliado`
+(`TA-0010`)
+
+**Qué pasó.** Al incorporar `015` §36–§48 al canónico (`TA-0002`), cerré seis de los ocho
+bloques con una frase rotunda de cosecha propia — *«…no es una condición de viabilidad: es
+una foto»*, *«…es una fase de un waterfall con otro nombre»*—. Cada bloque llevaba su marca
+`↳` apuntando a `015`. Ninguna de esas frases está en `015`.
+
+La auditoría lo detectó y lo formuló mejor de lo que yo lo habría hecho: **no estaban mal
+escritas, estaban mal marcadas.**
+
+**Por qué importa, y no es cosmético.** Dos de las seis no eran adorno: **endurecían la
+fuente.** `015 §41` dice que cada iteración *debería* entregar una capacidad demostrable;
+mi cierre lo convertía en definición absoluta. `015 §39` dice que el límite del prototipo
+*debe quedar explícito*; yo escribí que *forma parte del criterio de aprobación*, que es
+otra cosa y más exigente. Un lector futuro habría aplicado una regla más dura creyendo que
+venía de la fuente, y la marca `↳` le habría dado la razón.
+
+> 🔑 **La marca `↳` es una afirmación sobre el origen, y una afirmación no comprobada es
+> justo lo que `P-1` prohíbe. La escribí yo, sobre mi propio texto, sin comprobarla.**
+
+**Por qué se me pasó.** El impulso no fue inventar: fue **cerrar bien el párrafo**. Una
+sección que termina en una lista se siente incompleta, y la frase que la remata se siente
+como redacción, no como contenido. Ahí está la trampa: **el modo «estoy escribiendo mejor»
+y el modo «estoy añadiendo normativa» se sienten igual desde dentro.** Por eso no salta
+ninguna alarma — y por eso hay que comprobarlo desde fuera, mirando la marca, no la prosa.
+
+**Qué haremos distinto.** Al incorporar contenido de una fuente, el último paso no es
+releer para que suene bien: es **recorrer el bloque frase por frase preguntando "¿esto está
+en la fuente?"**. Lo que no esté, o se marca `➕` con entrada en el Anexo A, o se retira. La
+comprobación se hace **sobre el bloque entero**, no sobre la lista principal: el defecto
+vive en los bordes, no en el centro.
+
+📌 **Corolario para la auditoría.** Verificar «que la lista esté completa» no basta.
+`TA-0002` pasó sus seis criterios de cierre —los seis criterios de `015` §46 estaban
+completos, en orden y sin pérdida— y aun así el bloque contenía regla inventada. **La
+fidelidad del contenido incorporado y la fidelidad de sus bordes son dos comprobaciones
+distintas.**
+
+**Trazas:** `TA-0002` · `TA-0010` · `L-005` · `P-1`
