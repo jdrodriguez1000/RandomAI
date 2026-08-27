@@ -633,8 +633,14 @@ que después haya que desnormalizar.
 
 **Consecuencias.**
 
-- `_temp/` **no es fuente de verdad y nada la cita.** Ni el canónico, ni `CLAUDE.md`, ni
-  `GUIDE.md`, ni los registros de `_persistence/` dependen de ella.
+- `_temp/` **no es fuente de verdad, y nada normativo depende de ella.** Ni el canónico, ni
+  `CLAUDE.md`, ni `GUIDE.md` la citan.
+- ⚠️ **Pero sí la citan los registros de trabajo, y hay que decirlo:** `T-028`–`T-031` declaran
+  origen `_temp/005_discovery.md` §11, y `SUP-009` se funda en ese flujo. **Cuatro tareas
+  dependen de un archivo destinado a borrarse.** *(Enmendado el 2026-08-27 por `TA-0022`: la
+  redacción original decía «nada la cita», que era falso en el mismo commit que la escribió.
+  La distinción que vale es entre **citable** e **invocable como norma**, no entre citada y no
+  citada.)*
 - ⚠️ **Riesgo asumido: es una tercera capa que puede envejecer.** Es el defecto de `L-007` y
   `L-008` —una segunda fuente de verdad diverge sin avisar—. Se acepta **solo porque es
   temporal y está declarada como tal**; si sobrevive a esta decisión, se convierte en deuda.

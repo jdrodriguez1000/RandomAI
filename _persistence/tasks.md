@@ -19,9 +19,9 @@
 | `32` | &nbsp;&nbsp;↳ Códigos | [↓](#códigos) |
 | `42` | &nbsp;&nbsp;↳ Estados | [↓](#estados) |
 | `65` | **Tablero — Tareas de auditoría (TA)** | [↓](#tablero--tareas-de-auditoría-ta) |
-| `295` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
-| `310` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
-| `372` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
+| `328` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
+| `343` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
+| `405` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
 
 <!--/INDEX-->
 
@@ -88,6 +88,8 @@ Origen: [`0001-method`](../../RandomAi_Auditor/audits/0001-method.md)
 | `TA-0018` | Estado de deuda duplicado entre tablero y entrada | Media | No bloqueante | `Verificada` |
 | `TA-0019` | La lista de ADR pendientes no se revisó al pasar el Anexo de 7 a 12 | Media | No bloqueante | `Verificada` |
 | `TA-0020` | Estado duplicado que sobrevive en `DT-001` y `DT-005`, en otro formato | Media | No bloqueante | `Pendiente` |
+| `TA-0021` | `_phases/` y `_templates/` quedaron seguidos por git mientras tres registros dicen lo contrario | Alta | No bloqueante | `Pendiente` |
+| `TA-0022` | La consecuencia de `D-12` dice «nada la cita» y cuatro tareas la citan | Media | No bloqueante | `Pendiente` |
 
 **`TA-0009` · Razón del descarte:** decisión `D-01` del usuario — las fuentes se conservan
 intactas (`000_method.md:6-7`). El defecto queda documentado en la auditoría y en `DT-001`.
@@ -285,6 +287,37 @@ dato, que es lo que la convención escrita en el mismo commit prohíbe.
 todo lo que se escribió distinto. Pide comprobar si el mismo sesgo afecta a los otros barridos
 de esta ronda —el de las marcas `➕`, el de los `↳` consecutivos—, hechos con la misma
 técnica.
+
+**`TA-0021` · `Pendiente`, emitida por la auditoría `0005`. Hallazgo aceptado tras
+comprobarlo.** Los seis archivos de `_phases/` y `_templates/` entraron al índice de git en
+`4f7e003` —el commit de cierre de `S-005`— mientras ese mismo commit escribe que **no están
+decididos**. Comprobado: `git ls-files _phases _templates` devuelve los seis y
+`git log --diff-filter=A` los sitúa en `4f7e003`.
+
+🔑 **Lo que enseña, y vale más que el arreglo.** El razonamiento de `DT-013` era correcto y se
+aplicó **a la puerta equivocada**: se protegió el mapa de `progress.md` §6 de «normalizar por
+la puerta de atrás» mientras la puerta real —el índice de git— ya se había cruzado en el
+mismo commit. Bajo `D-06`, **commitear no es guardar copia: es incorporar al estado del
+proyecto.** La instrucción que lo causó fue mía, al pedirle al closer que los incluyera «para
+no perderlos».
+
+📌 **Matiz sobre el enunciado de la auditora.** Dice que los tres registros «son falsos desde
+el instante en que se escribieron». Comprobado uno a uno: las frases «*aparecieron* sin
+seguimiento en git» (`progress.md:50, :87, :239`, `decisions.md:605`) son **verdaderas** —
+describen cómo llegaron, y así llegaron. Lo que sí se contradice con el árbol es la
+justificación de `DT-013:421-423` y el «no están decididos» en presente. **El hallazgo se
+sostiene entero; solo su alcance es más estrecho que el enunciado.**
+
+**Cómo se salda:** depende de `T-013`. Si no se enmienda `D-04`, `git rm --cached` sobre los
+seis y los registros vuelven a ser ciertos. Si se enmienda, los registros se reescriben para
+decir que fueron readmitidos y por qué.
+
+**`TA-0022` · `Pendiente`, emitida por la auditoría `0005`. Hallazgo aceptado.** La
+consecuencia de `D-12` dice que `_temp/` «no es fuente de verdad y **nada la cita**». En el
+mismo commit, `T-028`–`T-031` declaran origen `_temp/005_discovery.md` §11 y `SUP-009` se funda
+en ese flujo. El cuerpo de la decisión distingue bien —citable, no invocable como norma—; es la
+frase de la consecuencia la que dice de más, y al decirlo de más **subestima el riesgo que la
+propia decisión declara asumido**: cuatro tareas dependen de un archivo destinado a borrarse.
 
 **`DT-008` · corregida, no saldada.** La auditoría `0004` demostró que estaba mal medida:
 cinco de sus ocho puntos están cubiertos, faltan tres —entradas exigidas, condición de salida,

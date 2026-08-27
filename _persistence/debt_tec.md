@@ -418,13 +418,25 @@ commiteado y no hay red de `git`.
 `D-05`» y no lista `_temp/` (nuevo en `S-005`) ni `_phases/` y `_templates/` (aportados por el
 usuario en `S-005`, sin decidir).
 
+🚨 **Ampliado el 2026-08-27, tras el barrido que sugirió la auditoría `0005`: son cuatro, no
+tres.** Contrastado el mapa contra `git ls-files`, **`_guide/` también falta**, y no tiene nada
+que ver con `T-013`: existe desde `S-003` por `D-09` y `T-023`, está seguido por git y es una
+de las tres capas que `GUIDE.md` §0 declara. Llevaba dos sesiones ausente del mapa sin que
+nadie lo notara — **incluida la sesión que escribió esta misma deuda mirando ese mismo
+árbol**.
+
+🔑 Es el patrón de `L-013` otra vez: se miró el mapa para ver **qué sobraba por decidir**, no
+para comprobar **qué faltaba**. Un inventario contra lo que uno tiene en la cabeza encuentra lo
+que uno ya sospechaba.
+
 **Por qué se aplazó.** Se detectó al cerrar `S-005`. `_phases/` y `_templates/` **no están
 decididos** todavía (ver `T-013`, `D-12`), así que incluirlos en el mapa sería normalizar por
 la puerta de atrás algo que el usuario no ha resuelto. `_temp/` sí existe y es estable
 mientras dure `D-12`, y sí podría añadirse sin ese problema.
 
-**Qué la salda.** Al resolverse `T-013`, actualizar el árbol de §6 completo. Si la resolución
-tarda, se puede añadir `_temp/` de forma aislada antes.
+**Qué la salda.** Al resolverse `T-013`, actualizar el árbol de §6 completo. **`_guide/` no
+espera a nadie: no depende de `T-013` y debe añadirse ya.** `_temp/` también puede añadirse de
+forma aislada, porque es estable mientras dure `D-12`.
 
 **Qué pasa si no se salda.** Bajo impacto: es un mapa de referencia, no un mecanismo del que
 dependa nada. Pero un mapa que no refleja el árbol real deja de usarse para orientarse, que es
