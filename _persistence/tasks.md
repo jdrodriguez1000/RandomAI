@@ -19,9 +19,9 @@
 | `32` | &nbsp;&nbsp;↳ Códigos | [↓](#códigos) |
 | `42` | &nbsp;&nbsp;↳ Estados | [↓](#estados) |
 | `59` | **Tablero — Tareas de auditoría (TA)** | [↓](#tablero--tareas-de-auditoría-ta) |
-| `140` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
-| `155` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
-| `204` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
+| `160` | &nbsp;&nbsp;↳ Notas de alcance | [↓](#notas-de-alcance) |
+| `175` | **Tablero — Tareas propias (T)** | [↓](#tablero--tareas-propias-t) |
+| `224` | **Orden de trabajo** | [↓](#orden-de-trabajo) |
 
 <!--/INDEX-->
 
@@ -65,7 +65,7 @@ Origen: [`0001-method`](../../RandomAi_Auditor/audits/0001-method.md)
 | `TA-0001` | Corregir atribución sobre «Actor Invitado» (§10 y Anexo A.1); retirar `➕` de §10 | Alta | Bloqueante | `Verificada` |
 | `TA-0002` | Incorporar contenido normativo omitido de `015` §35–§48 | Alta | Bloqueante | `Implementada` |
 | `TA-0007` | Añadir «decisión de alcance del prototipo» a las salidas del Descubrimiento (§14) | Alta | Bloqueante | `No implementada` |
-| `TA-0003` | Declarar en el Anexo A las omisiones deliberadas de `015` §35–§51 | Alta | No bloqueante | `No implementada` |
+| `TA-0003` | Declarar en el Anexo A las omisiones deliberadas de `015` §35–§51 | Alta | No bloqueante | `Implementada` |
 | `TA-0004` | Añadir Anexo A.8: alcance del Prototipo de Evolución | Media | No bloqueante | `No implementada` |
 | `TA-0005` | Corregir la fila «Cuándo» de la tabla §57 | Media | No bloqueante | `No implementada` |
 | `TA-0006` | Reformular §32 de forma agnóstica a la infraestructura | Media | No bloqueante | `No implementada` |
@@ -111,9 +111,8 @@ contrapartida localizable, más la fusión de `015` §50 en el §4:
 Cada bloque incorporado lleva su marca `↳`. No hubo renumeración: `§18`, `§30`, `§47`,
 `§61` y `§62` conservan su número (`RES-007`).
 
-**Pendiente de la ejecutora:** `TA-0003` — declarar en el Anexo A las omisiones
-deliberadas (`015` §35, §49, §51). El único estado de cierre es `Verificada` y lo
-asigna la auditora.
+**Pendiente de la ejecutora:** ninguna. `TA-0003` quedó implementada en la misma sesión
+`S-004`. El único estado de cierre es `Verificada` y lo asigna la auditora.
 
 **`TA-0010`, `TA-0011`, `TA-0013` · Implementadas, no `Verificadas`.** Origen:
 auditoría `0002-metodo-ampliado`. Las tres son defectos introducidos por `TA-0002` en la
@@ -136,6 +135,27 @@ misma sesión `S-004`, y se corrigieron en ella:
 `D-03` en lugar de abrir una `D-11`: una decisión nueva no borra la anterior, y `D-03` es
 la que se cita desde aquí y desde el tablero de la auditora. `D-03` conserva código, fecha
 y estado `Vigente`; el alcance decidido no cambia.
+
+**`TA-0003` · Implementada, no `Verificada`.** Creada la entrada **Anexo A.10** en
+`000_method.md`: qué se omitió de `015` §35–§51 y por qué. Cierra el rango completo —14
+secciones incorporadas al cuerpo + 3 omitidas = §35–§51—, comprobado por script: ninguna
+sección sin resolver, ninguna en dos sitios a la vez.
+
+Las tres omisiones, con la razón que consta en el canónico:
+
+| `015` | Razón |
+|---|---|
+| §35 Ventajas | Argumentativa, no normativa. Justifica por qué conviene el método; no enuncia reglas. Lo normativo ya está en `§2`, `§3` y `§4` |
+| §49 Principios (28 ítems) | Recapitulación. Los 28 están distribuidos por el cuerpo (`§16`, `§40`, `§51`, `§37.1`, `§17-bis`, `§60`…). Repetirlos crearía un segundo sitio donde la misma regla puede divergir |
+| §51 Filosofía final | Duplica material presente en tres piezas: `§62`, el diagrama de `§5` y `§4` |
+
+⚠️ **Hallazgo propio, registrado dentro de la propia entrada A.10.** `D-03` justificaba
+omitir §49 y §51 diciendo que «duplican §61 y §62». **Comprobado, y es impreciso:** `§61`
+son diez principios cuya fuente es `005 §41`, no los 28 de `015 §49`; y `§62` procede de
+`005 §43`. La omisión sigue siendo correcta, pero por recapitulación distribuida, no por
+duplicación con esas dos secciones. **No se modifica `D-03`**: la decisión no cambia, solo
+su justificación, y la razón precisa queda escrita donde el lector del canónico la va a
+buscar.
 
 ### Notas de alcance
 

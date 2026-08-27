@@ -1191,6 +1191,7 @@ cuerpo aparece aquí.
 | **A.6** | ➕ **La métrica de adopción del Gate 2 se define antes de medir** | `015 §25` lista métricas posibles sin decir cuándo se eligen | Adición. Elegir la métrica después de ver el resultado no es medir |
 | **A.7** | **Se elimina la voz de deliberación** | las tres fuentes usan «se consideró…», «hasta este punto», «inicialmente se denominó…» | El método se enuncia en presente y sin condicionales. La deliberación queda en `sources/` |
 | **A.9** | ➕ **El canónico se amplía, nunca se renumera** — las secciones nuevas llevan sufijo `bis` (`§17-bis`) en lugar de desplazar las siguientes | ninguna fuente contempla el problema: son documentos que no habían sido citados todavía | Adición. Hay referencias por número de sección en repositorios que este documento no puede editar; renumerar las rompería en silencio. Ver la nota de detalle abajo |
+| **A.10** | **Omisiones deliberadas del bloque `015` §35–§51** | `015` §35, §49 y §51 no tienen contrapartida en el cuerpo | Se omiten por recapitulación o por ser argumentativas, **no por descarte**: su contenido normativo ya vive distribuido en el cuerpo. Detalle sección por sección abajo |
 
 ⚠️ **Pendiente:** A.1, A.2, A.5 y A.6 merecen un ADR propio con contexto, alternativas
 y consecuencias. Aún no se han escrito.
@@ -1227,6 +1228,48 @@ las fuentes y se marcan con ➕ remitiendo aquí:
 | `§30` | Confundir éxito de prototipo con adopción lleva a evolucionar un producto sin usuarios |
 | `§37.1` | Distinguir «no construir de más» de «no impedir» es responsabilidad de ARCHIT, y queda en los ADR |
 | `§50.1` | Comprobada una sola vez, la viabilidad no es condición: es una foto |
+
+## A.10 — Qué se omitió de `015` §35–§51, y por qué
+
+> **Un documento canónico no puede omitir en silencio.** Esta entrada resuelve el bloque
+> `015` §35–§51 **completo**: cada sección está incorporada al cuerpo o listada aquí como
+> omisión con su razón. Ninguna queda sin resolver.
+
+**Incorporadas al cuerpo** (13 secciones, por decisión `D-03`):
+
+| `015` | Dónde vive ahora |
+|---|---|
+| §36, §37 | `§37.1` — No construir no significa no diseñar |
+| §38 | `§50.1` — La viabilidad se evalúa periódicamente |
+| §39 | `§29.1` — Qué NO valida el prototipo |
+| §40 | `§30` — Éxito de prototipo no es adopción |
+| §41 | `§41.1` — GRTH no puede degenerar en Waterfall |
+| §42, §43 | `§17-bis.3` — Los dos riesgos simétricos |
+| §44 | `§17-bis.5` — Límites del método |
+| §45 | `§17-bis.1` — Cuándo debe extenderse el prototipo |
+| §46 | `§17-bis.2` — Los seis criterios |
+| §47 | `§17-bis.4` — Aplicaciones que requieren adaptación |
+| §48 | `§17-bis.6` — Principio de excepción |
+| §50 | `§4` — Las seis preguntas del método |
+
+**Omitidas deliberadamente** (3 secciones):
+
+| `015` | Qué es | Por qué se omite |
+|---|---|---|
+| **§35** · Ventajas del método (10 subsecciones) | Argumentación de por qué conviene adoptarlo: reduce riesgo inicial, evita el «MVP monstruoso», permite detener la inversión, favorece participación de usuarios… | **Es argumentativa, no normativa.** No enuncia ninguna regla que el método deba seguir: justifica ante un lector externo por qué el método existe. Lo normativo que contiene ya está en `§2` (principio rector), `§3` (los cinco principios) y `§4` (la inversión crece por evidencia). Un canónico dice qué hacer, no por qué conviene hacerlo |
+| **§49** · Principios fundamentales (28 ítems) | Recapitulación numerada de todo el método, del prototipo descartable al Release Objetivo | **Es una recapitulación, no contenido nuevo.** Comprobado ítem por ítem: los 28 están distribuidos por el cuerpo — el prototipo descartable en `§16`, el WSLT como Iteración 0 en `§40`, la evaluación en condiciones reales y la adopción en `§51`, la extensibilidad en `§37.1`, la adaptación por otros actores en `§17-bis`, y los tres últimos en `§60`. Repetirlos aquí crearía un segundo lugar donde la misma regla puede divergir |
+| **§51** · Filosofía final | Resumen en una frase, más el objetivo del método y el flujo completo | **Duplica material ya presente**, en tres piezas: el objetivo está en `§62` (Definición), el flujo completo en el diagrama de `§5`, y la progresión evidencia → inversión en `§4` |
+
+⚠️ **Nota sobre la razón registrada en `D-03`.** `D-03` justifica la omisión de §49 y §51
+diciendo que «duplican §61 y §62». **Comprobado, y es impreciso:** `§61` son diez principios
+cuya fuente es `005 §41`, no los 28 de `015 §49`; y `§62` procede de `005 §43`. La omisión es
+correcta, pero por la razón que consta arriba —recapitulación distribuida por el cuerpo— y no
+por duplicación con esas dos secciones concretas. La decisión de `D-03` no cambia; su
+justificación se precisa aquí, que es donde el lector del canónico la va a buscar.
+
+**Consecuencia asumida.** Quien busque en este documento un resumen equivalente a `015` §49
+no lo encontrará: encontrará `§61`, que es más corto y de otra fuente. Es deliberado. La
+recapitulación exhaustiva vive en `sources/015_evolution.md`, que se conserva intacta.
 
 **Por qué A.1 sigue en esa lista.** No porque el conflicto entre fuentes siga abierto — no lo
 está: `010 §12` y `015 §5` excluyen al Actor Invitado con argumento y `005 §5.6` queda
